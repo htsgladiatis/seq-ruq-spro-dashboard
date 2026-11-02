@@ -1050,8 +1050,8 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   /* channel bars */
   var SRC_W={base:14,max:7,aria:'Источники целевых: Директ 7, SEO 5, Email 2',rows:[
     {k:'Директ',v:7,c:'--primary',d:'12,5 тыс. ₽ на ЦЛ'},{k:'SEO / Органика',v:5,c:'--ch-src'},{k:'Email',v:2,c:'--ch-mail'}]};
-  var SRC_M={base:63,max:40,aria:'Источники целевых: Директ 40, SEO 14, Email 9',rows:[
-    {k:'Директ',v:40,c:'--primary',d:'9,7 тыс. ₽ на ЦЛ'},{k:'SEO / Органика',v:14,c:'--ch-src'},{k:'Email',v:9,c:'--ch-mail'}]};
+  var SRC_M={base:63,max:38,aria:'Источники целевых: Директ 38, SEO 16, Email 9',rows:[
+    {k:'Директ',v:38,c:'--primary',d:'10,5 тыс. ₽ на ЦЛ'},{k:'SEO / Органика',v:16,c:'--ch-src'},{k:'Email',v:9,c:'--ch-mail'}]};
   var SRC=SRC_W;
   function drawSrc(){
     var host=$('#ch-src'); if(!host) return;
@@ -1081,10 +1081,9 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   var MTX_W=[{p:'Sequoia',c:['--seq','Sequoia'],cls:'seq',direct:3,seo:4,email:0},
            {p:'Ruqi',c:['--ruq','Ruqi'],cls:'ruq',direct:3,seo:0,email:0},
            {p:'Solution PRO',c:['--spr','Solution PRO'],cls:'spr',direct:1,seo:1,email:2}];
-  var MTX_M=[{p:'Sequoia',c:['--seq','Sequoia'],cls:'seq',direct:20,seo:7,email:0},
-           {p:'Ruqi',c:['--ruq','Ruqi'],cls:'ruq',direct:9,seo:0,email:4},
-           {p:'Solution PRO',c:['--spr','Solution PRO'],cls:'spr',direct:3,seo:3,email:4},
-           {p:'Без проекта',c:['','Без проекта'],cls:'x',direct:8,seo:4,email:1}];
+  var MTX_M=[{p:'Sequoia',c:['--seq','Sequoia'],cls:'seq',direct:23,seo:11,email:1},
+           {p:'Ruqi',c:['--ruq','Ruqi'],cls:'ruq',direct:12,seo:0,email:4},
+           {p:'Solution PRO',c:['--spr','Solution PRO'],cls:'spr',direct:3,seo:5,email:4}];
   var MTX=MTX_W;
   function drawMtx(){
     var host=$('#mtx'); if(!host) return;
@@ -1107,7 +1106,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   /* project bars */
   var PROJ_W=[{k:'Sequoia',v:8790,b:'61 527 ₽ / 7 ЦЛ',c:'--seq',cls:'seq'},{k:'Ruqi',v:8737,b:'26 210 ₽ / 3 ЦЛ',c:'--ruq',cls:'ruq'},{k:'Solution PRO',v:null,b:'бюджета нет / 4 ЦЛ',c:'--spr',cls:'spr'}];
   var PROJ_CFG_W={unit:'₽',max:10000};
-  var PROJ_M=[{k:'Sequoia',v:27,b:'27 ЦЛ · 42,9%',c:'--seq',cls:'seq'},{k:'Ruqi',v:13,b:'13 ЦЛ · 20,6%',c:'--ruq',cls:'ruq'},{k:'Solution PRO',v:10,b:'10 ЦЛ · 15,9%',c:'--spr',cls:'spr'},{k:'Без проекта',v:13,b:'13 ЦЛ · 20,6%',c:'--text-3',cls:'x'}];
+  var PROJ_M=[{k:'Sequoia',v:35,b:'35 ЦЛ · 55,6%',c:'--seq',cls:'seq'},{k:'Ruqi',v:16,b:'16 ЦЛ · 25,4%',c:'--ruq',cls:'ruq'},{k:'Solution PRO',v:12,b:'12 ЦЛ · 19,0%',c:'--spr',cls:'spr'}];
   var PROJ_CFG_M={unit:'ЦЛ',max:63};
   var PROJ=PROJ_W; var PROJ_CFG=PROJ_CFG_W;
   var PROJ_ROWS={
@@ -1115,10 +1114,9 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       +'<tr><td><span class="pill p-ruq">Ruqi</span></td><td class="d">697</td><td class="d">37</td><td class="d">26 210 ₽</td><td class="d">3</td><td class="d">8 737 ₽</td></tr>'
       +'<tr><td><span class="pill p-spr">Solution PRO</span></td><td class="d">—</td><td class="d">—</td><td class="d">—</td><td class="d">4</td><td class="d">—</td></tr>'
       +'<tr style="background:var(--surface-2);font-weight:600"><td>Итого</td><td class="d">50 378</td><td class="d">449</td><td class="d">87 738 ₽</td><td class="d">14</td><td class="d">6 267 ₽</td></tr>',
-    month:'<tr><td><span class="pill p-seq">Sequoia</span></td><td class="d">—</td><td class="d">—</td><td class="d">—</td><td class="d">27</td><td class="d">—</td></tr>'
-      +'<tr><td><span class="pill p-ruq">Ruqi</span></td><td class="d">—</td><td class="d">—</td><td class="d">—</td><td class="d">13</td><td class="d">—</td></tr>'
-      +'<tr><td><span class="pill p-spr">Solution PRO</span></td><td class="d">—</td><td class="d">—</td><td class="d">—</td><td class="d">10</td><td class="d">—</td></tr>'
-      +'<tr><td><span class="pill" style="color:var(--text-3);border-color:var(--text-3)">Без проекта</span></td><td class="d">—</td><td class="d">—</td><td class="d">—</td><td class="d">13</td><td class="d">—</td></tr>'
+    month:'<tr><td><span class="pill p-seq">Sequoia</span></td><td class="d">—</td><td class="d">—</td><td class="d">—</td><td class="d">35</td><td class="d">—</td></tr>'
+      +'<tr><td><span class="pill p-ruq">Ruqi</span></td><td class="d">—</td><td class="d">—</td><td class="d">—</td><td class="d">16</td><td class="d">—</td></tr>'
+      +'<tr><td><span class="pill p-spr">Solution PRO</span></td><td class="d">—</td><td class="d">—</td><td class="d">—</td><td class="d">12</td><td class="d">—</td></tr>'
       +'<tr style="background:var(--surface-2);font-weight:600"><td>Итого</td><td class="d">—</td><td class="d">—</td><td class="d">398 529 ₽</td><td class="d">63</td><td class="d">6 326 ₽</td></tr>'
   };
   function drawProj(){
@@ -1292,32 +1290,32 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     {d:"26.10",ts:"2026-10-26",name:"Заявка с сайта sequoia-service.ru – lidmagnit",contact:"форма lidmagnit",raw:"sequoia-service.ru",meta:"лид-магнит · метка «3» без utm-кампании",src:"Директ",proj:"seq",projName:"Секвойя",stage:"Закрыто и не реализовано"},
     {d:"26.10",ts:"2026-10-26",name:"Заявка с сайта sequoia-service.ru – forma-zahvata",contact:"форма forma-zahvata",raw:"sequoia-service.ru",meta:"форма без utm-меток",src:"Директ",proj:"seq",projName:"Секвойя",stage:"Закрыто и не реализовано"},
     {d:"26.10",ts:"2026-10-26",name:"Заявка с сайта ruqi.ru – RUQI",contact:"форма ruqi.ru",raw:"ruqi.ru",meta:"ruqi.ru/contacts · форма без utm-меток",src:"Директ",proj:"ruq",projName:"Руки",stage:"Закрыто и не реализовано"},
-    {d:"24.10",ts:"2026-10-24",name:"Лиски бройлер",contact:"колл-центр",raw:"—",meta:"входящий звонок · сайт не определён · дубль",src:"SEO",proj:"x",projName:"Без проекта",stage:"Закрыто и не реализовано"},
+    {d:"24.10",ts:"2026-10-24",name:"Лиски бройлер",contact:"+7 (919) 210-10-44",raw:"+79192101044",meta:"входящий звонок · колл-центр · сайт не определён · дубль · отнесён в Секвойю (SEO)",src:"SEO",proj:"seq",projName:"Секвойя",stage:"Закрыто и не реализовано"},
     {d:"23.10",ts:"2026-10-23",name:"Сделка по звонку 79161366453",contact:"+7 (916) 136-64-53",raw:"+79161366453",meta:"входящий звонок · колл-центр · s-pro.group",src:"SEO",proj:"spr",projName:"Solution PRO",stage:"Закрыто и не реализовано"},
     {d:"23.10",ts:"2026-10-23",name:"АО Кама",contact:"Почта",raw:"ruqi.ru",meta:"письмо · ruqi.ru",src:"Email",proj:"ruq",projName:"Руки",stage:"Контакт с ЛПР установлен"},
     {d:"21.10",ts:"2026-10-21",name:"Мираторг склад Домодедово",contact:"форма sequoia-service.ru",raw:"sequoia-service.ru",meta:"форма · сайт не определён · вахта 15 чел.",src:"Директ",proj:"seq",projName:"Секвойя",stage:"Встреча проведена"},
-    {d:"22.10",ts:"2026-10-22",name:"Заявка с почты – Сергей Щукин",contact:"Почта",raw:"—",meta:"письмо · сайт не виден",src:"Email",proj:"x",projName:"Без проекта",stage:"Закрыто и не реализовано"},
-    {d:"22.10",ts:"2026-10-22",name:"List",contact:"форма",raw:"—",meta:"ООО ИмпэксТрейд-МО · сайт не определён · СПАМ",src:"Директ",proj:"x",projName:"Без проекта",stage:"Закрыто и не реализовано"},
-    {d:"21.10",ts:"2026-10-21",name:"ООО «Импэкс-Сервис»",contact:"форма",raw:"—",meta:"сайт не определён · местный, 10 чел.",src:"Директ",proj:"x",projName:"Без проекта",stage:"Закрыто и не реализовано"},
+    {d:"22.10",ts:"2026-10-22",name:"Заявка с почты – Сергей Щукин",contact:"Почта",raw:"—",meta:"письмо · сайт не виден · отнесён в Секвойю",src:"Email",proj:"seq",projName:"Секвойя",stage:"Закрыто и не реализовано"},
+    {d:"22.10",ts:"2026-10-22",name:"List",contact:"форма",raw:"—",meta:"ООО ИмпэксТрейд-МО · РУКИ ПРО ПЛЮС · СПАМ",src:"Директ",proj:"ruq",projName:"Руки",stage:"Закрыто и не реализовано"},
+    {d:"21.10",ts:"2026-10-21",name:"ООО «Импэкс-Сервис»",contact:"форма ruqi-pro.ru",raw:"ruqi-pro.ru",meta:"ruqi-pro.ru · местный, 10 чел. · дорого",src:"Директ",proj:"ruq",projName:"Руки",stage:"Закрыто и не реализовано"},
     {d:"21.10",ts:"2026-10-21",name:"ПАО «ТЕПЛАНТ ВОСТОК»",contact:"Почта",raw:"s-pro.group",meta:"письмо · s-pro.group · местный 10 чел.",src:"Email",proj:"spr",projName:"Solution PRO",stage:"КП выставлено"},
     {d:"20.10",ts:"2026-10-20",name:"ООО Эксреда",contact:"форма",raw:"—",meta:"сайт не определён · вахта 30 чел.",src:"Директ",proj:"seq",projName:"Секвойя",stage:"Закрыто и не реализовано"},
     {d:"20.10",ts:"2026-10-20",name:"ООО \"ПЕЛИГРИН МАТЕН\"",contact:"форма",raw:"—",meta:"сайт не определён · местный 10 чел.",src:"Директ",proj:"seq",projName:"Секвойя",stage:"Заявка получена"},
     {d:"19.10",ts:"2026-10-19",name:"Сделка по звонку 79656175856",contact:"+7 (965) 617-58-56",raw:"+79656175856",meta:"входящий звонок · колл-центр · s-pro.group",src:"SEO",proj:"spr",projName:"Solution PRO",stage:"Закрыто и не реализовано"},
     {d:"19.10",ts:"2026-10-19",name:"ООО Оливин",contact:"Почта",raw:"ruqi.ru",meta:"письмо · ruqi.ru · вахта 10 чел.",src:"Email",proj:"ruq",projName:"Руки",stage:"КП выставлено"},
-    {d:"19.10",ts:"2026-10-19",name:"Интеграл",contact:"форма",raw:"—",meta:"сайт не определён · местный 5 чел.",src:"Директ",proj:"x",projName:"Без проекта",stage:"Переговоры по договору"},
-    {d:"16.10",ts:"2026-10-16",name:"ООО Сахалинский Икорный Дом",contact:"форма",raw:"—",meta:"сайт не определён · местный 6 чел.",src:"Директ",proj:"x",projName:"Без проекта",stage:"Закрыто и не реализовано"},
-    {d:"16.10",ts:"2026-10-16",name:"Вкусвилл",contact:"Директ",raw:"—",meta:"сайт не определён · вахта 50 чел.",src:"Директ",proj:"x",projName:"Без проекта",stage:"Закрыто и не реализовано"},
+    {d:"19.10",ts:"2026-10-19",name:"Интеграл",contact:"форма ruqi-pro.ru",raw:"ruqi-pro.ru",meta:"ruqi-pro.ru · местный 5 чел.",src:"Директ",proj:"ruq",projName:"Руки",stage:"Переговоры по договору"},
+    {d:"16.10",ts:"2026-10-16",name:"ООО Сахалинский Икорный Дом",contact:"форма s-pro.group",raw:"s-pro.group",meta:"s-pro.group · SEO · местный 6 чел. · пропала потребность",src:"SEO",proj:"spr",projName:"Solution PRO",stage:"Закрыто и не реализовано"},
+    {d:"16.10",ts:"2026-10-16",name:"Вкусвилл",contact:"Директ",raw:"—",meta:"вахта 50 чел. · дорого · отнесён в Секвойю",src:"Директ",proj:"seq",projName:"Секвойя",stage:"Закрыто и не реализовано"},
     {d:"15.10",ts:"2026-10-15",name:"Оксное",contact:"входящий",raw:"—",meta:"SEO / входящий · сайт не определён",src:"SEO",proj:"seq",projName:"Секвойя",stage:"Закрыто и не реализовано"},
     {d:"15.10",ts:"2026-10-15",name:"Pirro Group (Местный)",contact:"форма sequoia-service.ru",raw:"sequoia-service.ru",meta:"местный 5 чел.",src:"Директ",proj:"seq",projName:"Секвойя",stage:"Закрыто и не реализовано"},
     {d:"15.10",ts:"2026-10-15",name:"АО Ланцет (Местный)",contact:"Почта",raw:"s-pro.group",meta:"письмо · s-pro.group · местный 5 чел.",src:"Email",proj:"spr",projName:"Solution PRO",stage:"Закрыто и не реализовано"},
     {d:"14.10",ts:"2026-10-14",name:"ООО Профреш",contact:"форма sequoia-service.ru",raw:"sequoia-service.ru",meta:"риски неоплаты",src:"Директ",proj:"seq",projName:"Секвойя",stage:"Закрыто и не реализовано"},
     {d:"14.10",ts:"2026-10-14",name:"Консулит (местный)",contact:"колл-центр",raw:"sequoia-service.ru",meta:"входящий звонок · местный 6 чел.",src:"SEO",proj:"seq",projName:"Секвойя",stage:"Закрыто и не реализовано"},
     {d:"13.10",ts:"2026-10-13",name:"Заявка с почты – lantaservice.ru",contact:"Почта",raw:"ruqi.ru",meta:"письмо · ruqi.ru · дубль",src:"Email",proj:"ruq",projName:"Руки",stage:"Закрыто и не реализовано"},
-    {d:"13.10",ts:"2026-10-13",name:"Ракодо (Местный)",contact:"колл-центр",raw:"—",meta:"входящий звонок · сайт не определён · местный 10 чел.",src:"SEO",proj:"x",projName:"Без проекта",stage:"Закрыто и не реализовано"},
-    {d:"12.10",ts:"2026-10-12",name:"ООО Отвидо групп",contact:"форма",raw:"—",meta:"сайт не определён · местный 8 чел. · Beeline",src:"Директ",proj:"x",projName:"Без проекта",stage:"Переговоры по КП"},
+    {d:"13.10",ts:"2026-10-13",name:"Ракодо (Местный)",contact:"колл-центр",raw:"—",meta:"входящий звонок · местный 10 чел. · отнесён в Секвойю (SEO)",src:"SEO",proj:"seq",projName:"Секвойя",stage:"Закрыто и не реализовано"},
+    {d:"12.10",ts:"2026-10-12",name:"ООО Отвидо групп",contact:"форма",raw:"—",meta:"местный 8 чел. · Beeline · отнесён в Секвойю",src:"Директ",proj:"seq",projName:"Секвойя",stage:"Переговоры по КП"},
     {d:"13.10",ts:"2026-10-13",name:"Вакино Агро (Атлас)",contact:"форма s-pro.group",raw:"s-pro.group",meta:"форма без utm-меток",src:"Директ",proj:"spr",projName:"Solution PRO",stage:"Отложенный клиент"},
     {d:"12.10",ts:"2026-10-12",name:"ООО «Павлово-Посадский хлебокомбинат» (Местный)",contact:"форма ruqi-pro.ru",raw:"ruqi-pro.ru",meta:"ruqi-pro.ru · местный 8 чел.",src:"Директ",proj:"ruq",projName:"Руки",stage:"Отложенный клиент"},
-    {d:"13.10",ts:"2026-10-13",name:"PVG",contact:"Директ",raw:"—",meta:"сайт не определён · вахта 130 чел.",src:"Директ",proj:"x",projName:"Без проекта",stage:"Отложенный клиент"},
+    {d:"13.10",ts:"2026-10-13",name:"PVG",contact:"Директ",raw:"—",meta:"вахта 130 чел. · отнесён в Секвойю",src:"Директ",proj:"seq",projName:"Секвойя",stage:"Отложенный клиент"},
     {d:"09.10",ts:"2026-10-09",name:"Заявка с сайта sequoia-service.ru – zavavka",contact:"форма zavavka",raw:"sequoia-service.ru",meta:"форма · уже работаем с клиентом",src:"Директ",proj:"seq",projName:"Секвойя",stage:"Закрыто и не реализовано"},
     {d:"09.10",ts:"2026-10-09",name:"НЕТФНЕТ (Местный)",contact:"форма ruqi-pro.ru",raw:"ruqi-pro.ru",meta:"ruqi-pro.ru · местный 7 чел.",src:"Директ",proj:"ruq",projName:"Руки",stage:"Закрыто и не реализовано"},
     {d:"09.10",ts:"2026-10-09",name:"ООО Амариста",contact:"Директ",raw:"sequoia-service.ru",meta:"sequoia-service.ru · местный 16 чел.",src:"Директ",proj:"seq",projName:"Секвойя",stage:"Переговоры по договору"},
@@ -1331,14 +1329,14 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     {d:"07.10",ts:"2026-10-07",name:"ООО Пластик (Местный)",contact:"форма ruqi-pro.ru",raw:"ruqi-pro.ru",meta:"ruqi-pro.ru · местный 10 чел.",src:"Директ",proj:"ruq",projName:"Руки",stage:"Закрыто и не реализовано"},
     {d:"06.10",ts:"2026-10-06",name:"Wonderlab",contact:"форма sequoia-service.ru",raw:"sequoia-service.ru",meta:"форма · местный 10 чел.",src:"Директ",proj:"seq",projName:"Секвойя",stage:"Переговоры по КП"},
     {d:"05.10",ts:"2026-10-05",name:"Спектр",contact:"форма",raw:"—",meta:"сайт не определён · вахта 60 чел.",src:"Директ",proj:"seq",projName:"Секвойя",stage:"Отложенный клиент"},
-    {d:"05–07.10",ts:"2026-10-06",name:"Сделка по звонку 79607464242",contact:"+7 (960) 746-42-42",raw:"+79607464242",meta:"входящий звонок · Колл-центр · сайт не определён",src:"SEO",proj:"x",projName:"Без проекта",stage:"Закрыто и не реализовано"},
+    {d:"07.10",ts:"2026-10-07",name:"Сделка по звонку 79607464242",contact:"+7 (960) 746-42-42",raw:"+79607464242",meta:"входящий звонок · Колл-центр · сайт не определён · отнесён в Секвойю (SEO)",src:"SEO",proj:"seq",projName:"Секвойя",stage:"Закрыто и не реализовано"},
     {d:"05.10",ts:"2026-10-05",name:"Вкус Черноземья",contact:"форма",raw:"—",meta:"сайт не определён · вахта 10 чел.",src:"Директ",proj:"seq",projName:"Секвойя",stage:"КП выставлено"},
     {d:"05.10",ts:"2026-10-05",name:"ФФ Подольск (местный)",contact:"форма",raw:"—",meta:"сайт не определён · местный 20 чел.",src:"Директ",proj:"seq",projName:"Секвойя",stage:"Успешно реализовано"},
     {d:"04.10",ts:"2026-10-04",name:"Заявка с сайта s-pro.group",contact:"форма s-pro.group",raw:"s-pro.group",meta:"s-pro.group · форма без utm-меток",src:"Директ",proj:"spr",projName:"Solution PRO",stage:"Закрыто и не реализовано"},
-    {d:"02–04.10",ts:"2026-10-03",name:"Царь-курик",contact:"форма",raw:"—",meta:"ООО УК «Время первых» · сайт не определён · местный 10 чел.",src:"Директ",proj:"x",projName:"Без проекта",stage:"Закрыто и не реализовано"},
+    {d:"02–04.10",ts:"2026-10-03",name:"Царь-курник",contact:"форма s-pro.group",raw:"s-pro.group",meta:"ООО УК «Время первых» · s-pro.group · SEO · местный 10 чел.",src:"SEO",proj:"spr",projName:"Solution PRO",stage:"Закрыто и не реализовано"},
     {d:"02.10",ts:"2026-10-02",name:"Заявка с почты – Сергей Кириченко",contact:"Почта",raw:"ruqi.ru",meta:"письмо · ruqi.ru",src:"Email",proj:"ruq",projName:"Руки",stage:"Закрыто и не реализовано"},
     {d:"02.10",ts:"2026-10-02",name:"ТД трейд ЮГ (местный)",contact:"форма ruqi-pro.ru",raw:"ruqi-pro.ru",meta:"ruqi-pro.ru · местный 5 чел.",src:"Директ",proj:"ruq",projName:"Руки",stage:"Закрыто и не реализовано"},
-    {d:"02.10",ts:"2026-10-02",name:"БыстроРуга (местный)",contact:"колл-центр",raw:"—",meta:"входящий звонок · сайт не определён",src:"SEO",proj:"x",projName:"Без проекта",stage:"Закрыто и не реализовано"},
+    {d:"02.10",ts:"2026-10-02",name:"БыстроГруз (местный)",contact:"колл-центр",raw:"—",meta:"входящий звонок · сайт не определён · отнесён в Секвойю (SEO)",src:"SEO",proj:"seq",projName:"Секвойя",stage:"Закрыто и не реализовано"},
     {d:"01.10",ts:"2026-10-01",name:"BOSCO Прачечная (местный)",contact:"колл-центр",raw:"sequoia-service.ru",meta:"входящий звонок · sequoia-service.ru · ООО «Экипировочный центр»",src:"SEO",proj:"seq",projName:"Секвойя",stage:"КП выставлено"},
     {d:"01.10",ts:"2026-10-01",name:"НПО Клевер (местный)",contact:"форма",raw:"—",meta:"сайт не определён · местный 5 чел.",src:"Директ",proj:"seq",projName:"Секвойя",stage:"Успешно реализовано"}
   ];
@@ -1555,9 +1553,9 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   /* разрез по каналам и проектам: p5 — неделя (статика HTML), октябрь (m10/pall) — по тегам 63 сделок CRM;
      канал: тег «Колл-центр»/чат -> SEO, «Почта» -> Email, «Директ»/формы без utm/ysclid/eLama -> Директ;
      проект: по сайту сделки (ruqi* -> Руки, s-pro.group -> Solution PRO, sequoia* / тег Sequoia -> Секвойя) */
-  var SPLIT_MONTH={dir:40,dirPct:'63,5%',dirCpl:'9 963 ₽ за ЦЛ',seo:14,seoPct:'22,2%',mail:9,mailPct:'14,3%',
-      seq:['27','42,9%'],ruq:['13','20,6%'],spr:['10','15,9%'],x:['13','20,6%'],
-      note:'Октябрь: разрез по тегам 63 сделок CRM; проект — по сайту сделки, 13 сделок — сайт не определён'};
+  var SPLIT_MONTH={dir:38,dirPct:'60,3%',dirCpl:'10 488 ₽ за ЦЛ',seo:16,seoPct:'25,4%',mail:9,mailPct:'14,3%',
+      seq:['35','55,6%'],ruq:['16','25,4%'],spr:['12','19,0%'],x:null,
+      note:'Октябрь: разрез по тегам 63 сделок CRM; проект — по сайту сделки, все 63 сделки привязаны к проекту (сверено с CRM 02.11)'};
   var SPLIT={
     p5:{dir:7,dirPct:'50%',dirCpl:'12 534 ₽ за ЦЛ',seo:5,seoPct:'35,7%',mail:2,mailPct:'14,3%',
         seq:['7','50%'],ruq:['3','21,4%'],spr:['4','28,6%'],x:null,note:null},
@@ -1594,10 +1592,10 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       leadsCap:'Целевые лиды за 26 октября – 1 ноября 2026',
       stages:'Этапы: КП выставлено 2 · Переговоры по КП 2 · Потребности выявлены 1 · Закрыто и не реализовано 9'},
     month:{srcCap:'63 целевых · SEO включает звонки и чат; заявки с форм без utm-меток отнесены к Директу',
-      srcCall:'<b>Директ дал 40 из 63 целевых</b> при бюджете 398,5 тыс. ₽. Расходы на один целевой лид Директа — около <b class="mono">10,0 тыс. ₽</b> (398 529 / 40). Общая цена целевого лида всех каналов — 6 326 ₽.',
-      projCap:'63 целевых · расход 398 529 ₽ не разбит по доменам; 13 сделок — сайт не определён',
+      srcCall:'<b>Директ дал 38 из 63 целевых</b> при бюджете 398,5 тыс. ₽. Расходы на один целевой лид Директа — около <b class="mono">10,5 тыс. ₽</b> (398 529 / 38). Общая цена целевого лида всех каналов — 6 326 ₽.',
+      projCap:'63 целевых: Секвойя 35 · Руки 16 · Solution PRO 12 · расход 398 529 ₽ по доменам не разбит',
       projSub:'Показы и клики по проектам за октябрь не разбиты · ЦЛ — по CRM (тег «Целевой»)',
-      projCall:'<b>Solution PRO — 10 целевых при нулевом бюджете.</b> Четыре письма, три входящих звонка и три заявки с форм s-pro.group (включая переход по ysclid): домен не входит в отслеживаемые аккаунты.',
+      projCall:'<b>Solution PRO — 12 целевых при нулевом бюджете.</b> Четыре письма, три заявки с форм s-pro.group по Директу и пять обращений из органики (звонки и формы): домен не входит в отслеживаемые аккаунты.',
       leadsSub:'63 сделки · созданы 01.10–31.10 · этапы — по воронке октября (тег «Целевой»). Номер, почта или ИНН кликается — копируется.',
       leadsCap:'Целевые лиды за октябрь 2026',
       stages:'Этапы: Закрыто и не реализовано 38 · КП выставлено 7 · Отложенный клиент 6 · Переговоры по КП 4 · Успешно реализовано 2 · Переговоры по договору 2 · Заявка получена 1 · Контакт с ЛПР 1 · Встреча 1 · Потребности 1'}
@@ -1621,9 +1619,10 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       var isAll=(o.dataset.proj==='all'||o.dataset.src==='all');
       o.setAttribute('aria-pressed', isAll?'true':'false');
     });
-    setTxt('cnt-all',LEADS.length); setTxt('cnt-seq',m?27:7); setTxt('cnt-ruq',m?13:3); setTxt('cnt-spr',m?10:4); setTxt('cnt-x',m?13:0);
-    setTxt('cnt-dir',m?40:7); setTxt('cnt-seo',m?14:5); setTxt('cnt-mail',m?9:2);
-    var x=document.getElementById('chip-x'); if(x){ x.hidden=!m; x.style.display=m?'':'none'; }
+    var C={seq:(m?35:7),ruq:(m?16:3),spr:(m?12:4),x:0,dir:(m?38:7),seo:(m?16:5),mail:(m?9:2)};
+    setTxt('cnt-all',LEADS.length); setTxt('cnt-seq',C.seq); setTxt('cnt-ruq',C.ruq); setTxt('cnt-spr',C.spr); setTxt('cnt-x',C.x);
+    setTxt('cnt-dir',C.dir); setTxt('cnt-seo',C.seo); setTxt('cnt-mail',C.mail);
+    var x=document.getElementById('chip-x'); if(x){ x.hidden=!(C.x>0); x.style.display=C.x>0?'':'none'; }
     setTxt('leads-sub',t.leadsSub); setTxt('leads-stages',t.stages);
     var cap=document.getElementById('leads-cap'); if(cap) cap.textContent=t.leadsCap;
     render();
