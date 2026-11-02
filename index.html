@@ -1190,18 +1190,17 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   TREND.all=TREND.map(function(p){return p.t;});
   TREND.dir=TREND.map(function(p){return p.di;});
   TREND.se=TREND.map(function(p){return p.se;});
-  /* ---------- единый тренд ЦЛ по проектам (10 недель, 3 равновысоких ряда) ----------
-     Один SVG, три одинаковых ряда на общей оси X. У каждого ряда своя шкала Y:
-     факт — светло-серые столбцы, тренд — цветная линия с точками,
-     зелёная пунктирная — «скользящая» на 3 недели (среднее трёх недель).
-     Подписи значений — справа в шапке ряда (путь от первой недели к последней).
-     Наведите на столбик недели — даты и разбивка всплывают. */
+  /* ---------- единый тренд ЦЛ по проектам (10 недель, 3 ряда с отступами) ----------
+     Один SVG, три ряда друг под другом. У каждого своя шкала Y: факт — серые
+     столбцы, тренд — цветная линия, зелёная пунктирная — «скользящая» на 3 недели.
+     Стрелка вверху справа — путь от первой недели к последней. Наведите на столбик
+     недели — даты и разбивка всплывают. */
   function drawTrendViz(){
     var host=$('#ch-trend'); if(!host) return;
     host.innerHTML='';
     var W=Math.max(560, host.clientWidth||840),
-        pad={t:22,r:16,b:34,l:44},
-        rowH=88, gap=16, rows=3,
+        pad={t:26,r:30,b:50,l:50},
+        rowH=90, gap=30, rows=3,
         H=pad.t+rows*(rowH+gap)+pad.b,
         x0=pad.l, x1=W-pad.r;
     var N=TREND.length, dx=(x1-x0)/(N-1);
@@ -1230,11 +1229,9 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
         svg.appendChild(el('text',{x:x0-8,y:gy+4,'text-anchor':'end','font-size':'10.5','fill':cssv('--text-3')})).textContent=
           Math.round(lo+(hi-lo)*(1-i/4));
       }
-      /* заголовок ряда и путь от первой недели к последней */
-      var t1=el('text',{x:x0,y:top+19,'font-size':'12.5','font-weight':'600',fill:s.c});
-      t1.textContent=s.n; svg.appendChild(t1);
-      var tb=el('text',{x:x1,y:top+19,'text-anchor':'end','font-size':'12','font-weight':'700',fill:pc>=0?cssv('--pos'):cssv('--neg')});
-      tb.textContent=f+' → '+l+' · '+(pc>0?'+':'−')+Math.abs(pc)+'%'; svg.appendChild(tb);
+      /* заголовок ряда и стрелка пути f → l · ±% справа */
+      svg.appendChild(el('text',{x:x0,y:top+20,'font-size':'12.5','font-weight':'600',fill:s.c})).textContent=s.n;
+      svg.appendChild(el('text',{x:x1,y:top+20,'text-anchor':'end','font-size':'11','font-weight':'700',fill:pc>=0?cssv('--pos'):cssv('--neg')})).textContent=f+' → '+l+' · '+(pc>0?'+':'−')+Math.abs(pc)+'%';
       /* факт-столбцы (от нижней сетки) */
       for(var j=0;j<N;j++){
         var bw=(x1-x0)/N*0.4;
@@ -1246,8 +1243,9 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       for(var k=0;k<N;k++){ d+=(k?'L':'M')+X(k).toFixed(1)+' '+Y(s.d[k]).toFixed(1)+' '; }
       svg.appendChild(el('path',{d:d,fill:'none',stroke:s.c,'stroke-width':2.4,'stroke-linecap':'round','stroke-linejoin':'round'}));
       for(var m=0;m<N;m++){
+        if(m!==0&&m!==N-1) continue;
         svg.appendChild(el('circle',{cx:X(m),cy:Y(s.d[m]),r:3.2,fill:s.c,stroke:cssv('--surface'),'stroke-width':1.5}));
-        svg.appendChild(el('text',{x:X(m),y:Y(s.d[m])-9,'text-anchor':'middle','font-size':'11','font-weight':'700',fill:s.c,opacity:'0.92'})).textContent=s.d[m];
+        svg.appendChild(el('text',{x:X(m),y:Y(s.d[m])+14,'text-anchor':'middle','font-size':'10.5','font-weight':'700',fill:s.c,opacity:'0.92'})).textContent=s.d[m];
       }
       /* скользящая на 3 недели — зелёная, пунктирная */
       var sma=[];
@@ -1282,13 +1280,12 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     }
     /* общая ось X */
     for(var t=0;t<N;t++){
-      svg.appendChild(el('text',{x:X(t),y:H-10,'text-anchor':'middle','font-size':'11','font-weight':'700',fill:cssv('--text-2')})).textContent=TREND[t].k;
-      svg.appendChild(el('text',{x:X(t),y:H-2,'text-anchor':'middle','font-size':'10','fill':cssv('--text-3')})).textContent=TREND[t].d;
+      var ta=t===N-1?'end':'middle';
+      svg.appendChild(el('text',{x:t===N-1?x1:X(t),y:H-34,'text-anchor':ta,'font-size':'11','font-weight':'700',fill:cssv('--text-2')})).textContent=TREND[t].k;
+      svg.appendChild(el('text',{x:t===N-1?x1:X(t),y:H-16,'text-anchor':ta,'font-size':'10','fill':cssv('--text-3')})).textContent=TREND[t].d;
     }
     host.appendChild(svg);
-  }
-
-  function corridorRow(track,verdict,cls){
+  }  function corridorRow(track,verdict,cls){
     var row=document.createElement('div'); row.className='cor-row';
     var lab=document.createElement('div'); lab.className='cor-lab'; lab.textContent=track.label; row.appendChild(lab);
     var bar=document.createElement('div'); bar.className='cor-track';
