@@ -1447,7 +1447,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     leads:{get:function(d){return d.leads;}, text:fmtInt},
     cpl:{get:function(d){return d.cpl;}, text:fmtRub, inv:true},
     spend:{get:function(d){return d.spend;}, text:fmtRub, neutral:true},
-    conv:{get:function(d){return d.conv;}, text:fmtPctTo, inv:true, pp:true},
+    conv:{get:function(d){return d.conv;}, text:fmtPctTo, inv:true, pp:true, holdNote:''},
     allleads:{get:function(d){return d.allleads;}, text:fmtInt, holdNote:'из них 14 целевых'}
   };
   [['kv-leads','14'],['kv-cpl','6267'],['kv-spend','87738'],['kv-conv','3.12'],['kv-allleads','247']].forEach(function(p){
@@ -1477,13 +1477,13 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     if(v==null){
       val.textContent='—'; val.setAttribute('data-cur','');
       if(pill) pill.hidden=true;
-      if(note) note.textContent=cfg.holdNote||'—';
+      if(note){ var h2=cfg.holdNote||''; note.textContent=h2; note.style.display=h2?'':'none'; }
       return;
     }
     setT(val,v,cfg.text);
-    if(!pd){ if(pill) pill.hidden=true; if(note) note.textContent=cfg.holdNote||'—'; return; }
+    if(!pd){ if(pill) pill.hidden=true; if(note){ var h0=cfg.holdNote||''; note.textContent=h0; note.style.display=h0?'':'none'; } return; }
     var b=cfg.get(pd);
-    if(b==null){ if(pill) pill.hidden=true; if(note) note.textContent=cfg.holdNote||'—'; return; }
+    if(b==null){ if(pill) pill.hidden=true; if(note){ var h1=cfg.holdNote||''; note.textContent=h1; note.style.display=h1?'':'none'; } return; }
     var lbl,cls;
     if(cfg.pp){
       var diff=v-b;
@@ -1498,7 +1498,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     }
     if(pill){ pill.hidden=false; pill.className='delta '+cls;
       pill.innerHTML=(cls==='flat'?'':(cls==='up'?ARROWS.up:ARROWS.down))+'<span>'+lbl+'</span>'; }
-    if(note) note.textContent='было '+cfg.text(b);
+    if(note){ note.textContent='было '+cfg.text(b); note.style.display=''; }
   }
   function finalizeCards(){
     var d=P[current];
