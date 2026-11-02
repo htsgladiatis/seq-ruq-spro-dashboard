@@ -6,7 +6,7 @@
 <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
 <meta name="yandex" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="build" content="2026-11-02T18:58Z"><meta http-equiv="cache-control" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="build" content="2026-11-02T23:08Z"><meta http-equiv="cache-control" content="no-cache">
 <title>Отчёт 26 октября – 1 ноября 2026 — интерактивная версия</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -467,7 +467,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
         <span class="tag">CPL <b id="t-cpl">6 267 ₽</b></span>
         <span class="tag" id="sliceHint" hidden>Разрезы ниже — фиксированно за <b>26.10–01.11</b></span>
         <span class="tag">Сформировано <b>02.11.2026</b></span>
-        <span class="tag">Сборка <b id="buildStamp">02.11 18:58</b></span>
+        <span class="tag">Сборка <b id="buildStamp">02.11 23:08</b></span>
       </div>
     </div>
     <div class="ring-box" id="ringBox">
@@ -551,15 +551,27 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     </div>
 
     <div class="panel reveal" style="margin-top:18px">
-      <div class="panel-t">Тренд целевых лидов · 10 недель</div>
-      <div class="panel-s">Small multiples — своя панель на каждую серию, общая ось времени, значение подписано у каждой точки; справа в шапке панели — путь от первой недели к последней. 24.08 → 26.10–01.11 по недельным отчётам на дату выпуска. Месячная разбивка ниже пересчитана по датам создания сделок, поэтому за 05–25.10 там на 3 сделки больше (16 и 13 вместо 13 и 14). Шкала у панелей своя — сравнивайте форму, а не высоту.</div>
-      <div id="ch-trend"></div>
-      <div class="legend">
-        <span><i class="sw line" style="background:var(--text)"></i>Всего ЦЛ</span>
-        <span><i class="sw line" style="background:var(--primary)"></i>Директ · платный</span>
-        <span><i class="sw line" style="background:var(--ch-src)"></i>SEO · органика</span>
-        <span style="color:var(--text-3)">Наведите на столбик недели — даты и разбивка</span>
-      </div>
+      <div class="panel-t">Тренд ЦЛ по проектам · 10 недель</div>
+      <div class="panel-s">Три блока друг под другом — у каждого своя шкала; зелёной пунктирной линией отмечена «скользящая» на 3 недели; справа в шапке — путь от первой недели к последней. 24.08 → 26.10–01.11 по недельным отчётам на дату выпуска. Месячная разбивка ниже пересчитана по датам создания сделок — её строки за 05–25.10 на 3 сделки выше, чем на недельных графиках (16 и 13 вместо 13 и 14). Сравнивайте форму, а не высоту.</div>
+      <div id="ch-trend-all"></div>
+    </div>
+    <div class="panel reveal" style="margin-top:18px">
+      <div class="panel-t">Директ · платный · 10 недель</div>
+      <div class="panel-s">Директ: от 8 до 7 (−12%). Шкала у каждой панели своя — сравнивайте форму, а не высоту.</div>
+      <div id="ch-trend-dir"></div>
+    </div>
+    <div class="panel reveal" style="margin-top:18px">
+      <div class="panel-t">SEO · органика · 10 недель</div>
+      <div class="panel-s">SEO: от 3 до 5 (+67%). Шкала у каждой панели своя — сравнивайте форму, а не высоту.</div>
+      <div id="ch-trend-se"></div>
+    </div>
+    <div class="legend">
+      <span><i class="sw line" style="background:var(--surface-3)"></i>Факт за неделю</span>
+      <span><i class="sw line" style="background:var(--text)"></i>Всего ЦЛ</span>
+      <span><i class="sw line" style="background:var(--primary)"></i>Директ · платный</span>
+      <span><i class="sw line" style="background:var(--ch-src)"></i>SEO · органика</span>
+      <span><i class="sw line" style="background:var(--pos)"></i>Скользящая (3 недели)</span>
+      <span style="color:var(--text-3)">Наведите на столбик недели — даты и разбивка</span>
     </div>
   </section>
 
@@ -816,7 +828,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
 
   <footer>
     <span>Отчёт по рекламной кампании · 26.10–01.11.2026</span>
-    <span>Сформировано 02.11.2026 · интерактивная версия · сборка <b id="buildStamp2">02.11 18:58</b> UTC</span>
+    <span>Сформировано 02.11.2026 · интерактивная версия · сборка <b id="buildStamp2">02.11 23:08</b> UTC</span>
     <span id="baseCompare">База сравнения: неделя 19–25.10 (12 ЦЛ, 96 124 ₽)</span>
   </footer>
 </div>
@@ -1169,7 +1181,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     kpiAnim = true;
   }
 
-  function drawAll(){ drawKpis(); drawRing(); drawMonth(); drawWeeks(); drawTrend(); drawCorridor(); drawCmp((current==='m10'||current==='pall')?CMP.m:CMP.w); drawSrc(); drawMtx(); drawProj(); }
+  function drawAll(){ drawKpis(); drawRing(); drawMonth(); drawWeeks(); drawTrendSeries('ch-trend-all','Скользящая по всем ЦЛ',TREND.all,cssv('--text')); drawTrendSeries('ch-trend-dir','Скользящая по Директу',TREND.dir,cssv('--primary')); drawTrendSeries('ch-trend-se','Скользящая по SEO',TREND.se,cssv('--ch-src')); drawCorridor(); drawCmp((current==='m10'||current==='pall')?CMP.m:CMP.w); drawSrc(); drawMtx(); drawProj(); }
 
   /* ---------- тренд ЦЛ по неделям (3 линии: всего / Директ / SEO) ---------- */
   /* Источник: недельные отчёты 17.08–01.11 на Desktop\Отчеты\Секвойя + таблицы «Источники трафика · Целевые» (17–23.08: Д 12 / SEO 3 / Реферальный 1; 24–30.08: Д 8 / SEO 3; 31.08–06.09: Д 6 / SEO 6; w4 28.09–04.10: Д 5 / SEO 5 / Прямой 1 / Email 1) */
@@ -1185,55 +1197,87 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     {k:'w10',d:'19–25.10',t:12,di:5,se:4,extra:' · Email 3'},
     {k:'w11',d:'26.10–01.11',t:14,di:7,se:5,extra:' · Email 2'}
   ];
-  /* ---------- тренд ЦЛ по неделям — small multiples (вариант Д) ---------- */
-  /* Три панели на общей оси времени, шкала у каждой своя; значение подписано у каждой точки;
-     справа в шапке панели — путь от первой недели к последней. Источник данных прежний. */
-  function drawTrend(){
-    var host=$('#ch-trend'); if(!host) return;
+  /* значения по сериям — выводы от `TREND`, нужны для трёх блоков */
+  TREND.all=TREND.map(function(p){return p.t;});
+  TREND.dir=TREND.map(function(p){return p.di;});
+  TREND.se=TREND.map(function(p){return p.se;});
+  /* ---------- тренд ЦЛ по проектам (10 недель, 3 отдельных блока) ----------
+     Каждая серия — свой SVG: факт-столбцы, линия со значениями у точек и
+     зелёная пунктирная «скользящая» на 3 недели. Шкала у панели своя, слева —
+     название серии, справа — путь от первой недели к последней. */
+  function drawTrendSeries(elId, series, values, color){
+    var host=$('#'+elId); if(!host) return;
     host.innerHTML='';
-    var W=Math.max(668,host.clientWidth||940), x0=48, x1=W-26;
-    var panelH=122, tileH=30, gapP=20, H=6+3*panelH+2*gapP+30;
-    var X=function(i){ return x0+i/(TREND.length-1)*(x1-x0); };
-    var P=[{k:'t',n:'Всего ЦЛ',c:cssv('--text')},{k:'di',n:'Директ · платный',c:cssv('--primary')},{k:'se',n:'SEO · органика',c:cssv('--ch-src')}];
-    var svg=el('svg',{class:'chart',viewBox:'0 0 '+W+' '+H,height:H,role:'img','aria-label':'Тренд ЦЛ за 10 недель, три панели: всего 11→14 (+27%), Директ 8→7 (−13%), SEO 3→5 (+67%); значения подписаны у каждой точки серии'});
-    var gd=el('line',{x1:0,x2:0,y1:0,y2:H-34,stroke:cssv('--border'),'stroke-width':1,opacity:'0'});
+    var W=Math.max(420, host.clientWidth||620), x0=46, x1=W-30;
+    var panelH=124, top=16, bot=26, yH=panelH-top-bot-12;
+    var N=values.length;
+    var X=function(i){ return x0+i/(N-1)*(x1-x0); };
+    var lo=Math.min.apply(null, values)-1.2, hi=Math.max.apply(null, values)+1.2;
+    var Y=function(v){ return top+yH*(1-(v-lo)/(hi-lo)); };
+    var f=values[0], l=values[N-1], pc=f>0?Math.round((l-f)/f*100):0;
+    var svg=el('svg',{class:'chart',viewBox:'0 0 '+W+' '+panelH,height:panelH,role:'img',
+      'aria-label':series+' · '+f+' → '+l+' ('+(pc>0?'+':'')+pc+'%) за 10 недель'});
+    svg.appendChild(el('text',{x:x0,y:top+20,'font-size':'12.5','font-weight':'600',fill:color}));
+    svg.lastChild.textContent=series;
+    var tb=el('text',{x:x1,y:top+20,'text-anchor':'end','font-size':'12','font-weight':'700',fill:pc>=0?cssv('--pos'):cssv('--neg')});
+    tb.textContent=f+' → '+l+' · '+(pc>0?'+':'−')+Math.abs(pc)+'%'; svg.appendChild(tb);
+    /* вертикальная сетка */
+    for(var i=0;i<5;i++){
+      var gy=top+yH*i/4;
+      svg.appendChild(el('line',{x1:x0,x2:x1,y1:gy,y2:gy,class:'grid-l'}));
+      svg.appendChild(el('text',{x:x0-10,y:gy+4,'text-anchor':'end','font-size':'10','fill':cssv('--text-3')})).textContent=
+        Math.round(lo+(hi-lo)*(1-i/4));
+    }
+    /* факт-столбцы */
+    for(var j=0;j<N;j++){
+      var bw=(x1-x0)/N*0.52;
+      svg.appendChild(el('rect',{x:X(j)-bw/2,y:Y(values[j]),width:bw,height:Math.max(1,yH*(values[j]-lo)/(hi-lo)),rx:3,
+        fill:cssv('--surface-3')}));
+    }
+    /* линия + точки */
+    var d='';
+    for(var k=0;k<N;k++){ d+=(k?'L':'M')+X(k).toFixed(1)+' '+Y(values[k]).toFixed(1)+' '; }
+    svg.appendChild(el('path',{d:d,fill:'none',stroke:color,'stroke-width':2.6,'stroke-linecap':'round','stroke-linejoin':'round'}));
+    for(var m=0;m<N;m++){
+      svg.appendChild(el('circle',{cx:X(m),cy:Y(values[m]),r:3,fill:color,stroke:cssv('--surface'),'stroke-width':1.5}));
+      svg.appendChild(el('text',{x:X(m),y:Y(values[m])-9,'text-anchor':'middle','font-size':'10.5','font-weight':'600',fill:color,opacity:'0.92'})).textContent=values[m];
+    }
+    /* скользящая на 3 недели, зелёная, пунктирная */
+    var sM=[];
+    for(var n=0;n<N;n++){
+      if(n<2){ sM.push(null); }
+      else { sM.push((values[n]+values[n-1]+values[n-2])/3); }
+    }
+    var ds='';
+    for(var p=0;p<N;p++){
+      if(sM[p]===null) continue;
+      ds+=(p===0||sM[p-1]===null?'M':'L')+X(p).toFixed(1)+' '+Y(sM[p]).toFixed(1)+' ';
+    }
+    svg.appendChild(el('path',{d:ds,fill:'none',stroke:cssv('--pos'),'stroke-width':'1.8','stroke-dasharray':'5 5','stroke-linecap':'round','stroke-linejoin':'round'}));
+    for(var q=0;q<N;q++){
+      if(sM[q]===null) continue;
+      svg.appendChild(el('circle',{cx:X(q),cy:Y(sM[q]),r:2.4,fill:cssv('--pos'),stroke:cssv('--surface'),'stroke-width':1.2}));
+    }
+    /* оси */
+    for(var r=0;r<N;r++){
+      svg.appendChild(el('text',{x:X(r),y:panelH-bot+14,'text-anchor':'middle','font-size':'11','font-weight':'700',fill:cssv('--text-2')})).textContent=TREND[r].k;
+      svg.appendChild(el('text',{x:X(r),y:panelH-bot+26,'text-anchor':'middle','font-size':'10','fill':cssv('--text-3')})).textContent=TREND[r].d;
+    }
+    var gd=el('line',{x1:0,x2:0,y1:0,y2:panelH,stroke:cssv('--border'),'stroke-width':1,opacity:'0'});
     svg.appendChild(gd);
-    P.forEach(function(s,pi){
-      var top=6+pi*(panelH+gapP), zoneH=panelH-tileH-16;
-      var vals=TREND.map(function(p){return p[s.k];});
-      var lo=Math.min.apply(null,vals)-1.2, hi=Math.max.apply(null,vals)+1.2;
-      var Y=function(v){ return top+tileH+zoneH*(1-(v-lo)/(hi-lo)); };
-      var t1=el('text',{x:x0,y:top+20,'font-size':'12.5','font-weight':'600',fill:cssv('--text')});
-      t1.textContent=s.n; svg.appendChild(t1);
-      var f=vals[0],l=vals[9],pc=Math.round((l-f)/f*100);
-      var tb=el('text',{x:x1,y:top+20,'text-anchor':'end','font-size':'12','font-weight':'700',fill:pc>=0?cssv('--pos'):cssv('--neg')});
-      tb.textContent=f+' → '+l+' · '+(pc>0?'+':'−')+Math.abs(pc)+'%'; svg.appendChild(tb);
-      var d=''; TREND.forEach(function(p,i){ d+=(i?'L':'M')+X(i).toFixed(1)+' '+Y(vals[i]).toFixed(1)+' '; });
-      svg.appendChild(el('path',{d:d,fill:'none',stroke:s.c,'stroke-width':2.6,'stroke-linecap':'round','stroke-linejoin':'round'}));
-      TREND.forEach(function(p,i){
-        svg.appendChild(el('circle',{cx:X(i),cy:Y(vals[i]),r:3,fill:s.c,stroke:cssv('--surface'),'stroke-width':1.5}));
-        var nt=el('text',{x:X(i),y:Y(vals[i])-9,'text-anchor':'middle','font-size':'10.5','font-weight':'600',fill:s.c,opacity:'0.92'});
-        nt.textContent=vals[i]; svg.appendChild(nt);
-      });
-    });
-    TREND.forEach(function(p,i){
-      var a=el('text',{x:X(i),y:H-16,'text-anchor':'middle','font-size':'11','font-weight':'700',fill:cssv('--text-2')});
-      a.textContent=p.k; svg.appendChild(a);
-      var b=el('text',{x:X(i),y:H-3,'text-anchor':'middle','font-size':'10',fill:cssv('--text-3')});
-      b.textContent=p.d; svg.appendChild(b);
-    });
-    var dx0=(x1-x0)/(TREND.length-1);
-    TREND.forEach(function(p,i){
-      var hit=el('rect',{x:X(i)-dx0/2,y:0,width:dx0,height:H-34,fill:'transparent'});
+    var dx0=(x1-x0)/N;
+    for(var s=0;s<N;s++){
+      var hit=el('rect',{x:X(s)-dx0/2,y:0,width:dx0,height:panelH,fill:'transparent'});
       var ttl=document.createElementNS(NS,'title');
-      ttl.textContent='Неделя '+p.k+' ('+p.d+') — всего '+p.t+' ЦЛ: Директ '+p.di+' · SEO '+p.se+p.extra;
+      ttl.textContent='Неделя '+TREND[s].k+' ('+TREND[s].d+') — '+series+' '+values[s]+' ЦЛ'+
+        (TREND[s].extra?' · '+TREND[s].extra.split(' · ')[1]:'');
       hit.appendChild(ttl);
       hit.addEventListener('mouseenter',function(){
-        gd.setAttribute('x1',X(i)); gd.setAttribute('x2',X(i)); gd.setAttribute('opacity','1');
+        gd.setAttribute('x1',X(s)); gd.setAttribute('x2',X(s)); gd.setAttribute('opacity','1');
       });
       hit.addEventListener('mouseleave',function(){ gd.setAttribute('opacity','0'); });
       svg.appendChild(hit);
-    });
+    }
     host.appendChild(svg);
   }
 
