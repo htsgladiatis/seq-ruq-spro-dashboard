@@ -413,7 +413,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
 
 <nav class="nav" aria-label="Разделы отчёта">
   <div class="nav-in">
-    <div class="brand">Отчёт 26.10–01.11 <span>· Performance</span></div>
+    <div class="brand"><span id="brandDates">Отчёт 26.10–01.11</span> <span>· Performance</span></div>
     <div class="yper" id="yper">
       <button class="yper-btn" id="yperBtn" type="button" aria-haspopup="listbox" aria-expanded="false">
         <span class="yper-lab">Период</span><span class="yper-sep" aria-hidden="true"></span><span class="yper-ix" id="yperIx">w11</span><span class="yper-dates" id="yperDates">26.10 – 01.11</span>
@@ -441,7 +441,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     <div class="nav-links" id="navlinks">
       <a href="#kpi">Показатели</a>
       <a href="#month">Октябрь</a>
-      <a href="#wow">Неделя к неделе</a>
+      <a href="#wow" id="navwow">Неделя к неделе</a>
       <a href="#src">Источники</a>
       <a href="#proj">Проекты</a>
       <a href="#seo">SEO</a>
@@ -458,18 +458,18 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
 
   <header class="head">
     <div>
-      <div class="eyebrow">Рекламная кампания · неделя к неделе</div>
+      <div class="eyebrow" id="eyebrow">Рекламная кампания · неделя к неделе</div>
       <h1 id="h1per">26 октября – 1 ноября 2026</h1>
       <div class="meta">
         <span class="tag">Сравнение <b id="vsPrev">vs 19–25.10</b></span>
         <span class="tag">ЦЛ <b id="t-leads">14</b></span>
         <span class="tag">Бюджет <b id="t-spend">87 738 ₽</b></span>
         <span class="tag">CPL <b id="t-cpl">6 267 ₽</b></span>
-        <span class="tag" data-hint hidden>Разрезы ниже — фиксированно за <b>26.10–01.11</b></span>
+        <span class="tag" id="sliceHint" hidden>Разрезы ниже — фиксированно за <b>26.10–01.11</b></span>
         <span class="tag">Сформировано <b>02.11.2026</b></span>
       </div>
     </div>
-    <div class="ring-box">
+    <div class="ring-box" id="ringBox">
       <div id="ring"></div>
       <p class="ring-cap">Октябрь выполнен на <b class="mono">97%</b> — 63 целевых из 65 по плану за 31 день · план пересмотрен 26.10 (было 35) · ноябрь: план 46</p>
     </div>
@@ -502,7 +502,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
         <div class="kpi-lab">Конверсия клик → ЦЛ</div>
         <div class="kpi-val" id="kv-conv" data-cur="3.12">3,12%</div>
         <div class="kpi-foot"><span class="delta up">+0,50 п.п.</span><span class="kpi-note">было 2,62%</span></div>
-        <div class="kpi-sub">3-мес скользящая (авг–окт): <b class="mono">3,04%</b> · 169 ЦЛ / 5 556 кликов¹</div>
+        <div class="kpi-sub">3-мес скользящая (авг–окт): <b class="mono">3,04%</b> · 169 ЦЛ (57 + 49 + 63) / 5 556 кликов Директа</div>
       </article>
     </div>
 
@@ -551,7 +551,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
 
     <div class="panel reveal" style="margin-top:18px">
       <div class="panel-t">Тренд целевых лидов · 10 недель</div>
-      <div class="panel-s">Small multiples — своя панель на каждую серию, общая ось времени, значение подписано у каждой точки; справа в шапке панели — путь от первой недели к последней. 24.08 → 26.10–01.11, разбивка по недельным отчётам. Шкала у панелей своя — сравнивайте форму, а не высоту. Разрез фиксированный, не меняется с выбором периода.</div>
+      <div class="panel-s">Small multiples — своя панель на каждую серию, общая ось времени, значение подписано у каждой точки; справа в шапке панели — путь от первой недели к последней. 24.08 → 26.10–01.11 по недельным отчётам на дату выпуска. Месячная разбивка ниже пересчитана по датам создания сделок, поэтому за 05–25.10 там на 3 сделки больше (16 и 13 вместо 13 и 14). Шкала у панелей своя — сравнивайте форму, а не высоту.</div>
       <div id="ch-trend"></div>
       <div class="legend">
         <span><i class="sw line" style="background:var(--text)"></i>Всего ЦЛ</span>
@@ -565,7 +565,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   <section id="month">
     <div class="sec-head">
       <h2>Октябрь: итог</h2>
-      <p class="sub">План месяца — 65 целевых при бюджете 370 000 ₽ (сентябрьская план-отметка, пересмотрен 26.10 вместо сезонных 35). Итог: 63 целевых при бюджете ≈387 000 ₽ — 97% плана и 104% бюджета. Ноябрь открыт: план — 46 целевых.</p>
+      <p class="sub">План месяца — 65 целевых при бюджете 370 000 ₽ (сентябрьская план-отметка, пересмотрена 26.10 вместо сезонных 35). Итог: 63 целевых (CRM, созданные 01.10–31.10) и 398 529 ₽ расхода Директа за 01.10–01.11 — 97% плана по лидам и 107,7% по бюджету; в окне выгрузки есть один день ноября (01.11), поэтому расход к месяцу чуть завышен. Ноябрь открыт: план — 46 целевых.</p>
     </div>
     <div class="grid-2">
       <div class="panel reveal">
@@ -582,7 +582,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
         <div class="panel-s">Целевые и доля месячного плана</div>
         <div class="stats" id="wk-stats"></div>
         <div class="callout blue">
-          <b>Октябрь закрыт на 97% плана:</b> <b class="mono">63</b> из <b class="mono">65</b>, недобор — 2 ЦЛ. Бюджет по месяцу — 104% плана: ≈387 000 ₽ за 31 день при 370 000 ₽.
+          <b>Октябрь закрыт на 97% плана:</b> <b class="mono">63</b> из <b class="mono">65</b>, недобор — 2 ЦЛ. Бюджет по Директу — 398 529 ₽ за 01.10–01.11: 107,7% плана 370 000 ₽ (окно на день длиннее месяца).
         </div>
         <div class="callout amber">
           <b>Ноябрь — план 46 ЦЛ.</b> Все 14 целевых недели — сделки, созданные 26–30.10; обращений с 01.11 за отчётную неделю не зафиксировано — первый накопленный результат ноября будет виден в отчёте 02–08.11.
@@ -590,27 +590,27 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
         <div class="cor-block">
           <div class="panel-t" style="margin-top:18px">Идём ли в коридоре? · итог на 31.10 ± 10%</div>
           <div id="ch-corridor"></div>
-          <p class="note" style="margin-top:10px">Полоса — коридор ±10% (±10 п.п.); вертикаль — плановая отметка на конец месяца (100%). ЦЛ: 63 из 65 — 97% плана на 100% срока — в коридоре; бюджет — 104,6% месячного плана — в коридоре.</p>
+          <p class="note" style="margin-top:10px">Полоса — коридор ±10% (±10 п.п.); вертикаль — плановая отметка на конец месяца (100%). ЦЛ: 63 из 65 — 96,9% плана на 100% срока — в коридоре; бюджет — 398 529 ₽ — 107,7% месячного плана — в коридоре.</p>
         </div>
       </div>
     </div>
   </section>
 
   <section id="wow">
-    <div class="sec-head"><h2>Неделя к неделе</h2><p class="sub">Сравнение с предыдущей неделей по данным Яндекс.Директ API и MarketHub.</p></div>
+    <div class="sec-head"><h2 id="wow-title">Неделя к неделе</h2><p class="sub" id="wow-sub">Сравнение с предыдущей неделей по данным Яндекс.Директ API и MarketHub.</p></div>
     <div class="grid-2 even">
       <div class="panel reveal">
-        <div class="panel-t">Трафик и расход</div>
-        <div class="panel-s">26.10–01.11 против 19–25.10</div>
+        <div class="panel-t" id="wow-panel-t">Трафик и расход</div>
+        <div class="panel-s" id="wow-panel-s">26.10–01.11 против 19–25.10</div>
         <div id="ch-wow"></div>
       </div>
       <div class="panel reveal">
         <div class="panel-t">Полная таблица показателей</div>
-        <div class="panel-s">Предыдущая неделя — из отчёта 19–25.10. Визиты MarketHub — по одному домену, домен в выгрузке не указан</div>
+        <div class="panel-s" id="wow-panel-s2">Предыдущая неделя — из отчёта 19–25.10. Визиты MarketHub — по одному домену, домен в выгрузке не указан</div>
         <div class="tbl-wrap" style="max-height:none">
           <table style="min-width:0">
-            <thead><tr><th>Показатель</th><th>19–25.10</th><th>26.10–01.11</th><th>Изм.</th></tr></thead>
-            <tbody>
+            <thead><tr><th>Показатель</th><th id="cmp-h1">19–25.10</th><th id="cmp-h2">26.10–01.11</th><th>Изм.</th></tr></thead>
+            <tbody id="cmp-body">
               <tr><td>Целевые лиды (CRM)</td><td class="d">12</td><td class="d"><b>14</b></td><td class="d" style="color:var(--pos)">+17%</td></tr>
               <tr><td>Показы (Директ)</td><td class="d">49 336</td><td class="d">50 378</td><td class="d">+2%</td></tr>
               <tr><td>Клики (Директ)</td><td class="d">458</td><td class="d">449</td><td class="d">−2%</td></tr>
@@ -620,7 +620,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
               <tr><td>Рекламный бюджет</td><td class="d">98 159 ₽</td><td class="d">87 738 ₽</td><td class="d">−11%</td></tr>
               <tr><td>Цена целевого лида</td><td class="d">8 180 ₽</td><td class="d">6 267 ₽</td><td class="d" style="color:var(--pos)">−23%</td></tr>
               <tr><td>Конверсия клик → ЦЛ</td><td class="d">2,62%</td><td class="d">3,12%</td><td class="d" style="color:var(--pos)">+0,50 п.п.</td></tr>
-              <tr><td>ЦЛ накоплено за октябрь</td><td class="d">46 из 65</td><td class="d"><b>63 из 65</b></td><td class="d" style="color:var(--pos)">+17</td></tr>
+              <tr><td>ЦЛ накоплено за октябрь</td><td class="d">49 из 65</td><td class="d"><b>63 из 65</b></td><td class="d" style="color:var(--pos)">+14</td></tr>
             </tbody>
           </table>
         </div>
@@ -815,7 +815,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   <footer>
     <span>Отчёт по рекламной кампании · 26.10–01.11.2026</span>
     <span>Сформировано 02.11.2026 · интерактивная версия</span>
-    <span>База сравнения: неделя 19–25.10 (12 ЦЛ, 98 159 ₽)</span>
+    <span id="baseCompare">База сравнения: неделя 19–25.10 (12 ЦЛ, 98 159 ₽)</span>
   </footer>
 </div>
 
@@ -899,7 +899,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   }
 
   /* month cumulative chart */
-  var MONTH = { points:[{x:'04.10',y:7},{x:'11.10',y:20},{x:'18.10',y:34},{x:'25.10',y:46},{x:'31.10',y:63}], plan:65, unit:'04.10' };
+  var MONTH = { points:[{x:'04.10',y:7},{x:'11.10',y:23},{x:'18.10',y:36},{x:'25.10',y:49},{x:'31.10',y:63}], plan:65, unit:'04.10' };
   function drawMonth(){
     var host = $('#ch-month'); if(!host) return;
     host.innerHTML='';
@@ -908,7 +908,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     var max=nice(Math.max(MONTH.plan,63));   /* шкала должна покрывать факт, иначе линия уходит за верх */
     var X=function(i){ return m.l + (i/(MONTH.points.length-1))*iw; };
     var Y=function(v){ return m.t + ih - (v/max)*ih; };
-    var svg=el('svg',{class:'chart',viewBox:'0 0 '+W+' '+H,height:H,role:'img','aria-label':'Накопленные целевые: 7 к 4 октября, 20 к 11 октября, 34 к 18 октября, 46 к 25 октября, 63 к 31 октября при плане 65 (пересмотрен 26.10, был 35)'});
+    var svg=el('svg',{class:'chart',viewBox:'0 0 '+W+' '+H,height:H,role:'img','aria-label':'Накопленные целевые: 7 к 4 октября, 23 к 11 октября, 36 к 18 октября, 49 к 25 октября, 63 к 31 октября при плане 65 (пересмотрен 26.10, был 35)'});
     [0,.25,.5,.75,1].forEach(function(f){
       var v=max*f, y=Y(v);
       svg.appendChild(el('line',{x1:m.l,x2:W-m.r,y1:y,y2:y,class:'grid-l'}));
@@ -947,7 +947,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   }
 
   /* week stats */
-  var WEEKS=[{k:'01–04.10',v:7,note:'первая неделя'},{k:'05–11.10',v:13,note:'неделя 2'},{k:'12–18.10',v:14,note:'неделя 3'},{k:'19–25.10',v:12,note:'неделя 4'},{k:'26.10–01.11',v:14,note:'неделя 5'}];
+  var WEEKS=[{k:'01–04.10',v:7,note:'первая неделя'},{k:'05–11.10',v:16,note:'неделя 2'},{k:'12–18.10',v:13,note:'неделя 3'},{k:'19–25.10',v:13,note:'неделя 4'},{k:'26.10–01.11',v:14,note:'неделя 5'}];
   function drawWeeks(){
     var host=$('#wk-stats'); if(!host) return;
     host.innerHTML='';
@@ -959,7 +959,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       var tr=document.createElement('div'); tr.className='bar-track';
       var fl=document.createElement('div'); fl.className='bar-fill'; fl.style.width='0%';
       tr.appendChild(fl); l.appendChild(k); l.appendChild(tr);
-      var v=document.createElement('div'); v.className='stat-v'; v.textContent=w.v+' ЦЛ · '+Math.round(w.v/max*100)+'% плана';
+      var v=document.createElement('div'); v.className='stat-v'; v.textContent=w.v+' ЦЛ · '+Math.round(w.v/max*100)+'% месячного плана';
       row.appendChild(l); row.appendChild(v); host.appendChild(row);
       var target=(w.v/max*100);
       if (reduce) fl.style.width=target+'%';
@@ -970,28 +970,56 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     tl.appendChild(tk);
     var tr2=document.createElement('div'); tr2.className='bar-track';
     var fl2=document.createElement('div'); fl2.className='bar-fill'; fl2.style.width='100%'; tr2.appendChild(fl2); tl.appendChild(tr2);
-    var tv=document.createElement('div'); tv.className='stat-v'; tv.textContent='63 ЦЛ · 97%';
+    var tv=document.createElement('div'); tv.className='stat-v'; tv.textContent='63 ЦЛ · 96,9%';
     tot.appendChild(tl); tot.appendChild(tv); host.appendChild(tot);
   }
 
-  /* week-over-week: small multiples (у каждой метрики своя шкала) */
-  var WOW=[{k:'Показы',a:49336,b:50378,fmt:'int'},{k:'Клики',a:458,b:449,fmt:'int'},{k:'Бюджет, тыс ₽',a:98.2,b:87.7,fmt:'int'},{k:'Целевые',a:12,b:14,fmt:'int'}];
+  /* week-over-week / month-over-month: small multiples (у каждой метрики своя шкала) */
+  var WEEK_TABLE = null;                       /* недельная таблица сравнения, снимается при старте */
+  var CMP = {
+    w:{title:'Неделя к неделе',
+       sub:'Сравнение с предыдущей неделей по данным Яндекс.Директ API и MarketHub.',
+       pt:'Трафик и расход', ps:'26.10–01.11 против 19–25.10',
+       la:'19–25.10', lb:'26.10–01.11',
+       bars:[{k:'Показы',a:49336,b:50378},{k:'Клики',a:458,b:449},{k:'Бюджет, тыс ₽',a:98.2,b:87.7},{k:'Целевые',a:12,b:14}]},
+    m:{title:'Месяц к месяцу',
+       sub:'Октябрь против сентября · Директ API и CRM. Октябрь — окно выгрузки 01.10–01.11 (в нём один день ноября), сентябрь — 01.09–30.09.',
+       pt:'Результат и стоимость', ps:'октябрь против сентября',
+       la:'сентябрь', lb:'октябрь',
+       bars:[{k:'Целевые',a:49,b:63,good:'up',dlbl:'+29%'},
+             {k:'Цена ЦЛ, ₽',a:8085,b:6326,good:'up',dlbl:'−22%'},
+             {k:'Конверсия, %',a:3.26,b:3.43,good:'up',dlbl:'+0,17 п.п.'},
+             {k:'Бюджет, тыс ₽',a:396.1,b:398.5,good:'flat',dlbl:'+1%'}]}
+  };
+  var CMP_MONTH_TABLE = [
+    '<tr><td>Целевые лиды (CRM)</td><td class="d">49</td><td class="d"><b>63</b></td><td class="d" style="color:var(--pos)">+29%</td></tr>',
+    '<tr><td>Показы (Директ)</td><td class="d">86 411</td><td class="d">204 724</td><td class="d">+137%</td></tr>',
+    '<tr><td>Клики (Директ)</td><td class="d">1 503</td><td class="d">1 837</td><td class="d">+22%</td></tr>',
+    '<tr><td>CTR</td><td class="d">1,74%</td><td class="d">0,90%</td><td class="d" style="color:var(--neg)">−0,84 п.п.</td></tr>',
+    '<tr><td>CPC</td><td class="d">264 ₽</td><td class="d">217 ₽</td><td class="d" style="color:var(--pos)">−18%</td></tr>',
+    '<tr><td>Рекламный бюджет</td><td class="d">396 147 ₽</td><td class="d">398 529 ₽</td><td class="d">+1%</td></tr>',
+    '<tr><td>Цена целевого лида</td><td class="d">8 085 ₽</td><td class="d">6 326 ₽</td><td class="d" style="color:var(--pos)">−22%</td></tr>',
+    '<tr><td>Конверсия клик → ЦЛ</td><td class="d">3,26%</td><td class="d">3,43%</td><td class="d" style="color:var(--pos)">+0,17 п.п.</td></tr>',
+    '<tr><td>Целевых в день</td><td class="d">1,63</td><td class="d">2,03</td><td class="d" style="color:var(--pos)">+25%</td></tr>'
+  ].join('');
   function pct(a,b){ if(!a) return 0; return Math.round((b-a)/a*100); }
-  function drawWow(){
+  function drawCmp(cfg){
     var host=$('#ch-wow'); if(!host) return;
     host.innerHTML='';
-    WOW.forEach(function(d,i){
+    cfg.bars.forEach(function(d,i){
       var max=Math.max(d.a,d.b);
       var dlt=pct(d.a,d.b);
-      var good = d.k==='Целевые' ? dlt>=0 : dlt<=0;
+      var isGood = d.good ? (d.good==='up') : (d.k==='Целевые' ? dlt>=0 : dlt<=0);
+      var cls = d.good==='flat' ? 'flat' : (isGood?'up':'down');
+      var lbl = d.dlbl || ((dlt>0?'+':'')+(dlt<0?'−'+Math.abs(dlt):String(dlt))+'%');
       var wrap=document.createElement('div');
       wrap.className='sm'; wrap.style.animationDelay=(i*60)+'ms';
 
       var left=document.createElement('div'); left.className='sm-k';
-      left.innerHTML='<span class="sm-kt">'+d.k+'</span><span class="sm-delta '+(good?'up':'down')+'">'+(dlt>0?'+':'')+dlt+'%</span>';
+      left.innerHTML='<span class="sm-kt">'+d.k+'</span><span class="sm-delta '+cls+'">'+lbl+'</span>';
 
       var bars=document.createElement('div'); bars.className='sm-bars';
-      [['19–25.10',d.a,'prev'],['26.10–01.11',d.b,'cur']].forEach(function(s){
+      [[cfg.la,d.a,'prev'],[cfg.lb,d.b,'cur']].forEach(function(s){
         var line=document.createElement('div'); line.className='sm-line';
         var tr=document.createElement('div'); tr.className='sm-track';
         var fl=document.createElement('div'); fl.className='sm-fill '+s[2]; fl.style.width='0%';
@@ -1008,6 +1036,16 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       wrap.appendChild(left); wrap.appendChild(bars); host.appendChild(wrap);
     });
   }
+  function updCmp(p){
+    var m=(p==='m10'||p==='pall'), c=m?CMP.m:CMP.w;
+    var sec=$('#wow'); if(sec) sec.style.display=(p==='p5'||m)?'':'none';
+    setTxt('wow-title',c.title); setTxt('wow-sub',c.sub);
+    setTxt('wow-panel-t',c.pt); setTxt('wow-panel-s',c.ps);
+    setTxt('wow-panel-s2',m?'Предыдущий месяц — из месячного отчёта. Октябрь — окно выгрузки 01.10–01.11, сентябрь — 01.09–30.09':'Предыдущая неделя — из отчёта 19–25.10. Визиты MarketHub — по одному домену, домен в выгрузке не указан');
+    setTxt('cmp-h1',m?'сентябрь':'19–25.10'); setTxt('cmp-h2',m?'октябрь':'26.10–01.11');
+    var tb=$('#cmp-body'); if(tb) tb.innerHTML = m ? CMP_MONTH_TABLE : (WEEK_TABLE!=null?WEEK_TABLE:tb.innerHTML);
+    drawCmp(c);
+  }
 
   /* channel bars */
   var SRC_W={base:14,max:7,aria:'Источники целевых: Директ 7, SEO 5, Email 2',rows:[
@@ -1018,7 +1056,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   function drawSrc(){
     var host=$('#ch-src'); if(!host) return;
     host.innerHTML='';
-    var W=Math.max(320,host.clientWidth||420), rowH=46, H=SRC.length*rowH+22, lblW=126, valW=78;
+    var W=Math.max(320,host.clientWidth||420), rowH=46, H=SRC.rows.length*rowH+22, lblW=126, valW=78;
     var iw=W-lblW-valW;
     var max=SRC.max;
     var svg=el('svg',{class:'chart',viewBox:'0 0 '+W+' '+H,height:H,role:'img','aria-label':SRC.aria});
@@ -1081,7 +1119,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       +'<tr><td><span class="pill p-ruq">Ruqi</span></td><td class="d">—</td><td class="d">—</td><td class="d">—</td><td class="d">13</td><td class="d">—</td></tr>'
       +'<tr><td><span class="pill p-spr">Solution PRO</span></td><td class="d">—</td><td class="d">—</td><td class="d">—</td><td class="d">10</td><td class="d">—</td></tr>'
       +'<tr><td><span class="pill" style="color:var(--text-3);border-color:var(--text-3)">Без проекта</span></td><td class="d">—</td><td class="d">—</td><td class="d">—</td><td class="d">13</td><td class="d">—</td></tr>'
-      +'<tr style="background:var(--surface-2);font-weight:600"><td>Итого</td><td class="d">—</td><td class="d">—</td><td class="d">387 000 ₽</td><td class="d">63</td><td class="d">6 143 ₽</td></tr>'
+      +'<tr style="background:var(--surface-2);font-weight:600"><td>Итого</td><td class="d">—</td><td class="d">—</td><td class="d">398 529 ₽</td><td class="d">63</td><td class="d">6 326 ₽</td></tr>'
   };
   function drawProj(){
     var host=$('#ch-proj'); if(!host) return;
@@ -1131,7 +1169,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     kpiAnim = true;
   }
 
-  function drawAll(){ drawKpis(); drawRing(); drawMonth(); drawWeeks(); drawTrend(); drawCorridor(); drawWow(); drawSrc(); drawMtx(); drawProj(); }
+  function drawAll(){ drawKpis(); drawRing(); drawMonth(); drawWeeks(); drawTrend(); drawCorridor(); drawCmp((current==='m10'||current==='pall')?CMP.m:CMP.w); drawSrc(); drawMtx(); drawProj(); }
 
   /* ---------- тренд ЦЛ по неделям (3 линии: всего / Директ / SEO) ---------- */
   /* Источник: недельные отчёты 17.08–01.11 на Desktop\Отчеты\Секвойя + таблицы «Источники трафика · Целевые» (17–23.08: Д 12 / SEO 3 / Реферальный 1; 24–30.08: Д 8 / SEO 3; 31.08–06.09: Д 6 / SEO 6; w4 28.09–04.10: Д 5 / SEO 5 / Прямой 1 / Email 1) */
@@ -1200,7 +1238,9 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   }
 
   /* ---------- коридор плана/факта (±10% плановой траектории) ---------- */
-  /* План месяца 65 ЦЛ (пересмотрен 26.10, было 35) / 370 000 ₽; октябрь закрыт: 63 ЦЛ за 31 день, бюджет ≈387 000 ₽ */
+  /* План месяца 65 ЦЛ (пересмотрен 26.10, было 35) / 370 000 ₽.
+     Факт: 63 ЦЛ (CRM, созданные 01.10–31.10) и 398 529 ₽ — расход Директа за окно 01.10–01.11,
+     в котором есть один день ноября, поэтому процент к плану чуть завышен. */
   function corridorRow(track,verdict,cls){
     var row=document.createElement('div'); row.className='cor-row';
     var lab=document.createElement('div'); lab.className='cor-lab'; lab.textContent=track.label; row.appendChild(lab);
@@ -1216,8 +1256,8 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     var host=$('#ch-corridor'); if(!host) return;
     host.innerHTML='';
     var center=100, half=10;        /* итог месяца: коридор ±10 п.п. от 100% */
-    host.appendChild(corridorRow({label:'Целевые: факт 63 — 97% плана 65 при пройденных 100% месяца',plan:center,fact:96.9,band:[center-half,center+half]},'В коридоре · −3,1 п.п.','pos'));
-    host.appendChild(corridorRow({label:'Бюджет: факт ≈387 000 ₽ — 104,6% месячного плана',plan:center,fact:104.6,band:[center-half,center+half]},'В коридоре · +4,5%','pos'));
+    host.appendChild(corridorRow({label:'Целевые: 63 из 65 — 96,9% плана при пройденных 100% месяца',plan:center,fact:96.9,band:[center-half,center+half]},'В коридоре · −3,1 п.п.','pos'));
+    host.appendChild(corridorRow({label:'Бюджет: 398 529 ₽ за 01.10–01.11 — 107,7% плана 370 000 ₽',plan:center,fact:107.7,band:[center-half,center+half]},'В коридоре · +7,7 п.п.','pos'));
   }
 
   /* ---------- leads data ---------- */
@@ -1413,8 +1453,8 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     sep3:{tab:'w',ix:'w6',h1:'21 – 27 сентября 2026',dates:'21.09 – 27.09',lbl:'21–27.09',leads:15,spend:60000,cpl:4000,conv:null,prev:'sep2',chip:'ЦЛ 15',
       note:'21–27.09: 15 ЦЛ (Директ 7 / SEO 6 / Прямой 2). Бюджет ≈60 000 ₽ (оценка).',
       text:'21.09 27.09 сентябрь w3'},
-    m09:{tab:'m',ix:'сен',h1:'Сентябрь 2026',dates:'01.09 – 30.09',lbl:'сентябрь',leads:49,spend:325000,cpl:6633,conv:null,prev:null,chip:'ЦЛ 49',
-      note:'Сентябрь целиком, по месячному отчёту: 49 ЦЛ, 325 000 ₽, CPL 6 633 ₽.',
+    m09:{tab:'m',ix:'сен',h1:'Сентябрь 2026',dates:'01.09 – 30.09',lbl:'сентябрь',leads:49,spend:396147,cpl:8085,conv:3.26,clicks:1503,impr:86411,prev:null,chip:'ЦЛ 49',
+      note:'Сентябрь по Директ API: 49 ЦЛ (CRM), 396 147 ₽, 1 503 клика, CPL 8 085 ₽, конверсия 3,26%. В сентябрьском отчёте бюджет брался из MarketHub (325 000 ₽, CPL 6 633 ₽) — здесь обе даты в одной базе, чтобы сравнение было корректным.',
       text:'сентябрь 2026 01.09 30.09'},
     p1:{tab:'w',ix:'w7',h1:'28 сентября – 04 октября 2026',dates:'28.09 – 04.10',lbl:'28.09–04.10',leads:12,spend:63000,cpl:5250,conv:null,prev:'sep3',chip:'ЦЛ 12',
       note:'Неделя закрыта отчётом 28.09–04.10: 12 ЦЛ, из них 7 в октябре. Бюджет недели 63 000 ₽, CPL 5 250 ₽.',
@@ -1431,11 +1471,11 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     p5:{tab:'w',ix:'w11',h1:'26 октября – 1 ноября 2026',dates:'26.10 – 01.11',lbl:'26.10–01.11',leads:14,spend:87738,cpl:6267,conv:3.12,allleads:247,prev:'p4',chip:'ЦЛ 14',
       note:'14 ЦЛ, 87 738 ₽, CPL 6 267 ₽; Директ 7 / SEO 5 / Email 2. Лидов всего — 247. Период этого отчёта — значения по умолчанию.',
       text:'26.10 01.11 октябрь ноябрь w11'},
-    pall:{tab:'w',ix:'всё',h1:'1 октября – 1 ноября 2026',dates:'01.10 – 01.11',lbl:'01.10–01.11',leads:63,spend:387000,cpl:6143,conv:null,prev:'p5',chip:'ЦЛ 63',
-      note:'Итого 01.10–01.11: 63 ЦЛ (по CRM, тег «Целевой»), ≈387 000 ₽, CPL ≈6 143 ₽. Бюджет 01–25.10 оценён по доле недели 28.09–04.10.',
+    pall:{tab:'w',ix:'всё',h1:'1 октября – 1 ноября 2026',dates:'01.10 – 01.11',lbl:'01.10–01.11',leads:63,spend:398529,cpl:6326,conv:3.43,clicks:1837,impr:204724,prev:'m09',chip:'ЦЛ 63',
+      note:'Итого 01.10–01.11: 63 ЦЛ (CRM), 398 529 ₽ и 1 837 кликов Директа, CPL 6 326 ₽, конверсия 3,43%. Сравнение — с сентябрём по той же базе Директа.',
       text:'всё весь итог октябрь месяц 01.10 01.11'},
-    m10:{tab:'m',ix:'окт',h1:'Октябрь 2026',dates:'01.10 – 31.10',lbl:'октябрь',leads:63,spend:387000,cpl:6143,conv:null,prev:'m09',chip:'ЦЛ 63',
-      note:'Октябрь целиком: 63 ЦЛ (счётчик CRM, тег «Целевой», созданные 01.10–31.10), ≈387 000 ₽, CPL ≈6 143 ₽. Дельта — к сентябрю.',
+    m10:{tab:'m',ix:'окт',h1:'Октябрь 2026',dates:'01.10 – 31.10',lbl:'октябрь',leads:63,spend:398529,cpl:6326,conv:3.43,clicks:1837,impr:204724,prev:'m09',chip:'ЦЛ 63',
+      note:'Октябрь: 63 ЦЛ (CRM, тег «Целевой», созданные 01.10–31.10), 398 529 ₽ и 1 837 кликов — Директ API за 01.10–01.11 (в выгрузку попал и день 01.11). CPL 6 326 ₽, конверсия 3,43%.',
       text:'окт октябрь месяц 01.10 31.10 важно'},
   };
   var ORDER=['aug1','aug2','aug3','sep1','sep2','sep3','p1','p2','p3','p4','p5','pall','m09','m10'];
@@ -1494,8 +1534,8 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       lbl=(diff>0?'+':'−')+Math.abs(diff).toFixed(2).replace('.',',')+' п.п.';   /* конверсия — в пунктах, не в % */
       cls=diff<=0?'down':'up';
     } else {
-      var pctd=b?(v-b)/b*100:0, ABS=Math.abs(pctd);
-      lbl=(pctd>0?'+':'')+Math.round(pctd)+'%';
+      var pctd=b?(v-b)/b*100:0, ABS=Math.abs(pctd), rnd=Math.round(pctd);
+      lbl=(rnd>0?'+':'')+(rnd<0?'−'+Math.abs(rnd):String(rnd))+'%';
       if(cfg.neutral||ABS<0.5) cls='flat';
       else if(cfg.inv) cls=pctd<=0?'up':'down';      /* CPL: ниже — хорошо */
       else cls=pctd>=0?'up':'down';
@@ -1515,7 +1555,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   /* разрез по каналам и проектам: p5 — неделя (статика HTML), октябрь (m10/pall) — по тегам 63 сделок CRM;
      канал: тег «Колл-центр»/чат -> SEO, «Почта» -> Email, «Директ»/формы без utm/ysclid/eLama -> Директ;
      проект: по сайту сделки (ruqi* -> Руки, s-pro.group -> Solution PRO, sequoia* / тег Sequoia -> Секвойя) */
-  var SPLIT_MONTH={dir:40,dirPct:'63,5%',dirCpl:'9 675 ₽ за ЦЛ',seo:14,seoPct:'22,2%',mail:9,mailPct:'14,3%',
+  var SPLIT_MONTH={dir:40,dirPct:'63,5%',dirCpl:'9 963 ₽ за ЦЛ',seo:14,seoPct:'22,2%',mail:9,mailPct:'14,3%',
       seq:['27','42,9%'],ruq:['13','20,6%'],spr:['10','15,9%'],x:['13','20,6%'],
       note:'Октябрь: разрез по тегам 63 сделок CRM; проект — по сайту сделки, 13 сделок — сайт не определён'};
   var SPLIT={
@@ -1554,9 +1594,9 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       leadsCap:'Целевые лиды за 26 октября – 1 ноября 2026',
       stages:'Этапы: КП выставлено 2 · Переговоры по КП 2 · Потребности выявлены 1 · Закрыто и не реализовано 9'},
     month:{srcCap:'63 целевых · SEO включает звонки и чат; заявки с форм без utm-меток отнесены к Директу',
-      srcCall:'<b>Директ дал 40 из 63 целевых</b> при бюджете 387,0 тыс. ₽. Расходы на один целевой лид Директа — около <b class="mono">9,7 тыс. ₽</b> (387 000 / 40). Общая цена целевого лида всех каналов — 6 143 ₽.',
-      projCap:'63 целевых · расход 387 000 ₽ не разбит по доменам; 13 сделок — сайт не определён',
-      projSub:'Показы и клики за октябрь не выгружались (есть только неделя 26.10–01.11) · ЦЛ — по CRM',
+      srcCall:'<b>Директ дал 40 из 63 целевых</b> при бюджете 398,5 тыс. ₽. Расходы на один целевой лид Директа — около <b class="mono">10,0 тыс. ₽</b> (398 529 / 40). Общая цена целевого лида всех каналов — 6 326 ₽.',
+      projCap:'63 целевых · расход 398 529 ₽ не разбит по доменам; 13 сделок — сайт не определён',
+      projSub:'Показы и клики по проектам за октябрь не разбиты · ЦЛ — по CRM (тег «Целевой»)',
       projCall:'<b>Solution PRO — 10 целевых при нулевом бюджете.</b> Четыре письма, три входящих звонка и три заявки с форм s-pro.group (включая переход по ysclid): домен не входит в отслеживаемые аккаунты.',
       leadsSub:'63 сделки · созданы 01.10–31.10 · этапы — по воронке октября (тег «Целевой»). Номер, почта или ИНН кликается — копируется.',
       leadsCap:'Целевые лиды за октябрь 2026',
@@ -1589,19 +1629,28 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     render();
   }
 
+  var OCT_SET={p1:1,p2:1,p3:1,p4:1,p5:1,pall:1,m10:1};
   function setPeriod(p){
     current=p; var d=P[p], pd=d.prev?P[d.prev]:null;
+    var isMonth = d.tab==='m';
     $('#h1per').textContent=d.h1;
     document.title='Отчёт '+d.h1+' — интерактивная версия';
     $('#yperDates').textContent=d.dates; $('#yperIx').textContent=d.ix;
     $('#vsPrev').textContent=pd?('vs '+pd.lbl):'—';
+    var eb=$('#eyebrow'); if(eb) eb.textContent='Рекламная кампания · '+(isMonth?'месяц к месяцу':'неделя к неделе');
+    setTxt('brandDates','Отчёт '+d.lbl);
+    setTxt('navwow',isMonth?'Месяц к месяцу':'Неделя к неделе');
+    var rb=$('#ringBox'); if(rb) rb.style.display=OCT_SET[p]?'':'none';
+    var ms=$('#month'); if(ms) ms.style.display=OCT_SET[p]?'':'none';
     var tl=$('#t-leads'); if(tl) tl.textContent=fmtInt(d.leads);
     var tsp=$('#t-spend'); if(tsp) tsp.textContent=fmtRub(d.spend);
     var tc=$('#t-cpl'); if(tc) tc.textContent=fmtRub(d.cpl);
     Object.keys(CARDS).forEach(function(k){ updCard(k,d); });
     updSplit(p);
     updSrcProj(p); setLeads(p);
-    var hint=$('[data-hint]'); if(hint) hint.hidden=(p==='p5');
+    updCmp(p);
+    var hint=$('#sliceHint'); if(hint) hint.hidden=!!(p==='p5'||p==='m10'||p==='pall');
+    setTxt('baseCompare', pd ? ('База сравнения: '+pd.lbl+' ('+fmtInt(pd.leads)+' ЦЛ, '+fmtRub(pd.spend)+')') : 'База сравнения: не задана');
     var lv=$('#live'); if(lv) lv.textContent='Период: '+d.dates+'. '+d.note;
   }
   function finalizeList(){
@@ -1665,6 +1714,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   /* ---------- init ---------- */
   var rt=null;
   window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(drawAll,180); });
+  WEEK_TABLE = $('#cmp-body') ? $('#cmp-body').innerHTML : null;
   drawAll(); render(); observeAll();
 })();
 </script>
