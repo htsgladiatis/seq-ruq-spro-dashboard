@@ -1190,16 +1190,17 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   TREND.all=TREND.map(function(p){return p.t;});
   TREND.dir=TREND.map(function(p){return p.di;});
   TREND.se=TREND.map(function(p){return p.se;});
-  /* ---------- единый тренд ЦЛ по проектам (10 недель, 3 ряда с отступами) ----------
-     Один SVG, три ряда друг под другом. У каждого своя шкала Y: факт — серые
-     столбцы, тренд — цветная линия, зелёная пунктирная — «скользящая» на 3 недели.
-     Стрелка вверху справа — путь от первой недели к последней. Наведите на столбик
-     недели — даты и разбивка всплывают. */
+  /* ---------- единый тренд ЦЛ по проектам (10 недель, 3 ряда) ----------
+     Один SVG, три ряда друг под другом. У каждого ряда своя шкала Y: факт — серые
+     столбцы, тренд — цветная линия, зелёная пунктирная — «скользящая»
+     на 3 недели. Наведите мышкой на любую точку — появится подсказка с
+     номером недели, датой и значениями всех трёх рядов. */
+
   function drawTrendViz(){
     var host=$('#ch-trend'); if(!host) return;
     host.innerHTML='';
     var W=Math.max(560, host.clientWidth||840),
-        pad={t:26,r:30,b:50,l:50},
+        pad={t:72,r:30,b:50,l:50},
         rowH=90, gap=30, rows=3,
         H=pad.t+rows*(rowH+gap)+pad.b,
         x0=pad.l, x1=W-pad.r;
@@ -1212,9 +1213,22 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     ];
     var svg=el('svg',{class:'chart',viewBox:'0 0 '+W+' '+H,height:H,role:'img',
       'aria-label':'Тренд ЦЛ за 10 недель. Три ряда: сверху «Всего ЦЛ» 11→14 (+27 %), «Директ · платный» 8→7 (−12 %) и «SEO · органика» 3→5 (+67 %). Зелёная пунктирная — скользящая на 3 недели.'});
-    /* направляющая мыши поверх всего */
+    /* вертикальная направляющая мыши (поверх всех рядов) */
     var gd=el('line',{x1:0,x2:0,y1:0,y2:H,stroke:cssv('--border'),'stroke-width':1,opacity:'0'});
     svg.appendChild(gd);
+    /* всплывающая подсказка с данными недели */
+    var tipG=el('g',{id:'trend-tip',opacity:'0'});
+    tipG.appendChild(el('rect',{x:12,y:12,width:196,height:62,rx:6,fill:cssv('--surface'),stroke:cssv('--border'),'stroke-width':.8,opacity:'.92'}));
+    var tipTitle=el('text',{x:110,y:30,'text-anchor':'middle','font-size':'12.5','font-weight':'700',fill:cssv('--text')});
+    tipG.appendChild(tipTitle);
+    var tipVal=[];
+    for(var s=0;s<3;s++){
+      tipG.appendChild(el('circle',{cx:20,cy:42+s*12,r:3.5,fill:s===0?cssv('--text'):s===1?cssv('--primary'):cssv('--ch-src'),stroke:cssv('--surface'),'stroke-width':1.4}));
+      var t=el('text',{x:62,y:43+s*12,'font-size':'11.5','font-weight':'600',fill:s===0?cssv('--text'):s===1?cssv('--primary'):cssv('--ch-src')});
+      var v=el('text',{x:190,y:43+s*12,'text-anchor':'end','font-size':'12','font-weight':'700',fill:cssv('--text')});
+      tipG.appendChild(t); tipG.appendChild(v); tipVal.push(v);
+    }
+    svg.appendChild(tipG);
     for(var r=0;r<rows;r++){
       var s=S[r], top=pad.t+r*(rowH+gap), bot=top+rowH;
       var lo=Math.min.apply(null,s.d)-1.2, hi=Math.max.apply(null,s.d)+1.2;
@@ -1238,7 +1252,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
         svg.appendChild(el('rect',{x:X(j)-bw/2,y:Y(s.d[j]),width:bw,height:Math.max(1,bot-Y(s.d[j])),rx:3,
           fill:cssv('--border-strong'),opacity:'.28'}));
       }
-      /* линия + точки + подписи */
+      /* линия + точки + подписи (первая и последняя недели) */
       var d='';
       for(var k=0;k<N;k++){ d+=(k?'L':'M')+X(k).toFixed(1)+' '+Y(s.d[k]).toFixed(1)+' '; }
       svg.appendChild(el('path',{d:d,fill:'none',stroke:s.c,'stroke-width':2.4,'stroke-linecap':'round','stroke-linejoin':'round'}));
@@ -1266,16 +1280,24 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       /* области наведения */
       var gx0=(x1-x0)/N;
       for(var g=0;g<N;g++){
-        var hit=el('rect',{x:X(g)-gx0/2,y:top,width:gx0,height:rowH,fill:'transparent'});
-        var ttl=document.createElementNS(NS,'title');
-        ttl.textContent='Неделя '+TREND[g].k+' ('+TREND[g].d+') — '+s.n+' '+s.d[g]+' ЦЛ'+
-          (TREND[g].extra?' · '+TREND[g].extra.split(' · ')[1]:'');
-        hit.appendChild(ttl);
-        hit.addEventListener('mouseenter',function(){
-          gd.setAttribute('x1',X(g)); gd.setAttribute('x2',X(g)); gd.setAttribute('opacity','1');
-        });
-        hit.addEventListener('mouseleave',function(){ gd.setAttribute('opacity','0'); });
-        svg.appendChild(hit);
+        (function(gi){
+          var hit=el('rect',{x:X(gi)-gx0/2,y:top,width:gx0,height:rowH,fill:'transparent'});
+          var ttl=document.createElementNS(NS,'title');
+          ttl.textContent='Неделя '+TREND[gi].k+' ('+TREND[gi].d+') — '+s.n+' '+s.d[gi]+' ЦЛ'+
+            (TREND[gi].extra?' · '+TREND[gi].extra.split(' · ')[1]:'');
+          hit.appendChild(ttl);
+          hit.addEventListener('mouseenter',function(){
+            gd.setAttribute('x1',X(gi)); gd.setAttribute('x2',X(gi)); gd.setAttribute('opacity','1');
+            tipG.setAttribute('opacity','1');
+            tipTitle.textContent=TREND[gi].k+' · '+TREND[gi].d;
+            var o=tipG.children;
+            o[3].textContent='Всего ЦЛ'; o[4].textContent=TREND.all[gi];
+            o[6].textContent='Директ · платный'; o[7].textContent=TREND.dir[gi];
+            o[9].textContent='SEO · органика'; o[10].textContent=TREND.se[gi];
+          });
+          hit.addEventListener('mouseleave',function(){ tipG.setAttribute('opacity','0'); gd.setAttribute('opacity','0'); });
+          svg.appendChild(hit);
+        })(g);
       }
     }
     /* общая ось X */
@@ -1285,7 +1307,8 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       svg.appendChild(el('text',{x:t===N-1?x1:X(t),y:H-16,'text-anchor':ta,'font-size':'10','fill':cssv('--text-3')})).textContent=TREND[t].d;
     }
     host.appendChild(svg);
-  }  function corridorRow(track,verdict,cls){
+  }
+  function corridorRow(track,verdict,cls){
     var row=document.createElement('div'); row.className='cor-row';
     var lab=document.createElement('div'); lab.className='cor-lab'; lab.textContent=track.label; row.appendChild(lab);
     var bar=document.createElement('div'); bar.className='cor-track';
