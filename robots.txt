@@ -1,5 +1,6 @@
-# РЎС‚СЂР°РЅРёС†Р° РЅРµ РїСЂРµРґРЅР°Р·РЅР°С‡РµРЅР° РґР»СЏ РїРѕРёСЃРєР°.
-# Р—Р°РїСЂРµС‚ Р·Р°РґР°РЅ РјРµС‚Р°-С‚РµРіРѕРј robots=noindex РІ index.html, РїРѕСЌС‚РѕРјСѓ РѕР±С…РѕРґ РќР• Р±Р»РѕРєРёСЂСѓРµС‚СЃСЏ:
-# РёРЅР°С‡Рµ РїРѕРёСЃРєРѕРІРёРє РЅРµ СЃРјРѕР¶РµС‚ РїСЂРѕС‡РёС‚Р°С‚СЊ noindex Рё РјРѕР¶РµС‚ РїРѕРєР°Р·Р°С‚СЊ РіРѕР»С‹Р№ URL РІ РІС‹РґР°С‡Рµ.
+# This page is not intended for search engines.
+# `noindex` is set via <meta name="robots"> in index.html.
+# Crawling is deliberately NOT blocked here: a blocked page cannot be
+# fetched, so the crawler would never see the noindex directive.
 User-agent: *
 Disallow:
