@@ -3,6 +3,8 @@
 Static single-file dashboard, published via GitHub Pages.
 
 - Report: https://htsgladiatis.github.io/seq-ruq-spro-dashboard/
-- Period: 26.10 - 01.11.2026
-- Month view numbers re-pulled from Yandex.Direct API on 02.11.2026 (October: 396 494 RUB, 1 836 clicks, 204 723 impressions, 63 leads, CPL 6 294 RUB; Sequoia 284 731 RUB / 35 leads, Ruqi 111 762 RUB / 16 leads; September rebased to Direct: 396 147 RUB, CPL 8 085 RUB)
-- Project split re-attributed from CRM on 02.11.2026: all 63 October leads mapped (Sequoia 35 / Ruqi 16 / Solution PRO 12), none "без проекта"; channels 38 Direct / 16 SEO / 9 Email. Project table now carries Direct impressions, clicks and spend by account instead of dashes.
+- Period: 02.11 - 08.11.2026
+- Week pulled from Yandex.Direct API on 09.11.2026: 48 345 RUB, 846 clicks, 152 209 impressions, 21 Metrica conversions; CRM 10 target leads, CPL 4 835 RUB (was 87 738 RUB / 14 leads / CPL 6 267 RUB the week before). Sequoia 43 166 RUB / 6 leads, Ruqi 5 179 RUB / 1 lead, Solution PRO 3 leads without paid budget.
+- All 188 leads of the week in CRM, 10 of them tagged "Целевой". Channels: Direct 5 (all paid traffic), SEO 2 (calls and chat), Email 3. Project split: Sequoia 6 / Ruqi 1 / Solution PRO 3.
+- Two days without delivery: 04.11 (zero spend) and 08.11 (not yet in the API export), so the week is 6 billable days out of 7.
+- Report keeps the period switcher: 11 weeks + October and September month views; the October block and its ring are hidden in the default week view.

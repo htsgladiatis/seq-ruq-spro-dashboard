@@ -6,8 +6,8 @@
 <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
 <meta name="yandex" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="build" content="2026-11-02T23:20Z"><meta http-equiv="cache-control" content="no-cache">
-<title>Отчёт 26 октября – 1 ноября 2026 — интерактивная версия</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="build" content="2026-11-09T08:40Z"><meta http-equiv="cache-control" content="no-cache">
+<title>Отчёт 2 – 8 ноября 2026 — интерактивная версия</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap">
@@ -413,10 +413,10 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
 
 <nav class="nav" aria-label="Разделы отчёта">
   <div class="nav-in">
-    <div class="brand"><span id="brandDates">Отчёт 26.10–01.11</span> <span>· Performance</span></div>
+    <div class="brand"><span id="brandDates">Отчёт 02–08.11</span> <span>· Performance</span></div>
     <div class="yper" id="yper">
       <button class="yper-btn" id="yperBtn" type="button" aria-haspopup="listbox" aria-expanded="false">
-        <span class="yper-lab">Период</span><span class="yper-sep" aria-hidden="true"></span><span class="yper-ix" id="yperIx">w11</span><span class="yper-dates" id="yperDates">26.10 – 01.11</span>
+        <span class="yper-lab">Период</span><span class="yper-sep" aria-hidden="true"></span><span class="yper-ix" id="yperIx">w12</span><span class="yper-dates" id="yperDates">02.11 – 08.11</span>
         <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg>
       </button>
       <div class="yper-pop" id="yperPop" role="dialog" aria-label="Выбор периода">
@@ -432,7 +432,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
         <div class="yper-note" id="yperNote"></div>
         <div class="yper-fast">
           <span class="fl">Быстрый</span>
-          <button type="button" data-fast="p5">Последняя</button>
+          <button type="button" data-fast="p6">Последняя</button>
           <button type="button" data-fast="aug1">Первая</button>
           <button type="button" data-fast="pall">Всё</button>
         </div>
@@ -440,7 +440,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     </div>
     <div class="nav-links" id="navlinks">
       <a href="#kpi">Показатели</a>
-      <a href="#month">Октябрь</a>
+      <a href="#month" id="navmonth" style="display:none">Октябрь</a>
       <a href="#wow" id="navwow">Неделя к неделе</a>
       <a href="#src">Источники</a>
       <a href="#proj">Проекты</a>
@@ -459,18 +459,18 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   <header class="head">
     <div>
       <div class="eyebrow" id="eyebrow">Рекламная кампания · неделя к неделе</div>
-      <h1 id="h1per">26 октября – 1 ноября 2026</h1>
+      <h1 id="h1per">2 – 8 ноября 2026</h1>
       <div class="meta">
-        <span class="tag">Сравнение <b id="vsPrev">vs 19–25.10</b></span>
-        <span class="tag">ЦЛ <b id="t-leads">14</b></span>
-        <span class="tag">Бюджет <b id="t-spend">87 738 ₽</b></span>
-        <span class="tag">CPL <b id="t-cpl">6 267 ₽</b></span>
-        <span class="tag" id="sliceHint" hidden>Разрезы ниже — фиксированно за <b>26.10–01.11</b></span>
-        <span class="tag">Сформировано <b>02.11.2026</b></span>
-        <span class="tag">Сборка <b id="buildStamp">02.11 23:20</b></span>
+        <span class="tag">Сравнение <b id="vsPrev">vs 26.10–01.11</b></span>
+        <span class="tag">ЦЛ <b id="t-leads">10</b></span>
+        <span class="tag">Бюджет <b id="t-spend">48 345 ₽</b></span>
+        <span class="tag">CPL <b id="t-cpl">4 835 ₽</b></span>
+        <span class="tag" id="sliceHint" hidden>Разрезы ниже — фиксированно за <b>02.11–08.11</b></span>
+        <span class="tag">Сформировано <b>09.11.2026</b></span>
+        <span class="tag">Сборка <b id="buildStamp">09.11 11:40</b></span>
       </div>
     </div>
-    <div class="ring-box" id="ringBox">
+    <div class="ring-box" id="ringBox" style="display:none">
       <div id="ring"></div>
       <p class="ring-cap">Октябрь выполнен на <b class="mono">97%</b> — 63 целевых из 65 по плану за 31 день · план пересмотрен 26.10 (было 35) · ноябрь: план 46</p>
     </div>
@@ -481,66 +481,66 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     <div class="kpis">
       <article class="kpi reveal">
         <div class="kpi-lab">Целевые лиды<br>главная метрика</div>
-        <div class="kpi-val" id="kv-leads" data-count="14" data-cur="14">14</div>
-        <div class="kpi-foot"><span class="delta up"><svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 10V2M6 2L2.5 5.5M6 2l3.5 3.5"/></svg>+17%</span><span class="kpi-note">было 12</span></div>
+        <div class="kpi-val" id="kv-leads" data-count="10" data-cur="10">10</div>
+        <div class="kpi-foot"><span class="delta down"><svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v8M6 10l3.5-3.5M6 10L2.5 6.5"/></svg>−29%</span><span class="kpi-note">было 14</span></div>
       </article>
       <article class="kpi reveal">
         <div class="kpi-lab">Лиды всего<br>все обращения</div>
-        <div class="kpi-val" id="kv-allleads" data-cur="247">247</div>
-        <div class="kpi-foot"><span class="kpi-note">из них 14 целевых</span></div>
+        <div class="kpi-val" id="kv-allleads" data-cur="188">188</div>
+        <div class="kpi-foot"><span class="kpi-note">из них 10 целевых</span></div>
       </article>
       <article class="kpi reveal">
         <div class="kpi-lab">Цена целевого лида</div>
-        <div class="kpi-val" id="kv-cpl" data-count="6267" data-cur="6267">6 267 ₽</div>
-        <div class="kpi-foot"><span class="delta down"><svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v8M6 10l3.5-3.5M6 10L2.5 6.5"/></svg>−22%</span><span class="kpi-note">было 8 010 ₽</span></div>
+        <div class="kpi-val" id="kv-cpl" data-count="4835" data-cur="4835">4 835 ₽</div>
+        <div class="kpi-foot"><span class="delta up"><svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 10V2M6 2L2.5 5.5M6 2l3.5 3.5"/></svg>−23%</span><span class="kpi-note">было 6 267 ₽</span></div>
       </article>
       <article class="kpi reveal">
         <div class="kpi-lab">Рекламный бюджет</div>
-        <div class="kpi-val" id="kv-spend" data-cur="87738">87 738 ₽</div>
-        <div class="kpi-foot"><span class="delta flat"><svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v8M6 10l3.5-3.5M6 10L2.5 6.5"/></svg>−9%</span><span class="kpi-note">было 96 124 ₽</span></div>
+        <div class="kpi-val" id="kv-spend" data-cur="48345">48 345 ₽</div>
+        <div class="kpi-foot"><span class="delta flat"><svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v8M6 10l3.5-3.5M6 10L2.5 6.5"/></svg>−45%</span><span class="kpi-note">было 87 738 ₽</span></div>
       </article>
       <article class="kpi reveal">
         <div class="kpi-lab">Конверсия клик → ЦЛ</div>
-        <div class="kpi-val" id="kv-conv" data-cur="3.12">3,12%</div>
-        <div class="kpi-foot"><span class="delta up">+0,49 п.п.</span><span class="kpi-note">было 2,63%</span></div>
-        <div class="kpi-sub">3-мес скользящая (авг–окт): <b class="mono">3,04%</b> · 169 ЦЛ (57 + 49 + 63) / 5 555 кликов Директа</div>
+        <div class="kpi-val" id="kv-conv" data-cur="1.18">1,18%</div>
+        <div class="kpi-foot"><span class="delta down">−1,94 п.п.</span><span class="kpi-note">было 3,12%</span></div>
+        <div class="kpi-sub">3-мес скользящая (сен–ноя): <b class="mono">2,92%</b> · 122 ЦЛ (49 + 63 + 10) / 4 185 кликов Директа</div>
       </article>
     </div>
 
     <div class="kpis kpis--split">
       <article class="kpi reveal">
         <div class="kpi-lab">Директ<br>платный трафик</div>
-        <div class="kpi-val"><span id="ks-dir">7</span> <span class="kpi-unit">ЦЛ</span></div>
+        <div class="kpi-val"><span id="ks-dir">5</span> <span class="kpi-unit">ЦЛ</span></div>
         <div class="meter" aria-hidden="true"><i id="ks-dir-bar" data-w="50" style="width:50%;background:var(--primary)"></i></div>
-        <div class="kpi-foot"><span class="kpi-share" id="ks-dir-share">50% целевых</span><span class="kpi-note" id="ks-dir-note">12 534 ₽ за ЦЛ</span></div>
+        <div class="kpi-foot"><span class="kpi-share" id="ks-dir-share">50% целевых</span><span class="kpi-note" id="ks-dir-note">9 669 ₽ за ЦЛ</span></div>
       </article>
       <article class="kpi reveal">
         <div class="kpi-lab">SEO<br>органический трафик</div>
-        <div class="kpi-val"><span id="ks-seo">5</span> <span class="kpi-unit">ЦЛ</span></div>
-        <div class="meter" aria-hidden="true"><i id="ks-seo-bar" data-w="35.7" style="width:35.7%;background:var(--ch-src)"></i></div>
-        <div class="kpi-foot"><span class="kpi-share" id="ks-seo-share">35,7% целевых</span><span class="kpi-note" id="ks-seo-note">вне рекламного бюджета</span></div>
+        <div class="kpi-val"><span id="ks-seo">2</span> <span class="kpi-unit">ЦЛ</span></div>
+        <div class="meter" aria-hidden="true"><i id="ks-seo-bar" data-w="20" style="width:20%;background:var(--ch-src)"></i></div>
+        <div class="kpi-foot"><span class="kpi-share" id="ks-seo-share">20% целевых</span><span class="kpi-note" id="ks-seo-note">вне рекламного бюджета</span></div>
       </article>
       <article class="kpi reveal">
         <div class="kpi-lab">Email<br>письма</div>
-        <div class="kpi-val"><span id="ks-mail">2</span> <span class="kpi-unit">ЦЛ</span></div>
-        <div class="meter" aria-hidden="true"><i id="ks-mail-bar" data-w="14.3" style="width:14.3%;background:var(--ch-mail)"></i></div>
-        <div class="kpi-foot"><span class="kpi-share" id="ks-mail-share">14,3% целевых</span><span class="kpi-note" id="ks-mail-note">вне рекламного бюджета</span></div>
+        <div class="kpi-val"><span id="ks-mail">3</span> <span class="kpi-unit">ЦЛ</span></div>
+        <div class="meter" aria-hidden="true"><i id="ks-mail-bar" data-w="30" style="width:30%;background:var(--ch-mail)"></i></div>
+        <div class="kpi-foot"><span class="kpi-share" id="ks-mail-share">30% целевых</span><span class="kpi-note" id="ks-mail-note">вне рекламного бюджета</span></div>
       </article>
       <article class="kpi kpi--dir reveal">
         <div class="kpi-lab">По направлениям<br>доля целевых</div>
         <div class="dirs">
           <span class="pill p-seq">Секвойя</span>
-          <span class="bar-track"><i class="bar-fill seq" id="kd-seq-bar" data-w="50" style="width:50%"></i></span>
-          <b class="dir-v" id="kd-seq-v">7</b>
-          <span class="dir-n" id="kd-seq-n">50%</span>
+          <span class="bar-track"><i class="bar-fill seq" id="kd-seq-bar" data-w="60" style="width:60%"></i></span>
+          <b class="dir-v" id="kd-seq-v">6</b>
+          <span class="dir-n" id="kd-seq-n">60%</span>
           <span class="pill p-ruq">Руки</span>
-          <span class="bar-track"><i class="bar-fill ruq" id="kd-ruq-bar" data-w="21.4" style="width:21.4%"></i></span>
-          <b class="dir-v" id="kd-ruq-v">3</b>
-          <span class="dir-n" id="kd-ruq-n">21,4%</span>
+          <span class="bar-track"><i class="bar-fill ruq" id="kd-ruq-bar" data-w="10" style="width:10%"></i></span>
+          <b class="dir-v" id="kd-ruq-v">1</b>
+          <span class="dir-n" id="kd-ruq-n">10%</span>
           <span class="pill p-spr">Solution PRO</span>
-          <span class="bar-track"><i class="bar-fill spr" id="kd-spr-bar" data-w="28.6" style="width:28.6%"></i></span>
-          <b class="dir-v" id="kd-spr-v">4</b>
-          <span class="dir-n" id="kd-spr-n">28,6%</span>
+          <span class="bar-track"><i class="bar-fill spr" id="kd-spr-bar" data-w="30" style="width:30%"></i></span>
+          <b class="dir-v" id="kd-spr-v">3</b>
+          <span class="dir-n" id="kd-spr-n">30%</span>
           <span class="pill" id="kd-x-pill" hidden style="color:var(--text-3);border-color:var(--text-3)">Не определён</span>
           <span class="bar-track" id="kd-x-track" hidden><i class="bar-fill" id="kd-x-bar" data-w="0" style="width:0%;background:var(--text-3)"></i></span>
           <b class="dir-v" id="kd-x-v" hidden>—</b>
@@ -551,7 +551,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     </div>
 
     <div class="panel reveal" style="margin-top:18px">
-      <div class="panel-t">Тренд ЦЛ по проектам · 10 недель</div>
+      <div class="panel-t">Тренд ЦЛ по проектам · 11 недель</div>
       <div class="panel-s">Три ряда друг под другом — у каждого своя шкала Y; зелёной пунктирной линией отмечена «скользящая» на 3 недели (среднее предыдущих трёх недель). Наведите на столбик недели — даты и разбивка. Сравнивайте форму, а не высоту.</div>
       <div id="ch-trend"></div>
     </div>
@@ -564,7 +564,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     </div>
   </section>
 
-  <section id="month">
+  <section id="month" style="display:none">
     <div class="sec-head">
       <h2>Октябрь: итог</h2>
       <p class="sub">План месяца — 65 целевых при бюджете 370 000 ₽ (сентябрьская план-отметка, пересмотрена 26.10 вместо сезонных 35). Итог: 63 целевых (CRM, созданные 01.10–31.10) и 396 494 ₽ расхода Директа за 01.10–01.11 — 97% плана по лидам и 107,2% по бюджету; в окне выгрузки есть один день ноября (01.11), поэтому расход к месяцу чуть завышен. Ноябрь открыт: план — 46 целевых.</p>
@@ -599,30 +599,30 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   </section>
 
   <section id="wow">
-    <div class="sec-head"><h2 id="wow-title">Неделя к неделе</h2><p class="sub" id="wow-sub">Сравнение с предыдущей неделей по данным Яндекс.Директ API и MarketHub.</p></div>
+    <div class="sec-head"><h2 id="wow-title">Неделя к неделе</h2><p class="sub" id="wow-sub">Сравнение с предыдущей неделей по данным Яндекс.Директ API и CRM.</p></div>
     <div class="grid-2 even">
       <div class="panel reveal">
         <div class="panel-t" id="wow-panel-t">Трафик и расход</div>
-        <div class="panel-s" id="wow-panel-s">26.10–01.11 против 19–25.10</div>
+        <div class="panel-s" id="wow-panel-s">02.11–08.11 против 26.10–01.11</div>
         <div id="ch-wow"></div>
       </div>
       <div class="panel reveal">
         <div class="panel-t">Полная таблица показателей</div>
-        <div class="panel-s" id="wow-panel-s2">Предыдущая неделя — из отчёта 19–25.10. Визиты MarketHub — по одному домену, домен в выгрузке не указан</div>
+        <div class="panel-s" id="wow-panel-s2">Предыдущая неделя — из отчёта 26.10–01.11. Оба периода — Директ API, CRM и Метрика, сверка 09.11</div>
         <div class="tbl-wrap" style="max-height:none">
           <table style="min-width:0">
-            <thead><tr><th>Показатель</th><th id="cmp-h1">19–25.10</th><th id="cmp-h2">26.10–01.11</th><th>Изм.</th></tr></thead>
+            <thead><tr><th>Показатель</th><th id="cmp-h1">26.10–01.11</th><th id="cmp-h2">02–08.11</th><th>Изм.</th></tr></thead>
             <tbody id="cmp-body">
-              <tr><td>Целевые лиды (CRM)</td><td class="d">12</td><td class="d"><b>14</b></td><td class="d" style="color:var(--pos)">+17%</td></tr>
-              <tr><td>Показы (Директ)</td><td class="d">49 335</td><td class="d">50 378</td><td class="d">+2%</td></tr>
-              <tr><td>Клики (Директ)</td><td class="d">457</td><td class="d">449</td><td class="d">−2%</td></tr>
-              <tr><td>CTR</td><td class="d">0,93%</td><td class="d">0,89%</td><td class="d" style="color:var(--neg)">−4%</td></tr>
-              <tr><td>CPC</td><td class="d">210 ₽</td><td class="d">195 ₽</td><td class="d" style="color:var(--pos)">−7%</td></tr>
-              <tr><td>Визиты (MarketHub)</td><td class="d">751</td><td class="d">716</td><td class="d">−5%</td></tr>
-              <tr><td>Рекламный бюджет</td><td class="d">96 124 ₽</td><td class="d">87 738 ₽</td><td class="d">−9%</td></tr>
-              <tr><td>Цена целевого лида</td><td class="d">8 010 ₽</td><td class="d">6 267 ₽</td><td class="d" style="color:var(--pos)">−22%</td></tr>
-              <tr><td>Конверсия клик → ЦЛ</td><td class="d">2,63%</td><td class="d">3,12%</td><td class="d" style="color:var(--pos)">+0,49 п.п.</td></tr>
-              <tr><td>ЦЛ накоплено за октябрь</td><td class="d">49 из 65</td><td class="d"><b>63 из 65</b></td><td class="d" style="color:var(--pos)">+14</td></tr>
+              <tr><td>Целевые лиды (CRM)</td><td class="d">14</td><td class="d"><b>10</b></td><td class="d" style="color:var(--neg)">−29%</td></tr>
+              <tr><td>Показы (Директ)</td><td class="d">50 378</td><td class="d">152 209</td><td class="d">+202%</td></tr>
+              <tr><td>Клики (Директ)</td><td class="d">449</td><td class="d">846</td><td class="d">+88%</td></tr>
+              <tr><td>CTR</td><td class="d">0,89%</td><td class="d">0,56%</td><td class="d" style="color:var(--neg)">−0,33 п.п.</td></tr>
+              <tr><td>CPC</td><td class="d">195 ₽</td><td class="d">57 ₽</td><td class="d" style="color:var(--pos)">−71%</td></tr>
+              <tr><td>Конверсии Метрики</td><td class="d">43</td><td class="d">21</td><td class="d" style="color:var(--neg)">−51%</td></tr>
+              <tr><td>Рекламный бюджет</td><td class="d">87 738 ₽</td><td class="d">48 345 ₽</td><td class="d">−45%</td></tr>
+              <tr><td>Цена целевого лида</td><td class="d">6 267 ₽</td><td class="d">4 835 ₽</td><td class="d" style="color:var(--pos)">−23%</td></tr>
+              <tr><td>Конверсия клик → ЦЛ</td><td class="d">3,12%</td><td class="d">1,18%</td><td class="d" style="color:var(--neg)">−1,94 п.п.</td></tr>
+              <tr><td>Целевых в день</td><td class="d">2,00</td><td class="d"><b>1,43</b></td><td class="d" style="color:var(--neg)">−29%</td></tr>
             </tbody>
           </table>
         </div>
@@ -638,7 +638,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     <div class="grid-2">
       <div class="panel reveal">
         <div class="panel-t">Распределение по каналам</div>
-        <div class="panel-s" id="src-cap">14 целевых · SEO включает звонки и чат; заявки с форм без utm-меток отнесены к Директу</div>
+        <div class="panel-s" id="src-cap">10 целевых · SEO включает звонки и чат; заявки с форм без utm-меток отнесены к Директу</div>
         <div id="ch-src"></div>
       </div>
       <div class="panel reveal">
@@ -646,7 +646,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
         <div class="panel-s">Матрица «проект × источник»</div>
         <div id="mtx"></div>
         <div class="callout amber" id="src-callout">
-          <b>Директ дал 7 из 14 целевых</b> при бюджете 87,7 тыс. ₽. Расходы на один целевой лид Директа — около <b class="mono">12,5 тыс. ₽</b> (87 738 / 7). Общая цена целевого лида всех каналов — 6 267 ₽.
+          <b>Директ дал 5 из 10 целевых</b> при бюджете 48,3 тыс. ₽. Расходы на один целевой лид Директа — около <b class="mono">9,7 тыс. ₽</b> (48 345 / 5). Общая цена целевого лида всех каналов — 4 835 ₽.
         </div>
       </div>
     </div>
@@ -657,25 +657,25 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     <div class="grid-2 even">
       <div class="panel reveal">
         <div class="panel-t" id="proj-ttl">Расход и цена целевого лида</div>
-        <div class="panel-s" id="proj-cap">61 527 ₽ на Секвойю · 26 210 ₽ на Руки · Solution PRO — 4 целевых без рекламного бюджета</div>
+        <div class="panel-s" id="proj-cap">43 166 ₽ на Секвойю (6 ЦЛ) · 5 179 ₽ на Руки (1 ЦЛ) · Solution PRO — 3 целевых без рекламного бюджета</div>
         <div id="ch-proj"></div>
       </div>
       <div class="panel reveal">
         <div class="panel-t">Сводка по проектам</div>
-        <div class="panel-s" id="proj-sub">Показы и клики — из выгрузки Яндекс.Директ API за 26.10–01.11</div>
+        <div class="panel-s" id="proj-sub">Показы и клики — из выгрузки Яндекс.Директ API за 02.11–08.11</div>
         <div class="tbl-wrap" style="max-height:none">
           <table style="min-width:0">
             <thead><tr><th>Проект</th><th>Показы</th><th>Клики</th><th>Расход</th><th>ЦЛ</th><th>CPL</th></tr></thead>
             <tbody id="proj-tb">
-              <tr><td><span class="pill p-seq">Sequoia</span></td><td class="d">49 681</td><td class="d">412</td><td class="d">61 527 ₽</td><td class="d">7</td><td class="d">8 790 ₽</td></tr>
-              <tr><td><span class="pill p-ruq">Ruqi</span></td><td class="d">697</td><td class="d">37</td><td class="d">26 210 ₽</td><td class="d">3</td><td class="d">8 737 ₽</td></tr>
-              <tr><td><span class="pill p-spr">Solution PRO</span></td><td class="d" title="Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct — показов и кликов в выгрузке нет">—</td><td class="d" title="Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct — показов и кликов в выгрузке нет">—</td><td class="d" title="Платного трафика нет: заявки приходят из писем и органики"><span style="font-family:var(--mono);font-size:11.5px;color:var(--text-3)">вне Direct</span></td><td class="d">4</td><td class="d" title="CPL не считается: бюджета нет">—</td></tr>
-              <tr style="background:var(--surface-2);font-weight:600"><td>Итого</td><td class="d">50 378</td><td class="d">449</td><td class="d">87 738 ₽</td><td class="d">14</td><td class="d">6 267 ₽</td></tr>
+              <tr><td><span class="pill p-seq">Sequoia</span></td><td class="d">151 819</td><td class="d">832</td><td class="d">43 166 ₽</td><td class="d">6</td><td class="d">7 194 ₽</td></tr>
+              <tr><td><span class="pill p-ruq">Ruqi</span></td><td class="d">390</td><td class="d">14</td><td class="d">5 179 ₽</td><td class="d">1</td><td class="d">5 179 ₽</td></tr>
+              <tr><td><span class="pill p-spr">Solution PRO</span></td><td class="d" title="Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct — показов и кликов в выгрузке нет">—</td><td class="d" title="Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct — показов и кликов в выгрузке нет">—</td><td class="d" title="Платного трафика нет: заявки приходят из писем и органики"><span style="font-family:var(--mono);font-size:11.5px;color:var(--text-3)">вне Direct</span></td><td class="d">3</td><td class="d" title="CPL не считается: бюджета нет">—</td></tr>
+              <tr style="background:var(--surface-2);font-weight:600"><td>Итого</td><td class="d">152 209</td><td class="d">846</td><td class="d">48 345 ₽</td><td class="d">10</td><td class="d">4 835 ₽</td></tr>
             </tbody>
           </table>
         </div>
         <div class="panel-s" id="proj-foot" style="display:none;margin-top:10px;line-height:1.5"></div>
-        <div class="callout blue" id="proj-callout"><b>Solution PRO — 4 целевых при нулевом бюджете.</b> Два письма, входящий звонок и один переход по ysclid с Директа: домен s-pro.group не входит в отслеживаемые аккаунты.</div>
+        <div class="callout blue" id="proj-callout"><b>Solution PRO — 3 целевых при нулевом бюджете.</b> Три письма (МТС, Газпромбанк, Фудмаркет): домен не входит в отслеживаемые аккаунты Direct, поэтому расхода и CPL по нему нет.</div>
       </div>
     </div>
   </section>
@@ -683,7 +683,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   <section id="seo">
     <div class="sec-head">
       <h2>SEO: видимость в органике</h2>
-      <p class="sub">Topvisor · Секвойя, Москва, Яндекс (десктоп) · последняя проверка 21.10 — за 26.10–01.11 выгрузка не делалась, данные приведены по состоянию на 21.10.</p>
+      <p class="sub">Topvisor · Секвойя, Москва, Яндекс (десктоп) · последняя проверка 21.10 — за 02–08.11 выгрузка не делалась, данные приведены по состоянию на 21.10.</p>
     </div>
     <div class="grid-2 even">
       <div class="panel reveal">
@@ -770,22 +770,22 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   <section id="leads">
     <div class="sec-head">
       <h2>Целевые лиды по клиентам</h2>
-      <p class="sub" id="leads-sub">14 уникальных сделок · фильтр: созданы 26.10–01.11 · этапы по воронке «созданные за прошлую неделю». Номер, почта или ИНН кликается — копируется.</p>
+      <p class="sub" id="leads-sub">10 уникальных сделок · фильтр: созданы 02.11–08.11 · этапы по воронке «созданные за прошлую неделю». Номер, почта или ИНН кликается — копируется.</p>
     </div>
 
     <div class="toolbar">
       <div class="chips" role="group" aria-label="Фильтр по проекту">
-        <button class="chip" type="button" data-proj="all" aria-pressed="true">Все <span class="cnt" id="cnt-all">14</span></button>
-        <button class="chip" type="button" data-proj="seq" aria-pressed="false"><i class="sw" style="background:var(--seq)"></i>Секвойя <span class="cnt" id="cnt-seq">7</span></button>
-        <button class="chip" type="button" data-proj="ruq" aria-pressed="false"><i class="sw" style="background:var(--ruq)"></i>Руки <span class="cnt" id="cnt-ruq">3</span></button>
-        <button class="chip" type="button" data-proj="spr" aria-pressed="false"><i class="sw" style="background:var(--spr)"></i>Solution PRO <span class="cnt" id="cnt-spr">4</span></button>
+        <button class="chip" type="button" data-proj="all" aria-pressed="true">Все <span class="cnt" id="cnt-all">10</span></button>
+        <button class="chip" type="button" data-proj="seq" aria-pressed="false"><i class="sw" style="background:var(--seq)"></i>Секвойя <span class="cnt" id="cnt-seq">6</span></button>
+        <button class="chip" type="button" data-proj="ruq" aria-pressed="false"><i class="sw" style="background:var(--ruq)"></i>Руки <span class="cnt" id="cnt-ruq">1</span></button>
+        <button class="chip" type="button" data-proj="spr" aria-pressed="false"><i class="sw" style="background:var(--spr)"></i>Solution PRO <span class="cnt" id="cnt-spr">3</span></button>
         <button class="chip" type="button" data-proj="x" aria-pressed="false" id="chip-x" hidden style="display:none">Без проекта <span class="cnt" id="cnt-x">0</span></button>
       </div>
       <div class="chips" role="group" aria-label="Фильтр по каналу">
         <button class="chip" type="button" data-src="all" aria-pressed="true">Все каналы</button>
-        <button class="chip" type="button" data-src="Директ" aria-pressed="false">Директ <span class="cnt" id="cnt-dir">7</span></button>
-        <button class="chip" type="button" data-src="SEO" aria-pressed="false">SEO <span class="cnt" id="cnt-seo">5</span></button>
-        <button class="chip" type="button" data-src="Email" aria-pressed="false">Email <span class="cnt" id="cnt-mail">2</span></button>
+        <button class="chip" type="button" data-src="Директ" aria-pressed="false">Директ <span class="cnt" id="cnt-dir">5</span></button>
+        <button class="chip" type="button" data-src="SEO" aria-pressed="false">SEO <span class="cnt" id="cnt-seo">2</span></button>
+        <button class="chip" type="button" data-src="Email" aria-pressed="false">Email <span class="cnt" id="cnt-mail">3</span></button>
       </div>
       <div class="search">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
@@ -795,7 +795,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
 
     <div class="tbl-wrap">
       <table id="leads-tbl">
-        <caption class="sr-only" id="leads-cap" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Целевые лиды за 26 октября – 1 ноября 2026</caption>
+        <caption class="sr-only" id="leads-cap" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Целевые лиды за 2 – 8 ноября 2026</caption>
         <thead>
           <tr>
             <th class="sortable" data-k="date" scope="col">Дата <span class="arw">↕</span></th>
@@ -810,15 +810,15 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       <div class="empty" id="empty" hidden>Ничего не найдено — измените фильтры или поисковый запрос.</div>
     </div>
     <div class="tbl-foot">
-      <span id="shown">Показано 14 из 14</span>
-      <span id="leads-stages">Этапы: КП выставлено 2 · Переговоры по КП 2 · Потребности выявлены 1 · Закрыто и не реализовано 9</span>
+      <span id="shown">Показано 10 из 10</span>
+      <span id="leads-stages">Этапы: КП выставлено 3 · Потребности выявлены 1 · Взял в работу 1 · Закрыто и не реализовано 5</span>
     </div>
   </section>
 
   <footer>
-    <span>Отчёт по рекламной кампании · 26.10–01.11.2026</span>
-    <span>Сформировано 02.11.2026 · интерактивная версия · сборка <b id="buildStamp2">02.11 23:20</b> UTC</span>
-    <span id="baseCompare">База сравнения: неделя 19–25.10 (12 ЦЛ, 96 124 ₽)</span>
+    <span>Отчёт по рекламной кампании · 02–08.11.2026</span>
+    <span>Сформировано 09.11.2026 · интерактивная версия · сборка <b id="buildStamp2">09.11 11:40</b> UTC</span>
+    <span id="baseCompare">База сравнения: неделя 26.10–01.11 (14 ЦЛ, 87 738 ₽)</span>
   </footer>
 </div>
 
@@ -981,10 +981,10 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   var WEEK_TABLE = null;                       /* недельная таблица сравнения, снимается при старте */
   var CMP = {
     w:{title:'Неделя к неделе',
-       sub:'Сравнение с предыдущей неделей по данным Яндекс.Директ API и MarketHub.',
-       pt:'Трафик и расход', ps:'26.10–01.11 против 19–25.10',
-       la:'19–25.10', lb:'26.10–01.11',
-       bars:[{k:'Показы',a:49335,b:50378},{k:'Клики',a:457,b:449},{k:'Бюджет, тыс ₽',a:96.1,b:87.7},{k:'Целевые',a:12,b:14}]},
+       sub:'Сравнение с предыдущей неделей по данным Яндекс.Директ API и CRM.',
+       pt:'Трафик и расход', ps:'02.11–08.11 против 26.10–01.11',
+       la:'26.10–01.11', lb:'02–08.11',
+       bars:[{k:'Показы',a:50378,b:152209},{k:'Клики',a:449,b:846},{k:'Бюджет, тыс ₽',a:87.7,b:48.3},{k:'Целевые',a:14,b:10}]},
     m:{title:'Месяц к месяцу',
        sub:'Октябрь против сентября · Директ API и CRM. Октябрь — окно выгрузки 01.10–01.11 (в нём один день ноября), сентябрь — 01.09–30.09.',
        pt:'Результат и стоимость', ps:'октябрь против сентября',
@@ -1041,18 +1041,18 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   }
   function updCmp(p){
     var m=(p==='m10'||p==='pall'), c=m?CMP.m:CMP.w;
-    var sec=$('#wow'); if(sec) sec.style.display=(p==='p5'||m)?'':'none';
+    var sec=$('#wow'); if(sec) sec.style.display=(p==='p6'||m)?'':'none';
     setTxt('wow-title',c.title); setTxt('wow-sub',c.sub);
     setTxt('wow-panel-t',c.pt); setTxt('wow-panel-s',c.ps);
-    setTxt('wow-panel-s2',m?'Предыдущий месяц — из месячного отчёта. Октябрь — окно выгрузки 01.10–01.11, сентябрь — 01.09–30.09':'Предыдущая неделя — из отчёта 19–25.10. Визиты MarketHub — по одному домену, домен в выгрузке не указан');
-    setTxt('cmp-h1',m?'сентябрь':'19–25.10'); setTxt('cmp-h2',m?'октябрь':'26.10–01.11');
+    setTxt('wow-panel-s2',m?'Предыдущий месяц — из месячного отчёта. Октябрь — окно выгрузки 01.10–01.11, сентябрь — 01.09–30.09':'Предыдущая неделя — из отчёта 26.10–01.11. Оба периода — Директ API, CRM и Метрика, сверка 09.11');
+    setTxt('cmp-h1',m?'сентябрь':'26.10–01.11'); setTxt('cmp-h2',m?'октябрь':'02–08.11');
     var tb=$('#cmp-body'); if(tb) tb.innerHTML = m ? CMP_MONTH_TABLE : (WEEK_TABLE!=null?WEEK_TABLE:tb.innerHTML);
     drawCmp(c);
   }
 
   /* channel bars */
-  var SRC_W={base:14,max:7,aria:'Источники целевых: Директ 7, SEO 5, Email 2',rows:[
-    {k:'Директ',v:7,c:'--primary',d:'12,5 тыс. ₽ на ЦЛ'},{k:'SEO / Органика',v:5,c:'--ch-src'},{k:'Email',v:2,c:'--ch-mail'}]};
+  var SRC_W={base:10,max:5,aria:'Источники целевых: Директ 5, SEO 2, Email 3',rows:[
+    {k:'Директ',v:5,c:'--primary',d:'9,7 тыс. ₽ на ЦЛ'},{k:'SEO / Органика',v:2,c:'--ch-src'},{k:'Email',v:3,c:'--ch-mail'}]};
   var SRC_M={base:63,max:38,aria:'Источники целевых: Директ 38, SEO 16, Email 9',rows:[
     {k:'Директ',v:38,c:'--primary',d:'10,4 тыс. ₽ на ЦЛ'},{k:'SEO / Органика',v:16,c:'--ch-src'},{k:'Email',v:9,c:'--ch-mail'}]};
   var SRC=SRC_W;
@@ -1081,9 +1081,9 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   }
 
   /* project matrix */
-  var MTX_W=[{p:'Sequoia',c:['--seq','Sequoia'],cls:'seq',direct:3,seo:4,email:0},
-           {p:'Ruqi',c:['--ruq','Ruqi'],cls:'ruq',direct:3,seo:0,email:0},
-           {p:'Solution PRO',c:['--spr','Solution PRO'],cls:'spr',direct:1,seo:1,email:2}];
+  var MTX_W=[{p:'Sequoia',c:['--seq','Sequoia'],cls:'seq',direct:4,seo:2,email:0},
+           {p:'Ruqi',c:['--ruq','Ruqi'],cls:'ruq',direct:1,seo:0,email:0},
+           {p:'Solution PRO',c:['--spr','Solution PRO'],cls:'spr',direct:0,seo:0,email:3}];
   var MTX_M=[{p:'Sequoia',c:['--seq','Sequoia'],cls:'seq',direct:23,seo:11,email:1},
            {p:'Ruqi',c:['--ruq','Ruqi'],cls:'ruq',direct:12,seo:0,email:4},
            {p:'Solution PRO',c:['--spr','Solution PRO'],cls:'spr',direct:3,seo:5,email:4}];
@@ -1107,16 +1107,16 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   }
 
   /* project bars */
-  var PROJ_W=[{k:'Sequoia',v:8790,b:'61 527 ₽ / 7 ЦЛ',c:'--seq',cls:'seq'},{k:'Ruqi',v:8737,b:'26 210 ₽ / 3 ЦЛ',c:'--ruq',cls:'ruq'},{k:'Solution PRO',v:null,b:'бюджета нет / 4 ЦЛ',c:'--spr',cls:'spr'}];
-  var PROJ_CFG_W={unit:'₽',max:10000};
+  var PROJ_W=[{k:'Sequoia',v:7194,b:'43 166 ₽ / 6 ЦЛ',c:'--seq',cls:'seq'},{k:'Ruqi',v:5179,b:'5 179 ₽ / 1 ЦЛ',c:'--ruq',cls:'ruq'},{k:'Solution PRO',v:null,b:'бюджета нет / 3 ЦЛ',c:'--spr',cls:'spr'}];
+  var PROJ_CFG_W={unit:'₽',max:8000};
   var PROJ_M=[{k:'Sequoia',v:284731,b:'284 731 ₽ / 35 ЦЛ',c:'--seq',cls:'seq'},{k:'Ruqi',v:111762,b:'111 762 ₽ / 16 ЦЛ',c:'--ruq',cls:'ruq'},{k:'Solution PRO',v:null,b:'бюджета нет / 12 ЦЛ',c:'--spr',cls:'spr'}];
   var PROJ_CFG_M={unit:'₽',max:300000};
   var PROJ=PROJ_W; var PROJ_CFG=PROJ_CFG_W;
   var PROJ_ROWS={
-    week:'<tr><td><span class="pill p-seq">Sequoia</span></td><td class="d">49 681</td><td class="d">412</td><td class="d">61 527 ₽</td><td class="d">7</td><td class="d">8 790 ₽</td></tr>'
-      +'<tr><td><span class="pill p-ruq">Ruqi</span></td><td class="d">697</td><td class="d">37</td><td class="d">26 210 ₽</td><td class="d">3</td><td class="d">8 737 ₽</td></tr>'
-      +'<tr><td><span class="pill p-spr">Solution PRO</span></td><td class="d" title="Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct — показов и кликов в выгрузке нет">—</td><td class="d" title="Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct — показов и кликов в выгрузке нет">—</td><td class="d" title="Платного трафика нет: заявки приходят из писем и органики"><span style="font-family:var(--mono);font-size:11.5px;color:var(--text-3)">вне Direct</span></td><td class="d">4</td><td class="d" title="CPL не считается: бюджета нет">—</td></tr>'
-      +'<tr style="background:var(--surface-2);font-weight:600"><td>Итого</td><td class="d">50 378</td><td class="d">449</td><td class="d">87 738 ₽</td><td class="d">14</td><td class="d">6 267 ₽</td></tr>',
+    week:'<tr><td><span class="pill p-seq">Sequoia</span></td><td class="d">151 819</td><td class="d">832</td><td class="d">43 166 ₽</td><td class="d">6</td><td class="d">7 194 ₽</td></tr>'
+      +'<tr><td><span class="pill p-ruq">Ruqi</span></td><td class="d">390</td><td class="d">14</td><td class="d">5 179 ₽</td><td class="d">1</td><td class="d">5 179 ₽</td></tr>'
+      +'<tr><td><span class="pill p-spr">Solution PRO</span></td><td class="d" title="Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct — показов и кликов в выгрузке нет">—</td><td class="d" title="Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct — показов и кликов в выгрузке нет">—</td><td class="d" title="Платного трафика нет: заявки приходят из писем и органики"><span style="font-family:var(--mono);font-size:11.5px;color:var(--text-3)">вне Direct</span></td><td class="d">3</td><td class="d" title="CPL не считается: бюджета нет">—</td></tr>'
+      +'<tr style="background:var(--surface-2);font-weight:600"><td>Итого</td><td class="d">152 209</td><td class="d">846</td><td class="d">48 345 ₽</td><td class="d">10</td><td class="d">4 835 ₽</td></tr>',
     month:'<tr><td><span class="pill p-seq">Sequoia</span></td><td class="d">201 877</td><td class="d">1 651</td><td class="d">284 731 ₽</td><td class="d">35</td><td class="d">8 135 ₽</td></tr>'
       +'<tr><td><span class="pill p-ruq">Ruqi</span></td><td class="d">2 846</td><td class="d">185</td><td class="d">111 762 ₽</td><td class="d">16</td><td class="d">6 985 ₽</td></tr>'
       +'<tr><td><span class="pill p-spr">Solution PRO</span></td><td class="d" title="Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct — показов и кликов в выгрузке нет">—</td><td class="d" title="Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct — показов и кликов в выгрузке нет">—</td><td class="d" title="Платного трафика нет: заявки приходят из писем и органики"><span style="font-family:var(--mono);font-size:11.5px;color:var(--text-3)">вне Direct</span></td><td class="d">12</td><td class="d" title="CPL не считается: бюджета нет">—</td></tr>'
@@ -1184,13 +1184,14 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     {k:'w8',d:'05–11.10',t:13,di:11,se:2,extra:''},
     {k:'w9',d:'12–18.10',t:14,di:5,se:6,extra:' · Email 3'},
     {k:'w10',d:'19–25.10',t:12,di:5,se:4,extra:' · Email 3'},
-    {k:'w11',d:'26.10–01.11',t:14,di:7,se:5,extra:' · Email 2'}
+    {k:'w11',d:'26.10–01.11',t:14,di:7,se:5,extra:' · Email 2'},
+    {k:'w12',d:'02–08.11',t:10,di:5,se:2,extra:' · Email 3'}
   ];
   /* значения по сериям — от `TREND`, используются в ряде */
   TREND.all=TREND.map(function(p){return p.t;});
   TREND.dir=TREND.map(function(p){return p.di;});
   TREND.se=TREND.map(function(p){return p.se;});
-  /* ---------- единый тренд ЦЛ по проектам (10 недель, 3 ряда) ----------
+  /* ---------- единый тренд ЦЛ по проектам (11 недель, 3 ряда) ----------
      Один SVG, три ряда друг под другом. У каждого ряда своя шкала Y: факт — серые
      столбцы, тренд — цветная линия, зелёная пунктирная — «скользящая»
      на 3 недели. Наведите мышкой на любую точку — появится подсказка с
@@ -1212,7 +1213,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       {n:'SEO · органика',c:cssv('--ch-src'),d:TREND.se}
     ];
     var svg=el('svg',{class:'chart',viewBox:'0 0 '+W+' '+H,height:H,role:'img',
-      'aria-label':'Тренд ЦЛ за 10 недель. Три ряда: сверху «Всего ЦЛ» 11→14 (+27 %), «Директ · платный» 8→7 (−12 %) и «SEO · органика» 3→5 (+67 %). Зелёная пунктирная — скользящая на 3 недели.'});
+      'aria-label':'Тренд ЦЛ за 11 недель. Три ряда: «Всего ЦЛ», «Директ · платный» и «SEO · органика». Зелёная пунктирная — скользящая на 3 недели.'});
     /* вертикальная направляющая мыши (поверх всех рядов) */
     var gd=el('line',{x1:0,x2:0,y1:0,y2:H,stroke:cssv('--border'),'stroke-width':1,opacity:'0'});
     svg.appendChild(gd);
@@ -1329,20 +1330,16 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
 
   /* ---------- leads data ---------- */
   var LEADS_W=[
-    {d:'30.10',ts:'2026-10-30',name:'Camillamed (ООО «КАМИЛЛАМЕД»)',contact:'+7 (903) 572-06-84',raw:'+79035720684',meta:'входящий звонок · колл-центр · сайт сделки s-pro.group',src:'SEO',proj:'spr',projName:'Solution PRO',stage:'КП выставлено'},
-    {d:'29.10',ts:'2026-10-29',name:'Заявка с сайта ruqi-pro.ru – RUQI',contact:'форма ruqi.ru',raw:'ruqi.ru',meta:'ruqi-pro.ru · eLama · «Аренда персонала. Поиск. Москва и МО»',src:'Директ',proj:'ruq',projName:'Руки',stage:'Закрыто и не реализовано'},
-    {d:'29.10',ts:'2026-10-29',name:'Заявка с почты – Евгений Звонарев',contact:'zvonarev_evgen@bk.ru',raw:'zvonarev_evgen@bk.ru',meta:'письмо на почту · bk.ru · ООО «Рижский хлеб»',src:'Email',proj:'spr',projName:'Solution PRO',stage:'Закрыто и не реализовано'},
-    {d:'29.10',ts:'2026-10-29',name:'Сантехмарк (ООО «САНТЕХМАРК»)',contact:'+7 (905) 219-31-23',raw:'+79052193123',meta:'входящий звонок · колл-центр · старт 8 чел.',src:'SEO',proj:'seq',projName:'Секвойя',stage:'Переговоры по КП'},
-    {d:'29.10',ts:'2026-10-29',name:'Сделка по звонку 74954810926',contact:'+7 (495) 481-09-26',raw:'+74954810926',meta:'входящий звонок · колл-центр · сайт сделки sequoia-service.ru · отнесён в SEO',src:'SEO',proj:'seq',projName:'Секвойя',stage:'Закрыто и не реализовано'},
-    {d:'28.10',ts:'2026-10-28',name:'Kanzler (ООО «КАНЦЛЕР РУС»)',contact:'форма ruqi.ru',raw:'ruqi.ru',meta:'ruqi-pro.ru · eLama · «Аренда персонала. Поиск. Москва и МО» · старт 5 чел.',src:'Директ',proj:'ruq',projName:'Руки',stage:'КП выставлено'},
-    {d:'28.10',ts:'2026-10-28',name:'Заявка с почты – emexglobal.com',contact:'a.dubik@emexglobal.com',raw:'a.dubik@emexglobal.com',meta:'письмо на почту · emexglobal.com · Дубик Александр',src:'Email',proj:'spr',projName:'Solution PRO',stage:'Закрыто и не реализовано'},
-    {d:'28.10',ts:'2026-10-28',name:'Круазетт',contact:'форма s-pro.group',raw:'s-pro.group',meta:'s-pro.group · ysclid без utm-меток · вахта, старт 60 чел.',src:'Директ',proj:'spr',projName:'Solution PRO',stage:'Потребности выявлены'},
-    {d:'27.10',ts:'2026-10-27',name:'Сделка по звонку 79193079186',contact:'+7 (919) 307-91-86',raw:'+79193079186',meta:'входящий звонок · колл-центр · сайт сделки sequoia-service.ru · отнесён в SEO',src:'SEO',proj:'seq',projName:'Секвойя',stage:'Закрыто и не реализовано'},
-    {d:'26.10',ts:'2026-10-26',name:'Трапеза (ООО «ТРАПЕЗА»)',contact:'форма SEQUIA',raw:'sequoia-service.ru',meta:'sequoia-service.ru · форма без utm-меток · старт 10 чел.',src:'Директ',proj:'seq',projName:'Секвойя',stage:'Переговоры по КП'},
-    {d:'26.10',ts:'2026-10-26',name:'ООО «Ивановская текстильная компания»',contact:'Онлайн-чат · Google',raw:'sequoia-service.ru',meta:'sequoia-service.ru/ivanovo · заход с google.com · старт 5 чел.',src:'SEO',proj:'seq',projName:'Секвойя',stage:'Закрыто и не реализовано'},
-    {d:'26.10',ts:'2026-10-26',name:'Заявка с сайта sequoia-service.ru – lidmagnit',contact:'форма lidmagnit',raw:'sequoia-service.ru',meta:'sequoia-service.ru · лид-магнит · метка «3» без utm-кампании',src:'Директ',proj:'seq',projName:'Секвойя',stage:'Закрыто и не реализовано'},
-    {d:'26.10',ts:'2026-10-26',name:'Заявка с сайта sequoia-service.ru – forma-zahvata',contact:'форма forma-zahvata',raw:'sequoia-service.ru',meta:'sequoia-service.ru · форма без utm-меток',src:'Директ',proj:'seq',projName:'Секвойя',stage:'Закрыто и не реализовано'},
-    {d:'26.10',ts:'2026-10-26',name:'Заявка с сайта ruqi.ru – RUQI',contact:'форма ruqi.ru',raw:'ruqi.ru',meta:'ruqi.ru/contacts · форма без utm-меток',src:'Директ',proj:'ruq',projName:'Руки',stage:'Закрыто и не реализовано'}
+    {d:'06.11',ts:'2026-11-06',name:'Заявка с почты – gazprombank.ru',contact:'gazprombank.ru',raw:'gazprombank.ru',meta:'письмо на почту · gazprombank.ru · мгновенная потребность',src:'Email',proj:'spr',projName:'Solution PRO',stage:'Закрыто и не реализовано'},
+    {d:'05.11',ts:'2026-11-05',name:'AryaHome (ООО «БИРИЗ ТЕКСТИЛЬ»)',contact:'форма sequoia-service.ru',raw:'sequoia-service.ru',meta:'sequoia-service.ru · Директ · старт 6 чел. · грузчик, комплектовщик',src:'Директ',proj:'seq',projName:'Секвойя',stage:'КП выставлено'},
+    {d:'05.11',ts:'2026-11-05',name:'Рэмос (ООО «РЭМОСАЛЬЯНС»)',contact:'+7 (495) 796-20-70',raw:'+74957962070',meta:'входящий звонок · колл-центр · sequoia-service.ru · дубль: письмо на почту',src:'SEO',proj:'seq',projName:'Секвойя',stage:'КП выставлено'},
+    {d:'04.11',ts:'2026-11-04',name:'Авангард, Патриот',contact:'форма sequoia-service.ru',raw:'sequoia-service.ru',meta:'sequoia-service.ru · обращение с сайта · форма без utm-меток',src:'Директ',proj:'seq',projName:'Секвойя',stage:'Закрыто и не реализовано'},
+    {d:'03.11',ts:'2026-11-03',name:'Тендер МТС',contact:'mvmor013@mtsretail.ru',raw:'mvmor013@mtsretail.ru',meta:'письмо на почту · mtsretail.ru · сайт сделки s-pro.group',src:'Email',proj:'spr',projName:'Solution PRO',stage:'Взял в работу'},
+    {d:'03.11',ts:'2026-11-03',name:'Заявка с сайта sequoia-service.ru – Zvonok',contact:'форма sequoia-service.ru',raw:'sequoia-service.ru',meta:'sequoia-service.ru · Calltouch · utm_campaign=703157688 (РСЯ)',src:'Директ',proj:'seq',projName:'Секвойя',stage:'Закрыто и не реализовано'},
+    {d:'03.11',ts:'2026-11-03',name:'Заявка с сайта sequoia-service.ru – Попок',contact:'форма sequoia-service.ru',raw:'sequoia-service.ru',meta:'sequoia-service.ru · форма без utm-меток',src:'Директ',proj:'seq',projName:'Секвойя',stage:'Закрыто и не реализовано'},
+    {d:'02.11',ts:'2026-11-02',name:'Новотранс (ПАО «Новотранс»)',contact:'колл-центр',raw:'—',meta:'входящий звонок · колл-центр · старт 11 чел. · грузчик',src:'SEO',proj:'seq',projName:'Секвойя',stage:'КП выставлено'},
+    {d:'02.11',ts:'2026-11-02',name:'Традиции Вкуса (ООО «Традиции вкуса»)',contact:'форма ruqi.ru',raw:'ruqi.ru',meta:'ruqi-pro.ru · eLama · «Аренда персонала. Поиск. Москва и МО»',src:'Директ',proj:'ruq',projName:'Руки',stage:'Закрыто и не реализовано'},
+    {d:'02.11',ts:'2026-11-02',name:'ООО «ФУДМАРКЕТ ЦЕНТР»',contact:'почта',raw:'—',meta:'письмо на почту · местный (подработка)',src:'Email',proj:'spr',projName:'Solution PRO',stage:'Потребности выявлены'}
   ];
   var LEADS_M=[
     {d:"30.10",ts:"2026-10-30",name:"Camillamed (ООО «КАМИЛЛАМЕД»)",contact:"+7 (903) 572-06-84",raw:"+79035720684",meta:"входящий звонок · колл-центр · сайт s-pro.group",src:"SEO",proj:"spr",projName:"Solution PRO",stage:"КП выставлено"},
@@ -1500,7 +1497,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
 
   /* ---------- период-пикер: данные --------------------------------------------------------------------------
      Все метрики посчитаны офлайн из готовых отчётов (CRM + Директ), JS ничего не пересчитывает.
-     p4 — период этого отчёта, его значения вшиты в разметку по умолчанию. */
+      p6 — период этого отчёта, его значения вшиты в разметку по умолчанию. */
   var P={
     aug1:{tab:'w',ix:'w1',h1:'17 – 23 августа 2026',dates:'17.08 – 23.08',lbl:'17–23.08',leads:16,spend:95000,cpl:5907,conv:null,prev:null,chip:'ЦЛ 16',
       note:'По отчёту 17–23.08: 16 ЦЛ (Директ 12 / SEO 3 / Реферальный 1). Бюджет ≈95 000 ₽, CPL 5 907 ₽.',
@@ -1536,8 +1533,11 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       note:'12 ЦЛ, 96 124 ₽, CPL 8 010 ₽; Директ 5 / SEO 4 / Email 3. Расход пересчитан повторной выгрузкой 02.11 (было 98 159 ₽).',
       text:'19.10 25.10 октябрь w7'},
     p5:{tab:'w',ix:'w11',h1:'26 октября – 1 ноября 2026',dates:'26.10 – 01.11',lbl:'26.10–01.11',leads:14,spend:87738,cpl:6267,conv:3.12,allleads:247,prev:'p4',chip:'ЦЛ 14',
-      note:'14 ЦЛ, 87 738 ₽, CPL 6 267 ₽; Директ 7 / SEO 5 / Email 2. Лидов всего — 247. Период этого отчёта — значения по умолчанию.',
+      note:'14 ЦЛ, 87 738 ₽, CPL 6 267 ₽; Директ 7 / SEO 5 / Email 2. Лидов всего — 247.',
       text:'26.10 01.11 октябрь ноябрь w11'},
+    p6:{tab:'w',ix:'w12',h1:'2 – 8 ноября 2026',dates:'02.11 – 08.11',lbl:'02–08.11',leads:10,spend:48345,cpl:4835,conv:1.18,allleads:188,prev:'p5',chip:'ЦЛ 10',
+      note:'10 ЦЛ, 48 345 ₽, CPL 4 835 ₽; Директ 5 / SEO 2 / Email 3. Лидов всего — 188. Два дня без открутки: 04.11 и 08.11. Период этого отчёта — значения по умолчанию.',
+      text:'02.11 08.11 ноябрь w12'},
     pall:{tab:'w',ix:'всё',h1:'1 октября – 1 ноября 2026',dates:'01.10 – 01.11',lbl:'01.10–01.11',leads:63,spend:396494,cpl:6294,conv:3.43,clicks:1836,impr:204723,prev:'m09',chip:'ЦЛ 63',
       note:'Итого 01.10–01.11: 63 ЦЛ (CRM), 396 494 ₽ и 1 836 кликов Директа, CPL 6 294 ₽, конверсия 3,43%. Сравнение — с сентябрём по той же базе Директа.',
       text:'всё весь итог октябрь месяц 01.10 01.11'},
@@ -1545,8 +1545,8 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       note:'Октябрь: 63 ЦЛ (CRM, тег «Целевой», созданные 01.10–31.10), 396 494 ₽ и 1 836 кликов — Директ API за 01.10–01.11 (в выгрузку попал и день 01.11). CPL 6 294 ₽, конверсия 3,43%. Сверено повторной выгрузкой 02.11: в таблице — свежие суммы по аккаунтам.',
       text:'окт октябрь месяц 01.10 31.10 важно'},
   };
-  var ORDER=['aug1','aug2','aug3','sep1','sep2','sep3','p1','p2','p3','p4','p5','pall','m09','m10'];
-  var current='p5';
+  var ORDER=['aug1','aug2','aug3','sep1','sep2','sep3','p1','p2','p3','p4','p5','p6','pall','m09','m10'];
+  var current='p6';
   var ARROWS={
     up:'<svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 10V2M6 2L2.5 5.5M6 2l3.5 3.5"/></svg>',
     down:'<svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v8M6 10l3.5-3.5M6 10L2.5 6.5"/></svg>'
@@ -1559,9 +1559,9 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     cpl:{get:function(d){return d.cpl;}, text:fmtRub, inv:true},
     spend:{get:function(d){return d.spend;}, text:fmtRub, neutral:true},
     conv:{get:function(d){return d.conv;}, text:fmtPctTo, inv:true, pp:true, holdNote:''},
-    allleads:{get:function(d){return d.allleads;}, text:fmtInt, holdNote:'из них 14 целевых'}
+    allleads:{get:function(d){return d.allleads;}, text:fmtInt, holdNote:function(d){return 'из них '+fmtInt(d.leads)+' целевых';}}
   };
-  [['kv-leads','14'],['kv-cpl','6267'],['kv-spend','87738'],['kv-conv','3.12'],['kv-allleads','247']].forEach(function(p){
+  [['kv-leads','10'],['kv-cpl','4835'],['kv-spend','48345'],['kv-conv','1.18'],['kv-allleads','188']].forEach(function(p){
     var e=document.getElementById(p[0]); if(e) e.setAttribute('data-cur',p[1]);
   });
 
@@ -1577,6 +1577,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       if(pr<1)requestAnimationFrame(step); else elm.textContent=formatter(to);
     });
   }
+  function holdNote(cfg,d){ return typeof cfg.holdNote==='function' ? cfg.holdNote(d) : (cfg.holdNote||''); }
   function updCard(key,d){
     var val=$('#kv-'+key); if(!val) return;
     var box=val.closest('.kpi');
@@ -1588,13 +1589,13 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     if(v==null){
       val.textContent='—'; val.setAttribute('data-cur','');
       if(pill) pill.hidden=true;
-      if(note){ var h2=cfg.holdNote||''; note.textContent=h2; note.style.display=h2?'':'none'; }
+      if(note){ var h2=holdNote(cfg,d); note.textContent=h2; note.style.display=h2?'':'none'; }
       return;
     }
     setT(val,v,cfg.text);
-    if(!pd){ if(pill) pill.hidden=true; if(note){ var h0=cfg.holdNote||''; note.textContent=h0; note.style.display=h0?'':'none'; } return; }
+    if(!pd){ if(pill) pill.hidden=true; if(note){ var h0=holdNote(cfg,d); note.textContent=h0; note.style.display=h0?'':'none'; } return; }
     var b=cfg.get(pd);
-    if(b==null){ if(pill) pill.hidden=true; if(note){ var h1=cfg.holdNote||''; note.textContent=h1; note.style.display=h1?'':'none'; } return; }
+    if(b==null){ if(pill) pill.hidden=true; if(note){ var h1=holdNote(cfg,d); note.textContent=h1; note.style.display=h1?'':'none'; } return; }
     var lbl,cls;
     if(cfg.pp){
       var diff=v-b;
@@ -1621,7 +1622,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   }
   window.addEventListener('beforeprint',finalizeCards);
 
-  /* разрез по каналам и проектам: p5 — неделя (статика HTML), октябрь (m10/pall) — по тегам 63 сделок CRM;
+  /* разрез по каналам и проектам: p6 — неделя (статика HTML), октябрь (m10/pall) — по тегам 63 сделок CRM;
      канал: тег «Колл-центр»/чат -> SEO, «Почта» -> Email, «Директ»/формы без utm/ysclid/eLama -> Директ;
      проект: по сайту сделки (ruqi* -> Руки, s-pro.group -> Solution PRO, sequoia* / тег Sequoia -> Секвойя) */
   var SPLIT_MONTH={dir:38,dirPct:'60,3%',dirCpl:'10 434 ₽ за ЦЛ',seo:16,seoPct:'25,4%',mail:9,mailPct:'14,3%',
@@ -1630,10 +1631,12 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   var SPLIT={
     p5:{dir:7,dirPct:'50%',dirCpl:'12 534 ₽ за ЦЛ',seo:5,seoPct:'35,7%',mail:2,mailPct:'14,3%',
         seq:['7','50%'],ruq:['3','21,4%'],spr:['4','28,6%'],x:null,note:null},
+    p6:{dir:5,dirPct:'50%',dirCpl:'9 669 ₽ за ЦЛ',seo:2,seoPct:'20%',mail:3,mailPct:'30%',
+        seq:['6','60%'],ruq:['1','10%'],spr:['3','30%'],x:null,note:null},
     m10:SPLIT_MONTH, pall:SPLIT_MONTH
   };
   function updSplit(pid){
-    var s=SPLIT[pid]||SPLIT.p5;
+    var s=SPLIT[pid]||SPLIT.p6;
     function T(i,v){ var e=document.getElementById(i); if(e) e.textContent=v; }
     function B(id,v){ var e=document.getElementById(id); if(!e) return; e.setAttribute('data-w',String(v)); e.style.width=v+'%'; }
     function P1(id,v){ var f=parseFloat(String(v).replace(',','.')); return isNaN(f)?0:f; }
@@ -1654,15 +1657,15 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
 
   /* Источники / Проекты / Лиды: переключение наборов данных по периоду */
   var TXT={
-    week:{srcCap:'14 целевых · SEO включает звонки и чат; заявки с форм без utm-меток отнесены к Директу',
-      srcCall:'<b>Директ дал 7 из 14 целевых</b> при бюджете 87,7 тыс. ₽. Расходы на один целевой лид Директа — около <b class="mono">12,5 тыс. ₽</b> (87 738 / 7). Общая цена целевого лида всех каналов — 6 267 ₽.',
-      projCap:'61 527 ₽ на Секвойю · 26 210 ₽ на Руки · Solution PRO — 4 целевых без рекламного бюджета',
-      projSub:'Показы и клики — из выгрузки Яндекс.Директ API за 26.10–01.11',
+    week:{srcCap:'10 целевых · SEO включает звонки и чат; заявки с форм без utm-меток отнесены к Директу',
+      srcCall:'<b>Директ дал 5 из 10 целевых</b> при бюджете 48,3 тыс. ₽. Расходы на один целевой лид Директа — около <b class="mono">9,7 тыс. ₽</b> (48 345 / 5). Общая цена целевого лида всех каналов — 4 835 ₽.',
+      projCap:'43 166 ₽ на Секвойю (6 ЦЛ) · 5 179 ₽ на Руки (1 ЦЛ) · Solution PRO — 3 целевых без рекламного бюджета',
+      projSub:'Показы и клики — из выгрузки Яндекс.Директ API за 02.11–08.11',
       projFoot:'',
-      projCall:'<b>Solution PRO — 4 целевых при нулевом бюджете.</b> Два письма, входящий звонок и один переход по ysclid с Директа: домен s-pro.group не входит в отслеживаемые аккаунты.',
-      leadsSub:'14 уникальных сделок · фильтр: созданы 26.10–01.11 · этапы по воронке «созданные за прошлую неделю». Номер, почта или ИНН кликается — копируется.',
-      leadsCap:'Целевые лиды за 26 октября – 1 ноября 2026',
-      stages:'Этапы: КП выставлено 2 · Переговоры по КП 2 · Потребности выявлены 1 · Закрыто и не реализовано 9'},
+      projCall:'<b>Solution PRO — 3 целевых при нулевом бюджете.</b> Три письма (МТС, Газпромбанк, Фудмаркет): домен не входит в отслеживаемые аккаунты Direct, поэтому расхода и CPL по нему нет.',
+      leadsSub:'10 уникальных сделок · фильтр: созданы 02.11–08.11 · этапы по воронке «созданные за прошлую неделю». Номер, почта или ИНН кликается — копируется.',
+      leadsCap:'Целевые лиды за 2 – 8 ноября 2026',
+      stages:'Этапы: КП выставлено 3 · Потребности выявлены 1 · Взял в работу 1 · Закрыто и не реализовано 5'},
     month:{srcCap:'63 целевых · SEO включает звонки и чат; заявки с форм без utm-меток отнесены к Директу',
       srcCall:'<b>Директ дал 38 из 63 целевых</b> при бюджете 396,5 тыс. ₽. Расходы на один целевой лид Директа — около <b class="mono">10,4 тыс. ₽</b> (396 494 / 38). Общая цена целевого лида всех каналов — 6 294 ₽.',
       projCap:'63 целевых: Секвойя 35 (284 731 ₽) · Руки 16 (111 762 ₽) · Solution PRO 12 (без бюджета)',
@@ -1693,7 +1696,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       var isAll=(o.dataset.proj==='all'||o.dataset.src==='all');
       o.setAttribute('aria-pressed', isAll?'true':'false');
     });
-    var C={seq:(m?35:7),ruq:(m?16:3),spr:(m?12:4),x:0,dir:(m?38:7),seo:(m?16:5),mail:(m?9:2)};
+    var C={seq:(m?35:6),ruq:(m?16:1),spr:(m?12:3),x:0,dir:(m?38:5),seo:(m?16:2),mail:(m?9:3)};
     setTxt('cnt-all',LEADS.length); setTxt('cnt-seq',C.seq); setTxt('cnt-ruq',C.ruq); setTxt('cnt-spr',C.spr); setTxt('cnt-x',C.x);
     setTxt('cnt-dir',C.dir); setTxt('cnt-seo',C.seo); setTxt('cnt-mail',C.mail);
     var x=document.getElementById('chip-x'); if(x){ x.hidden=!(C.x>0); x.style.display=C.x>0?'':'none'; }
@@ -1715,6 +1718,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     setTxt('navwow',isMonth?'Месяц к месяцу':'Неделя к неделе');
     var rb=$('#ringBox'); if(rb) rb.style.display=OCT_SET[p]?'':'none';
     var ms=$('#month'); if(ms) ms.style.display=OCT_SET[p]?'':'none';
+    var nm=$('#navmonth'); if(nm) nm.style.display=OCT_SET[p]?'':'none';
     var tl=$('#t-leads'); if(tl) tl.textContent=fmtInt(d.leads);
     var tsp=$('#t-spend'); if(tsp) tsp.textContent=fmtRub(d.spend);
     var tc=$('#t-cpl'); if(tc) tc.textContent=fmtRub(d.cpl);
@@ -1722,7 +1726,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     updSplit(p);
     updSrcProj(p); setLeads(p);
     updCmp(p);
-    var hint=$('#sliceHint'); if(hint) hint.hidden=!!(p==='p5'||p==='m10'||p==='pall');
+    var hint=$('#sliceHint'); if(hint) hint.hidden=!!(p==='p5'||p==='p6'||p==='m10'||p==='pall');
     setTxt('baseCompare', pd ? ('База сравнения: '+pd.lbl+' ('+fmtInt(pd.leads)+' ЦЛ, '+fmtRub(pd.spend)+')') : 'База сравнения: не задана');
     var lv=$('#live'); if(lv) lv.textContent='Период: '+d.dates+'. '+d.note;
   }
