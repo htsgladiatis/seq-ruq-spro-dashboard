@@ -6,7 +6,7 @@
 <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
 <meta name="yandex" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="build" content="2026-11-09T09:45Z"><meta http-equiv="cache-control" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="build" content="2026-11-09T10:02Z"><meta http-equiv="cache-control" content="no-cache">
 <title>Отчёт 2 – 8 ноября 2026 — интерактивная версия</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -342,6 +342,21 @@ th.sum-h{text-align:right}
 .meff-item b{display:block;font-family:var(--mono);font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.25}
 .meff-item span{display:block;font-size:11px;color:var(--text-3);line-height:1.35}
 .money-note{margin-top:13px;padding-top:11px;border-top:1px solid var(--border);font-size:11.5px;color:var(--text-3);line-height:1.55}
+.mm-row.on .mm-lbl{color:var(--text);font-weight:600}
+.mm-row.on .mm-track{box-shadow:inset 0 0 0 1px var(--border-strong)}
+/* ---------- сентябрь: только подписанные ---------- */
+.sep{margin-top:12px;padding:16px 18px 14px;border:1px solid var(--border);border-radius:14px;background:var(--surface)}
+.sep-h{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;justify-content:space-between;margin-bottom:10px}
+.sep-h b{font-size:13.5px;font-weight:600}
+.sep-h span{font-size:11.5px;color:var(--text-3)}
+.sep-row{display:grid;grid-template-columns:minmax(0,1fr) 150px 150px;gap:14px;align-items:baseline;padding:7px 0;border-top:1px solid var(--border);font-size:13px}
+.sep-row:first-of-type{border-top:0}
+.sep-row a{color:var(--text);text-decoration:none;border-bottom:1px dashed var(--border-strong)}
+.sep-row a:hover{color:var(--primary);border-bottom-color:var(--primary)}
+.sep-sum{font-family:var(--mono);text-align:right;font-weight:600;white-space:nowrap}
+.sep-share{font-size:11.5px;color:var(--text-3);text-align:right;white-space:nowrap}
+.sep-tot{border-top:2px solid var(--border-strong);margin-top:2px;padding-top:9px}
+.sep-note{margin-top:12px;font-size:11.5px;color:var(--text-3);line-height:1.55}
 .p-seq{color:var(--seq);background:var(--surface);border-color:var(--seq)}
 .p-ruq{color:var(--ruq);background:var(--surface);border-color:var(--ruq)}
 .p-spr{color:var(--spr);background:var(--surface);border-color:var(--spr)}
@@ -536,7 +551,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
         <span class="tag">CPL <b id="t-cpl">4 835 ₽</b></span>
         <span class="tag" id="sliceHint" hidden>Разрезы ниже — фиксированно за <b>02.11–08.11</b></span>
         <span class="tag">Сформировано <b>09.11.2026</b></span>
-        <span class="tag">Сборка <b id="buildStamp">09.11 12:45</b></span>
+        <span class="tag">Сборка <b id="buildStamp">09.11 13:02</b></span>
       </div>
     </div>
     <div class="ring-box" id="ringBox" style="display:none">
@@ -838,11 +853,11 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
 
   <section id="leads">
     <div class="sec-head">
-      <h2>Целевые лиды по клиентам</h2>
+      <h2 id="leads-h2">Целевые лиды по клиентам</h2>
       <p class="sub" id="leads-sub">10 сделок с тегом «Целевой», созданных 02.11–08.11. Номер, почта или ИНН кликается — копируется. Статусы этапов — на 09.11.2026.</p>
     </div>
 
-    <div class="toolbar">
+    <div class="toolbar" id="leads-toolbar">
       <div class="chips" role="group" aria-label="Фильтр по проекту">
         <button class="chip" type="button" data-proj="all" aria-pressed="true">Все <span class="cnt" id="cnt-all">10</span></button>
         <button class="chip" type="button" data-proj="seq" aria-pressed="false"><i class="sw" style="background:var(--seq)"></i>Секвойя <span class="cnt" id="cnt-seq">6</span></button>
@@ -862,7 +877,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       </div>
     </div>
 
-    <div class="tbl-wrap">
+    <div class="tbl-wrap" id="leads-wrap">
       <table id="leads-tbl">
         <caption class="sr-only" id="leads-cap" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Целевые лиды за 2 – 8 ноября 2026</caption>
         <thead>
@@ -886,6 +901,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       <div class="funnel-prev" id="funnel-prev" hidden></div>
       <div class="funnel-detail" id="funnel-detail"></div>
     </div>
+    <div class="sep" id="sepPanel" hidden></div>
     <div class="money" id="money">
       <div class="money-h"><b>Деньги: подписано</b><span>суммы договоров из карточек CRM · на 09.11.2026</span></div>
       <div class="mm-list" id="money-months"></div>
@@ -902,7 +918,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       </div>
       <p class="money-note" id="money-note"></p>
     </div>
-    <div class="tbl-foot">
+    <div class="tbl-foot" id="tbl-foot">
       <span id="shown">Показано 10 из 10</span>
       <span id="leads-period">Сделки, созданные 02.11–08.11.2026 · этап — текущий статус в CRM на 09.11.2026; факт периода — только количество, каналы и бюджет</span>
     </div>
@@ -910,7 +926,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
 
   <footer>
     <span id="footPeriod">Отчёт по рекламной кампании · 02–08.11.2026</span>
-    <span>Сформировано 09.11.2026 · интерактивная версия · сборка <b id="buildStamp2">09.11 12:45</b> UTC</span>
+    <span>Сформировано 09.11.2026 · интерактивная версия · сборка <b id="buildStamp2">09.11 13:02</b> UTC</span>
     <span id="baseCompare">База сравнения: неделя 26.10–01.11 (14 ЦЛ, 87 738 ₽)</span>
   </footer>
 </div>
@@ -1603,10 +1619,10 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   });
   /* ---------- деньги: подписанное по месяцам, средний чек по каналам, эффективность ---------- */
   var MONEY=[
-    {p:'m09',lbl:'Сентябрь',sub:'01.09 – 30.09',signedSum:23643000,signed:3,deals:[
+    {p:'m09',lbl:'Сентябрь',sub:'01.09 – 30.09',signedSum:23469540,signed:3,deals:[
       {n:'Адмирал 3PL',sum:17643000,crm:'https://crm.sequoia-service.ru/deals/01m376k75z3aezacbfa3v6ma51'},
       {n:'ООО Тамбовская индейка',sum:5000000,crm:'https://crm.sequoia-service.ru/deals/01m2qem0q5cn3cgwqw1e9g58fx'},
-      {n:'Видконди (местный)',sum:1000000,crm:'https://crm.sequoia-service.ru/deals/01m2g119rbsxe3fz8w88saqfqk'}
+      {n:'Видконди (местный)',sum:826540,crm:'https://crm.sequoia-service.ru/deals/01m2g119rbsxe3fz8w88saqfqk'}
     ]},
     {p:'m10',lbl:'Октябрь',sub:'01.10 – 31.10',signedSum:6200040,signed:3},
     {p:'p6',lbl:'Ноябрь',sub:'02.11 – 08.11',signedSum:0,signed:0,open:true}
@@ -1672,6 +1688,42 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       el.animate([{transform:'scaleX(0)'},{transform:'scaleX(1)'}],
         {duration:380,delay:120+i*50,easing:'cubic-bezier(.23,1,.32,1)',fill:'backwards'});
     });
+  }
+  /* ---------- сентябрь: этапов по сделкам нет — показываем только подписанные ---------- */
+  function renderSep(){
+    var el=$('#sepPanel'); if(!el) return;
+    var m=MONEY[0], deals=m.deals||[], per=P[m.p]||{};
+    var tot=deals.reduce(function(a,d){ return a+d.sum; },0);
+    var leads=per.leads||0, spend=per.spend||1;
+    var shareAll=leads?Math.round(deals.length/leads*100):0;
+    var rows=deals.map(function(d){
+      var pc=(d.sum/tot*100).toFixed(1).replace('.',',');
+      return '<div class="sep-row"><a href="'+d.crm+'" target="_blank" rel="noopener noreferrer">'+d.n+'</a>'
+        +'<span class="sep-sum">'+fmt(d.sum)+' ₽</span><span class="sep-share">'+pc+'% от суммы</span></div>';
+    }).join('');
+    el.innerHTML='<div class="sep-h"><b>Договоры, подписанные в сентябре</b>'
+      +'<span>'+deals.length+' '+plural(deals.length,'договор','договора','договоров')+' · '+fmt(tot)+' ₽ · '
+      +shareAll+'% от '+leads+' ЦЛ · '+(tot/spend).toFixed(1).replace('.',',')+' ₽ на 1 ₽ рекламы</span></div>'
+      +rows
+      +'<div class="sep-row sep-tot"><b>Итого за сентябрь</b><span class="sep-sum">'+fmt(tot)+' ₽</span>'
+      +'<span class="sep-share">бюджет '+fmt(spend)+' ₽</span></div>'
+      +'<p class="sep-note">Суммы — стоимость договоров из карточки CRM, а не выручка. Поэтапной разметки остальных '+Math.max(0,leads-deals.length)+' ЦЛ сентября в отчёте нет, поэтому воронка строится только за октябрь: здесь показано только известное — подписанные договоры.</p>';
+    setTxt('leads-sub', leads+' ЦЛ за сентябрь, из них '+deals.length+' '+plural(deals.length,'договор','договора','договоров')
+      +' на '+fmt(tot)+' ₽. Поэтапной разметки сделок за сентябрь нет — ниже только подписанные.');
+  }
+  function applySep(on){
+    var el=$('#sepPanel'), ids=['#leads-toolbar','#leads-wrap','#leads-tbl','#funnel','#tbl-foot','#empty','#money-deals'];
+    ids.forEach(function(id){ var e=$(id); if(e&&on) e.style.display='none'; });
+    if(on){ renderSep(); if(el) el.hidden=false; }
+    else {
+      if(el) el.hidden=true;
+      ids.forEach(function(id){ var e=$(id); if(e) e.style.display=''; });
+    }
+    setTxt('leads-h2', on?'Договоры сентября':'Целевые лиды по клиентам');
+  }
+  function markMoney(p){
+    var rows=document.querySelectorAll('#money-months .mm-row'), k=(p==='pall')?'m10':p;
+    MONEY.forEach(function(m,i){ if(rows[i]) rows[i].classList.toggle('on', m.p===k); });
   }
   var ICON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>';
 
@@ -1958,7 +2010,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   }
   function setLeads(pid){
     var m=(pid==='m10'||pid==='pall'), t=m?TXT.month:TXT.week;
-    LEADS=m?LEADS_M:LEADS_W;
+    LEADS=(pid==='m09')?[]:(m?LEADS_M:LEADS_W);
     state.proj='all'; state.src='all'; state.q=''; if(qi) qi.value='';
     $$('.chip[data-proj],.chip[data-src]').forEach(function(o){
       var isAll=(o.dataset.proj==='all'||o.dataset.src==='all');
@@ -1971,6 +2023,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     setTxt('leads-sub',t.leadsSub); setTxt('leads-period',t.periodNote);
     var cap=document.getElementById('leads-cap'); if(cap) cap.textContent=t.leadsCap;
     render();
+    applySep(pid==='m09');
   }
 
   var OCT_SET={p1:1,p2:1,p3:1,p4:1,p5:1,pall:1,m10:1};
@@ -1993,7 +2046,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     var tc=$('#t-cpl'); if(tc) tc.textContent=fmtRub(d.cpl);
     Object.keys(CARDS).forEach(function(k){ updCard(k,d); });
     updSplit(p);
-    updSrcProj(p); setLeads(p);
+    updSrcProj(p); setLeads(p); markMoney(p);
     updCmp(p);
     var hint=$('#sliceHint'); if(hint) hint.hidden=!!(p==='p5'||p==='p6'||p==='m10'||p==='pall');
     setTxt('baseCompare', pd ? ('База сравнения: '+pd.lbl+' ('+fmtInt(pd.leads)+' ЦЛ, '+fmtRub(pd.spend)+')') : 'База сравнения: не задана');
