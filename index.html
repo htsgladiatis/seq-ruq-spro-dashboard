@@ -6,7 +6,7 @@
 <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
 <meta name="yandex" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="build" content="2026-11-09T09:25Z"><meta http-equiv="cache-control" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="build" content="2026-11-09T09:45Z"><meta http-equiv="cache-control" content="no-cache">
 <title>Отчёт 2 – 8 ноября 2026 — интерактивная версия</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -307,6 +307,41 @@ th.sum-h{text-align:right}
 .sum .dash{color:var(--text-3)}
 .deal{color:inherit;text-decoration:none;border-bottom:1px dashed var(--border-strong)}
 @media (hover:hover) and (pointer:fine){.deal:hover{color:var(--primary);border-bottom-color:var(--primary)}}
+/* ---------- деньги ---------- */
+.money{margin-top:16px;padding:16px 18px 14px;border:1px solid var(--border);border-radius:14px;background:var(--surface)}
+.money-h{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;justify-content:space-between;margin-bottom:14px}
+.money-h b{font-size:13.5px;font-weight:600}
+.money-h span{font-size:11.5px;color:var(--text-3)}
+.mm-list{display:flex;flex-direction:column;gap:10px}
+.mm-row{display:grid;grid-template-columns:122px minmax(0,1fr) auto;gap:14px;align-items:center}
+.mm-lbl{font-size:12.5px;color:var(--text-2);white-space:nowrap}
+.mm-lbl small{display:block;font-size:10.5px;color:var(--text-3)}
+.mm-track{position:relative;height:26px;border-radius:7px;background:var(--surface-2);overflow:hidden}
+.mm-fill{position:absolute;inset:0 auto 0 0;border-radius:7px;background:var(--pos);transform-origin:left center;will-change:transform}
+.mm-fill.wait{background:repeating-linear-gradient(135deg,var(--border-strong) 0 6px,transparent 6px 12px);opacity:.55}
+.mm-val{font-family:var(--mono);font-size:13px;font-weight:600;text-align:right;white-space:nowrap;min-width:150px}
+.mm-val small{display:block;font-size:10.5px;font-weight:400;color:var(--text-3);font-family:var(--sans)}
+.mm-deals{display:flex;flex-wrap:wrap;gap:6px 8px;margin-top:9px}
+.mm-deals:empty{display:none}
+.mm-deals span{font-size:11px;color:var(--text-3);margin-right:2px}
+.mm-deal{font:inherit;font-size:11.5px;color:var(--text-2);border:1px solid var(--border);border-radius:999px;padding:3px 9px;background:var(--surface-2);cursor:pointer;transition:color .16s,border-color .16s}
+.mm-deal b{font-weight:600;color:var(--text);font-family:var(--mono);font-size:11px;margin-left:4px}
+.mm-deal:hover{color:var(--primary);border-color:var(--primary)}
+.mm-deal:hover b{color:var(--primary)}
+.money-cols{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:16px;padding-top:14px;border-top:1px solid var(--border)}
+.money-sub{margin:0 0 8px;font-size:12px;font-weight:600;color:var(--text-2);display:flex;gap:7px;align-items:baseline}
+.money-sub span{font-size:11px;font-weight:400;color:var(--text-3)}
+.mch-row{display:grid;grid-template-columns:70px minmax(0,1fr) auto;gap:10px;align-items:center;padding:5px 0;font-size:12.5px;border-top:1px solid var(--border)}
+.mch-row:first-child{border-top:0}
+.mch-k{color:var(--text-2)}
+.mch-bar{height:6px;border-radius:4px;background:var(--surface-2);overflow:hidden}
+.mch-bar i{display:block;height:100%;background:var(--primary-2);transform-origin:left center;will-change:transform}
+.mch-v{font-family:var(--mono);font-size:12.5px;text-align:right;white-space:nowrap;color:var(--text)}
+.mch-v small{color:var(--text-3);font-size:10.5px;margin-left:7px;font-family:var(--sans)}
+.meff{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px}
+.meff-item b{display:block;font-family:var(--mono);font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.25}
+.meff-item span{display:block;font-size:11px;color:var(--text-3);line-height:1.35}
+.money-note{margin-top:13px;padding-top:11px;border-top:1px solid var(--border);font-size:11.5px;color:var(--text-3);line-height:1.55}
 .p-seq{color:var(--seq);background:var(--surface);border-color:var(--seq)}
 .p-ruq{color:var(--ruq);background:var(--surface);border-color:var(--ruq)}
 .p-spr{color:var(--spr);background:var(--surface);border-color:var(--spr)}
@@ -501,7 +536,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
         <span class="tag">CPL <b id="t-cpl">4 835 ₽</b></span>
         <span class="tag" id="sliceHint" hidden>Разрезы ниже — фиксированно за <b>02.11–08.11</b></span>
         <span class="tag">Сформировано <b>09.11.2026</b></span>
-        <span class="tag">Сборка <b id="buildStamp">09.11 12:25</b></span>
+        <span class="tag">Сборка <b id="buildStamp">09.11 12:45</b></span>
       </div>
     </div>
     <div class="ring-box" id="ringBox" style="display:none">
@@ -851,6 +886,22 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       <div class="funnel-prev" id="funnel-prev" hidden></div>
       <div class="funnel-detail" id="funnel-detail"></div>
     </div>
+    <div class="money" id="money">
+      <div class="money-h"><b>Деньги: подписано</b><span>суммы договоров из карточек CRM · на 09.11.2026</span></div>
+      <div class="mm-list" id="money-months"></div>
+      <div class="mm-deals" id="money-deals"></div>
+      <div class="money-cols">
+        <div>
+          <h3 class="money-sub">Средний чек по каналам <span>октябрь</span></h3>
+          <div class="mch" id="money-channels"></div>
+        </div>
+        <div>
+          <h3 class="money-sub">Эффективность рекламы <span>октябрь</span></h3>
+          <div class="meff" id="money-eff"></div>
+        </div>
+      </div>
+      <p class="money-note" id="money-note"></p>
+    </div>
     <div class="tbl-foot">
       <span id="shown">Показано 10 из 10</span>
       <span id="leads-period">Сделки, созданные 02.11–08.11.2026 · этап — текущий статус в CRM на 09.11.2026; факт периода — только количество, каналы и бюджет</span>
@@ -859,7 +910,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
 
   <footer>
     <span id="footPeriod">Отчёт по рекламной кампании · 02–08.11.2026</span>
-    <span>Сформировано 09.11.2026 · интерактивная версия · сборка <b id="buildStamp2">09.11 12:25</b> UTC</span>
+    <span>Сформировано 09.11.2026 · интерактивная версия · сборка <b id="buildStamp2">09.11 12:45</b> UTC</span>
     <span id="baseCompare">База сравнения: неделя 26.10–01.11 (14 ЦЛ, 87 738 ₽)</span>
   </footer>
 </div>
@@ -1550,6 +1601,78 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     if(qi) qi.value=b.dataset.q;
     state.q=b.dataset.q||''; render();
   });
+  /* ---------- деньги: подписанное по месяцам, средний чек по каналам, эффективность ---------- */
+  var MONEY=[
+    {p:'m09',lbl:'Сентябрь',sub:'01.09 – 30.09',signedSum:23643000,signed:3,deals:[
+      {n:'Адмирал 3PL',sum:17643000,crm:'https://crm.sequoia-service.ru/deals/01m376k75z3aezacbfa3v6ma51'},
+      {n:'ООО Тамбовская индейка',sum:5000000,crm:'https://crm.sequoia-service.ru/deals/01m2qem0q5cn3cgwqw1e9g58fx'},
+      {n:'Видконди (местный)',sum:1000000,crm:'https://crm.sequoia-service.ru/deals/01m2g119rbsxe3fz8w88saqfqk'}
+    ]},
+    {p:'m10',lbl:'Октябрь',sub:'01.10 – 31.10',signedSum:6200040,signed:3},
+    {p:'p6',lbl:'Ноябрь',sub:'02.11 – 08.11',signedSum:0,signed:0,open:true}
+  ];
+  function renderMoney(){
+    var list=$('#money-months'), ch=$('#money-channels'), eff=$('#money-eff'), note=$('#money-note');
+    if(!list||!ch||!eff) return;
+    var known=MONEY.filter(function(m){ return m.signedSum!=null; });
+    var max=Math.max.apply(null,known.map(function(m){ return m.signedSum; }).concat([1]));
+    list.innerHTML=MONEY.map(function(m){
+      var per=P[m.p]||{}, waiting=m.signedSum==null;
+      var w=waiting?100:Math.round(m.signedSum/max*100);
+      var under=waiting?'из CRM':(m.open?m.signed+' подписаний · '+fmtInt(per.leads)+' ЦЛ':m.signed+' '+plural(m.signed,'сделка','сделки','сделок')+' · бюджет '+fmtRub(per.spend));
+      return '<div class="mm-row"><div class="mm-lbl">'+m.lbl+'<small>'+m.sub+'</small></div>'
+        +'<div class="mm-track"><i class="mm-fill'+(waiting?' wait':'')+'" style="width:'+w+'%"></i></div>'
+        +'<div class="mm-val">'+(waiting?'— ждём суммы':(m.signedSum?fmt(m.signedSum)+' ₽':'0 ₽'))
+        +'<small>'+under+'</small></div></div>';
+    }).join('');
+    var signedLeads=LEADS_M.filter(function(l){ return l.stage==='Успешно реализовано' && l.sum; });
+    var tot=signedLeads.reduce(function(a,l){ return a+l.sum; },0)||1;
+    ch.innerHTML=['Директ','SEO','Email'].map(function(k){
+      var sg=LEADS_M.filter(function(l){ return l.src===k && l.stage==='Успешно реализовано' && l.sum; });
+      var pd=LEADS_M.filter(function(l){ return l.src===k && l.stage!=='Успешно реализовано' && l.sum; });
+      var sum=sg.reduce(function(a,l){ return a+l.sum; },0);
+      var pend=pd.reduce(function(a,l){ return a+l.sum; },0);
+      var w=Math.round(sum/tot*100);
+      var sub=sg.length?(sg.length+' '+plural(sg.length,'сделка','сделки','сделок')+' · ср. '+fmt(Math.round(sum/sg.length))+' ₽'):'0 подписанных';
+      if(pend) sub+=' · +'+fmt(pend)+' ₽ в договоре';
+      return '<div class="mch-row"><span class="mch-k">'+k+'</span>'
+        +'<div class="mch-bar"><i style="width:'+w+'%"></i></div>'
+        +'<span class="mch-v">'+(sum?fmt(sum)+' ₽':'—')+'<small>'+sub+'</small></span></div>';
+    }).join('');
+    var oct=P.m10, signedSum=6200040, signedN=3;
+    var cells=[
+      [(signedSum/oct.spend).toFixed(1).replace('.',',')+' ₽','договоров на 1 ₽ рекламы'],
+      [fmt(Math.round(oct.spend/signedN))+' ₽','стоимость подписанной сделки'],
+      [fmt(oct.cpl)+' ₽','стоимость целевого лида'],
+      [(signedN/oct.leads*100).toFixed(1).replace('.',',')+'%','лидов дошли до договора']
+    ];
+    eff.innerHTML=cells.map(function(c){
+      return '<div class="meff-item"><b>'+c[0]+'</b><span>'+c[1]+'</span></div>';
+    }).join('');
+    var dealsEl=$('#money-deals');
+    if(dealsEl){
+      var withDeals=MONEY.filter(function(m){ return m.deals; });
+      dealsEl.innerHTML=withDeals.map(function(m){
+        return '<span>'+m.lbl+':</span>'+m.deals.map(function(d){
+          return '<a class="mm-deal" href="'+d.crm+'" target="_blank" rel="noopener noreferrer" title="Карточка в CRM">'+d.n
+            +'<b>'+fmt(d.sum)+' ₽</b></a>';
+        }).join('');
+      }).join('');
+    }
+    if(note) note.innerHTML='Суммы — стоимость договоров из карточки CRM, а не выручка: оплаты и график платежей не учитываются. '
+      +'Сентябрь — 3 договора по ссылкам владельца (Адмирал 3PL, Тамбовская индейка, Видконди); октябрь — 5 сделок из 63 имеют сумму в карточке. '
+      +'Каналы и эффективность — только октябрь: каналы сентябрьских договоров в отчёте не размечены. Ноябрь не закрыт: подписаний пока нет.';
+    if(reduce||!window.Element||!Element.prototype.animate) return;
+    [].forEach.call(list.querySelectorAll('.mm-fill:not(.wait)'),function(el,i){
+      var w=el.style.width; el.style.width='100%';
+      el.animate([{transform:'scaleX(0)'},{transform:'scaleX(1)'}],
+        {duration:420,delay:60+i*70,easing:'cubic-bezier(.23,1,.32,1)',fill:'backwards'}).onfinish=function(){ el.style.width=w; };
+    });
+    [].forEach.call(ch.querySelectorAll('.mch-bar i'),function(el,i){
+      el.animate([{transform:'scaleX(0)'},{transform:'scaleX(1)'}],
+        {duration:380,delay:120+i*50,easing:'cubic-bezier(.23,1,.32,1)',fill:'backwards'});
+    });
+  }
   var ICON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>';
 
   var state={proj:'all',src:'all',q:'',sort:{k:'ts',dir:-1}};
@@ -1939,7 +2062,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(drawAll,180); });
   document.addEventListener('visibilitychange',function(){ if(!document.hidden) finalizeCards(); });
   WEEK_TABLE = $('#cmp-body') ? $('#cmp-body').innerHTML : null;
-  drawAll(); render(); observeAll();
+  drawAll(); render(); renderMoney(); observeAll();
 })();
 </script>
 <script>(function(){var B=(document.querySelector('meta[name="build"]')||{}).content||'';if(!B||location.protocol==='file:')return;function chk(){if(document.hidden)return;var k='bchk:'+B;try{if(sessionStorage.getItem(k))return;}catch(e){}fetch(location.pathname+'?_b='+Date.now(),{cache:'no-store'}).then(function(r){return r.text();}).then(function(t){var m=t.match(/name="build" content="([^"]+)"/);if(!m||m[1]===B)return;try{sessionStorage.setItem(k,'1');}catch(e){}location.replace(location.pathname+'?v='+encodeURIComponent(m[1])+location.hash);}).catch(function(){});}if(document.readyState==='complete')setTimeout(chk,1200);else window.addEventListener('load',function(){setTimeout(chk,1200);});document.addEventListener('visibilitychange',function(){if(!document.hidden)setTimeout(chk,600);});})();</script>
