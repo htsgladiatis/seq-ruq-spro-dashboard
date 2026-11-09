@@ -6,7 +6,7 @@
 <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
 <meta name="yandex" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="build" content="2026-11-09T08:40Z"><meta http-equiv="cache-control" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="build" content="2026-11-09T09:05Z"><meta http-equiv="cache-control" content="no-cache">
 <title>Отчёт 2 – 8 ноября 2026 — интерактивная версия</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,7 @@
   --r:10px; --r-sm:8px;
   --sans:"Fira Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --mono:"Fira Code",ui-monospace,"Cascadia Code",Consolas,monospace;
-  --maxw:1440px;
+  --maxw:1440px; --ease-out:cubic-bezier(.23,1,.32,1);
 }
 html[data-theme="dark"]{
   --bg:#0B1220; --surface:#121A2B; --surface-2:#1A2436; --surface-3:#223049;
@@ -316,6 +316,34 @@ html[data-theme="dark"] tr.p-spr:hover{background:#2E2611}
 .copy.done{color:var(--pos)}
 .tbl-foot{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-top:12px;font-size:12.5px;color:var(--text-3)}
 .empty{padding:44px 20px;text-align:center;color:var(--text-3);font-size:14px}
+.funnel{margin-top:16px;padding:16px 18px 14px;border:1px solid var(--border);border-radius:14px;background:var(--surface)}
+.funnel-h{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;justify-content:space-between;margin-bottom:12px}
+.funnel-h b{font-size:13.5px;font-weight:600}
+.funnel-h span{font-size:11.5px;color:var(--text-3)}
+.funnel-bar{display:flex;height:10px;border-radius:6px;overflow:hidden;background:var(--surface-2);margin-bottom:14px}
+.funnel-bar i{display:block;height:100%;transform-origin:left center;will-change:transform}
+.funnel-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.fn{display:flex;flex-direction:column;gap:2px}
+.fn-k{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--text-3);line-height:1.25}
+.fn-k i{width:8px;height:8px;border-radius:2px;flex:none}
+.fn-v{font-family:var(--mono);font-size:20px;font-weight:600;letter-spacing:-.02em;line-height:1.15}
+.fn-v small{font-size:12px;font-weight:500;color:var(--text-3);margin-left:1px}
+.fn-n{font-size:11.5px;color:var(--text-3)}
+.funnel-detail{margin-top:13px;padding-top:11px;border-top:1px solid var(--border);font-size:11.5px;color:var(--text-3);line-height:1.55}
+.funnel-prev{margin-top:11px;padding-top:12px;border-top:1px dashed var(--border-strong);display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.funnel-prev[hidden]{display:none}
+.fp-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;min-width:0}
+.fp-lab{font-size:11.5px;font-weight:600;color:var(--text-2)}
+.fp-lab::before{content:"\21A9";margin-right:5px;color:var(--text-3);font-size:12px}
+.fp-n{font-size:13px;font-weight:600}
+.fp-sub{font-size:11.5px;color:var(--text-3)}
+.fp-chips{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+.fp-chip{font-family:var(--sans);font-size:11.5px;line-height:1.5;padding:2px 9px;border-radius:100px;border:1px dashed var(--border-strong);background:transparent;color:var(--text-2);cursor:pointer;transition:color .15s,border-color .15s,background .15s,transform .12s var(--ease-out)}
+.fp-chip:active{transform:scale(.97)}
+.tag-prev{display:block;margin-top:2px;font-size:10.5px;line-height:1.4;color:var(--text-3)}
+@media (hover:hover) and (pointer:fine){.fp-chip:hover{color:var(--pos);border-color:var(--pos);background:var(--pos-soft)}}
+@media (max-width:900px){.funnel-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:520px){.funnel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* ---------- callouts / details ---------- */
 .callout{border-radius:var(--r);padding:16px 18px;font-size:14px;margin-top:16px;border:1px solid}
@@ -467,7 +495,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
         <span class="tag">CPL <b id="t-cpl">4 835 ₽</b></span>
         <span class="tag" id="sliceHint" hidden>Разрезы ниже — фиксированно за <b>02.11–08.11</b></span>
         <span class="tag">Сформировано <b>09.11.2026</b></span>
-        <span class="tag">Сборка <b id="buildStamp">09.11 11:40</b></span>
+        <span class="tag">Сборка <b id="buildStamp">09.11 12:05</b></span>
       </div>
     </div>
     <div class="ring-box" id="ringBox" style="display:none">
@@ -770,7 +798,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   <section id="leads">
     <div class="sec-head">
       <h2>Целевые лиды по клиентам</h2>
-      <p class="sub" id="leads-sub">10 уникальных сделок · фильтр: созданы 02.11–08.11 · этапы по воронке «созданные за прошлую неделю». Номер, почта или ИНН кликается — копируется.</p>
+      <p class="sub" id="leads-sub">10 сделок с тегом «Целевой», созданных 02.11–08.11. Номер, почта или ИНН кликается — копируется. Статусы этапов — на 09.11.2026.</p>
     </div>
 
     <div class="toolbar">
@@ -809,15 +837,22 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       </table>
       <div class="empty" id="empty" hidden>Ничего не найдено — измените фильтры или поисковый запрос.</div>
     </div>
+    <div class="funnel" id="funnel">
+      <div class="funnel-h"><b>Воронка по этапам</b><span id="funnel-sub">доля от показанных сделок · статус в CRM на 09.11.2026</span></div>
+      <div class="funnel-bar" id="funnel-bar" aria-hidden="true"></div>
+      <div class="funnel-grid" id="funnel-grid"></div>
+      <div class="funnel-prev" id="funnel-prev" hidden></div>
+      <div class="funnel-detail" id="funnel-detail"></div>
+    </div>
     <div class="tbl-foot">
       <span id="shown">Показано 10 из 10</span>
-      <span id="leads-stages">Этапы: КП выставлено 3 · Потребности выявлены 1 · Взял в работу 1 · Закрыто и не реализовано 5</span>
+      <span id="leads-period">Сделки, созданные 02.11–08.11.2026 · этап — текущий статус в CRM на 09.11.2026; факт периода — только количество, каналы и бюджет</span>
     </div>
   </section>
 
   <footer>
-    <span>Отчёт по рекламной кампании · 02–08.11.2026</span>
-    <span>Сформировано 09.11.2026 · интерактивная версия · сборка <b id="buildStamp2">09.11 11:40</b> UTC</span>
+    <span id="footPeriod">Отчёт по рекламной кампании · 02–08.11.2026</span>
+    <span>Сформировано 09.11.2026 · интерактивная версия · сборка <b id="buildStamp2">09.11 12:05</b> UTC</span>
     <span id="baseCompare">База сравнения: неделя 26.10–01.11 (14 ЦЛ, 87 738 ₽)</span>
   </footer>
 </div>
@@ -1408,6 +1443,103 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   ];
   var LEADS=LEADS_W;
   var CLS={seq:'p-seq',ruq:'p-ruq',spr:'p-spr',x:''};
+
+  /* воронка по этапам: шесть групп + доля от показанных сделок; пересчитывается иод фильтрами */
+  var FUNNEL=[
+    {k:'done',t:'В договоре',c:'--pos'},
+    {k:'talk',t:'Переговоры',c:'--primary-2'},
+    {k:'offer',t:'КП выставлено',c:'--accent'},
+    {k:'work',t:'В работе',c:'--text'},
+    {k:'lost',t:'Закрыто',c:'--neg'},
+    {k:'hold',t:'Отложено',c:'--ch-mail'}
+  ];
+  function stageGroup(s){
+    if(s==='Переговоры по договору') return 'done';
+    if(s==='Переговоры по КП'||s==='Встреча проведена') return 'talk';
+    if(s==='КП выставлено') return 'offer';
+    if(s==='Закрыто и не реализовано') return 'lost';
+    if(s==='Отложенный клиент') return 'hold';
+    return 'work';
+  }
+  function plural(n,a,b,c){ var m=n%100, k=n%10; if(m>10&&m<20) return c; if(k===1) return a; if(k>=2&&k<=4) return b; return c; }
+  function renderFunnel(rows){
+    var grid=$('#funnel-grid'), bar=$('#funnel-bar'), det=$('#funnel-detail'), pv=$('#funnel-prev'), sub=$('#funnel-sub');
+    if(!grid||!bar) return;
+    /* факт подписания — касание прошлого периода: вне воронки и вне знаменателя */
+    var signed=rows.filter(function(l){ return l.stage==='Успешно реализовано'; });
+    var cur=rows.filter(function(l){ return l.stage!=='Успешно реализовано'; });
+    var total=cur.length, cnt={done:0,talk:0,offer:0,work:0,lost:0,hold:0}, st={};
+    cur.forEach(function(l){ cnt[stageGroup(l.stage)]++; st[l.stage]=(st[l.stage]||0)+1; });
+    /* целые проценты по методу наибольшего остатка — сумма всегда ровно 100 */
+    var pcs={}, raw=FUNNEL.map(function(f){ return {k:f.k, v: total? cnt[f.k]/total*100 : 0}; });
+    var base=0; raw.forEach(function(r){ pcs[r.k]=Math.floor(r.v); base+=pcs[r.k]; });
+    if(total) raw.slice().sort(function(a,b){ return (b.v-Math.floor(b.v))-(a.v-Math.floor(a.v)); })
+      .slice(0, Math.max(0, 100-base)).forEach(function(r){ pcs[r.k]++; });
+    grid.innerHTML=FUNNEL.map(function(f){
+      var v=cnt[f.k], pc=total?pcs[f.k]:0;
+      return '<div class="fn"><div class="fn-k"><i style="background:var('+f.c+')"></i>'+f.t+'</div>'
+        +'<div class="fn-v"><span class="fn-pc" data-pc="'+pc+'">'+pc+'</span><small>%</small></div>'
+        +'<div class="fn-n">'+v+' '+plural(v,'сделка','сделки','сделок')+'</div></div>';
+    }).join('');
+    bar.innerHTML=total?FUNNEL.filter(function(f){return cnt[f.k]>0;}).map(function(f){
+      return '<i style="width:'+(cnt[f.k]/total*100).toFixed(2)+'%;background:var('+f.c+')"></i>';
+    }).join(''):'';
+    var parts=Object.keys(st).sort(function(a,b){return st[b]-st[a];}).map(function(k){return k+' '+st[k];});
+    det.textContent=total?('Детально по статусам: '+parts.join(' · ')):'Нет сделок под текущим фильтром';
+    funnelFx(grid,bar,sub,rows,signed,total);
+  }
+  /* ---------- воронка: учёт факта подписания и движение ---------- */
+  var FN_PC={};
+  var MONTH_GEN={m09:'сентября',m10:'октября'};
+  function prevLabel(){
+    var d=P[current], k=d&&d.prev;
+    return (k&&MONTH_GEN[k])||'прошлого периода';
+  }
+  function shortName(n){ return n.replace(/\s*\(.*\)$/,''); }
+  function easeOut(t){ return 1-Math.pow(1-t,3); }
+  function animatePc(el,key,to){
+    var from=FN_PC[key];
+    FN_PC[key]=to;
+    if(reduce||from==null||from===to){ el.textContent=to; return; }
+    var t0=performance.now(), d=420;
+    (function step(t){
+      var k=Math.min(1,(t-t0)/d);
+      el.textContent=Math.round(from+(to-from)*easeOut(k));
+      if(k<1) requestAnimationFrame(step);
+    })(t0);
+  }
+  function animateBar(bar){
+    if(reduce||!bar||!bar.animate) return;
+    [].forEach.call(bar.children,function(sg,i){
+      sg.animate([{transform:'scaleX(0)'},{transform:'scaleX(1)'}],
+        {duration:380,delay:Math.min(i*40,200),easing:'cubic-bezier(.23,1,.32,1)',fill:'backwards'});
+    });
+  }
+  function funnelFx(grid,bar,sub,rows,signed,total){
+    if(sub) sub.textContent=total+' '+plural(total,'сделка','сделки','сделок')+' периода · доля внутри периода'
+      +(signed.length?' · факт подписания — отдельно':'')+' · статус в CRM на 09.11.2026';
+    [].forEach.call(grid.querySelectorAll('.fn-pc'),function(el,i){
+      animatePc(el,'f'+i,+el.dataset.pc);
+    });
+    animateBar(bar);
+    var pv=$('#funnel-prev'); if(!pv) return;
+    if(!signed.length){ pv.hidden=true; pv.innerHTML=''; return; }
+    pv.hidden=false;
+    var share=Math.round(signed.length/rows.length*100);
+    pv.innerHTML='<div class="fp-h"><span class="fp-lab">Факт подписан</span>'
+      +'<b class="fp-n mono">'+signed.length+'</b>'
+      +'<span class="fp-sub">'+share+'% от '+rows.length+' · касание '+prevLabel()+' · в конверсию периода не входит</span></div>'
+      +'<div class="fp-chips">'+signed.map(function(l){
+          var nm=shortName(l.name);
+          return '<button class="fp-chip" type="button" data-q="'+nm.replace(/"/g,'&quot;')+'" title="Показать сделку в таблице">'+nm+'</button>';
+        }).join('')+'</div>';
+  }
+  var pvEl=$('#funnel-prev');
+  if(pvEl) pvEl.addEventListener('click',function(e){
+    var b=e.target.closest('.fp-chip'); if(!b) return;
+    if(qi) qi.value=b.dataset.q;
+    state.q=b.dataset.q||''; render();
+  });
   var ICON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>';
 
   var state={proj:'all',src:'all',q:'',sort:{k:'ts',dir:-1}};
@@ -1439,9 +1571,10 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
         +'<span>'+l.contact+'</span>'+ICON+'</button> · '+l.meta+'</span></td>'
         +'<td>'+l.src+'</td>'
         +'<td><span class="pill '+CLS[l.proj]+'">'+l.projName+'</span></td>'
-        +'<td>'+l.stage+'</td>';
+        +'<td>'+l.stage+(l.stage==='Успешно реализовано'?'<span class="tag-prev">касание '+prevLabel()+'</span>':'')+'</td>';
       tb.appendChild(tr);
     });
+    renderFunnel(rows);
     $('#shown').textContent='Показано '+rows.length+' из '+LEADS.length;
     $('#empty').hidden = rows.length>0;
     $('#leads-tbl').style.display = rows.length? '' : 'none';
@@ -1663,18 +1796,18 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       projSub:'Показы и клики — из выгрузки Яндекс.Директ API за 02.11–08.11',
       projFoot:'',
       projCall:'<b>Solution PRO — 3 целевых при нулевом бюджете.</b> Три письма (МТС, Газпромбанк, Фудмаркет): домен не входит в отслеживаемые аккаунты Direct, поэтому расхода и CPL по нему нет.',
-      leadsSub:'10 уникальных сделок · фильтр: созданы 02.11–08.11 · этапы по воронке «созданные за прошлую неделю». Номер, почта или ИНН кликается — копируется.',
+      leadsSub:'10 сделок с тегом «Целевой», созданных 02.11–08.11. Номер, почта или ИНН кликается — копируется. Статусы этапов — на 09.11.2026.',
       leadsCap:'Целевые лиды за 2 – 8 ноября 2026',
-      stages:'Этапы: КП выставлено 3 · Потребности выявлены 1 · Взял в работу 1 · Закрыто и не реализовано 5'},
+      periodNote:'Сделки, созданные 02.11–08.11.2026 · этап — текущий статус в CRM на 09.11.2026, а не результат периода; факт недели — количество, каналы и бюджет'},
     month:{srcCap:'63 целевых · SEO включает звонки и чат; заявки с форм без utm-меток отнесены к Директу',
       srcCall:'<b>Директ дал 38 из 63 целевых</b> при бюджете 396,5 тыс. ₽. Расходы на один целевой лид Директа — около <b class="mono">10,4 тыс. ₽</b> (396 494 / 38). Общая цена целевого лида всех каналов — 6 294 ₽.',
       projCap:'63 целевых: Секвойя 35 (284 731 ₽) · Руки 16 (111 762 ₽) · Solution PRO 12 (без бюджета)',
       projSub:'Показы и клики — Директ API за 01.10–01.11 по аккаунтам · ЦЛ — CRM (тег «Целевой») · строки округлены до рубля, итог — по неокруглённым суммам (расхождение до 1 ₽)',
       projFoot:'Конверсии Метрики по аккаунтам — 213 (Секвойя) и 20 (Руки): это все срабатывания целей, включая повторные и нецелевые обращения. ЦЛ считаются только по сделкам CRM с тегом «Целевой», поэтому 35 ≠ 213 и 16 ≠ 20.',
       projCall:'<b>Solution PRO — 12 целевых при нулевом бюджете.</b> Четыре письма, три заявки с форм s-pro.group по Директу и пять обращений из органики (звонки и формы): домен не входит в отслеживаемые аккаунты. Цена целевого лида по аккаунтам: Секвойя 8 135 ₽, Руки 6 985 ₽.',
-      leadsSub:'63 сделки · созданы 01.10–31.10 · этапы — по воронке октября (тег «Целевой»). Номер, почта или ИНН кликается — копируется.',
+      leadsSub:'63 сделки с тегом «Целевой», созданные 01.10–31.10. Номер, почта или ИНН кликается — копируется. Статусы этапов — на 09.11.2026.',
       leadsCap:'Целевые лиды за октябрь 2026',
-      stages:'Этапы: Закрыто и не реализовано 38 · КП выставлено 7 · Отложенный клиент 6 · Переговоры по КП 4 · Успешно реализовано 2 · Переговоры по договору 2 · Заявка получена 1 · Контакт с ЛПР 1 · Встреча 1 · Потребности 1'}
+      periodNote:'Сделки, созданные 01.10–31.10.2026 · этап — текущий статус в CRM на 09.11.2026, а не результат октября; факт периода — количество, каналы и бюджет · «Успешно реализовано» = касание сентября, в воронку октября не входит'}
   };
   function setTxt(id,v){ var e=document.getElementById(id); if(e) e.textContent=v; }
   function setHtml(id,v){ var e=document.getElementById(id); if(e) e.innerHTML=v; }
@@ -1700,7 +1833,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     setTxt('cnt-all',LEADS.length); setTxt('cnt-seq',C.seq); setTxt('cnt-ruq',C.ruq); setTxt('cnt-spr',C.spr); setTxt('cnt-x',C.x);
     setTxt('cnt-dir',C.dir); setTxt('cnt-seo',C.seo); setTxt('cnt-mail',C.mail);
     var x=document.getElementById('chip-x'); if(x){ x.hidden=!(C.x>0); x.style.display=C.x>0?'':'none'; }
-    setTxt('leads-sub',t.leadsSub); setTxt('leads-stages',t.stages);
+    setTxt('leads-sub',t.leadsSub); setTxt('leads-period',t.periodNote);
     var cap=document.getElementById('leads-cap'); if(cap) cap.textContent=t.leadsCap;
     render();
   }
@@ -1715,6 +1848,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     $('#vsPrev').textContent=pd?('vs '+pd.lbl):'—';
     var eb=$('#eyebrow'); if(eb) eb.textContent='Рекламная кампания · '+(isMonth?'месяц к месяцу':'неделя к неделе');
     setTxt('brandDates','Отчёт '+d.lbl);
+    setTxt('footPeriod','Отчёт по рекламной кампании · '+(isMonth? d.lbl+' 2026' : d.lbl+'.2026'));
     setTxt('navwow',isMonth?'Месяц к месяцу':'Неделя к неделе');
     var rb=$('#ringBox'); if(rb) rb.style.display=OCT_SET[p]?'':'none';
     var ms=$('#month'); if(ms) ms.style.display=OCT_SET[p]?'':'none';
